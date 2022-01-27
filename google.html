@@ -1,0 +1,27 @@
+<div class="flex justify-center pt-1/12">
+    <form class="bg-white shadow-2xl rounded-xl p-12 max-w-lg" name="submit-to-google-sheet">
+        <h1 class="text-6xl mb-5 text-center">Waitlist</h1>
+        <p>Be the first to know when new photoshoot time slots become available in your city.</p>
+        <div class="py-10">
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="instagram" placeholder="Instagram">
+            <input type="email" name="email" placeholder="Email">
+            <input type="tel" name="phone" placeholder="Phone">
+            <input type="text" name="city" placeholder="City">
+        </div>
+        <input type="submit" class="btn btn-lg btn-primary mx-auto" value="Join">
+    </form>
+
+
+    <script type="text/javascript">
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyjZVLZQdtXCYHa4Gud9EGNXfJSt0CrFmXbRNwIBgJMxgYzK77JoGG3DApb5uxv37Au/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</div>

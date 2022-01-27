@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Title";
+    src: url("../fonts/Butler.woff2") format('woff2'),
+        url("../fonts/Butler.woff") format('woff'),
+        url('../fonts/Butler.ttf')  format('truetype');
+}
+
+@layer base {
+    p { @apply mb-4; }
+    a { @apply font-bold; }
+    p a { @apply underline cursor-pointer; }
+
+    .scrollbar-none {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    }
+    .scrollbar-none::-webkit-scrollbar { /* WebKit */
+        width: 0;
+        height: 0;
+    }
+
+    /* Forms */
+    input:focus, textarea:focus, select:focus { @apply outline-none; }
+    input[type="text"], input[type="password"], input[type="tel"], input[type="email"], textarea, label.checkbox, select { @apply pt-6 pb-3 px-4 md:py-4 md:px-5 border rounded-lg border-gray-800 w-full bg-transparent transition duration-150 mb-2; } 
+    input[type="text"]:hover, input[type="password"]:hover, input[type="tel"]:hover, input[type="email"]:hover, textarea:hover, label.checkbox:hover, select:hover { @apply border-gray; }
+    input[type="text"]:focus, input[type="password"]:focus, input[type="tel"]:focus, input[type="email"]:focus, textarea:focus, select:focus { @apply border-black; }
+    label.label { @apply absolute left-4 md:left-auto md:right-8 top-1/2 transform -translate-y-1/2 text-gray transition duration-150; }
+    input[type="text"]:focus + label.label, input[type="email"]:focus + label.label { @apply -translate-y-6 text-xs md:-translate-y-1/2 md:text-base; }
+
+    /* Checkboxes */
+    input[type="checkbox"] { @apply hidden; }
+    label.checkbox { @apply w-full bg-transparent border border-gray-800 rounded-lg text-center cursor-pointer flex items-center justify-center text-gray transition duration-150; }
+    input[type="checkbox"]:checked + label.checkbox { @apply border-black text-black; }
+
+    /* Radio */
+    input[type="radio"] { @apply hidden; }
+    label.checkbox { @apply select-none; }
+    /* label.checkbox { @apply w-full bg-transparent border border-gray-800 rounded-lg text-center cursor-pointer flex items-center justify-center text-gray transition duration-150; } */
+    input[type="radio"]:checked + label.checkbox { @apply border-black text-black; }
+
+    /* Textarea */
+    textarea { min-height: 150px; resize: none; }
+
+    /* Day */
+    .input-date { @apply rounded-full bg-gray/20 transition duration-150 hover:bg-black/10; }
+    input[type="radio"]:checked + .input-date { @apply bg-black text-white; }
+
+    input:disabled { @apply bg-gray/20 text-black/20; }
+
+
+    /* py-4 px-8 rounded-full w-full bg-white shadow-sm */
+}
+@layer components { 
+    .btn { @apply cursor-pointer flex items-center justify-center transition duration-300 uppercase font-bold tracking-wider text-sm; }
+    .btn-sm { @apply py-2 px-5 mb-2; }
+    .btn-md { @apply py-3 px-6 mb-2; }
+    .btn-lg { @apply py-4 px-10 mb-2; }
+    .btn-secondary { @apply border border-black rounded-lg; }
+    .btn-secondary:hover { @apply text-white bg-black; }
+    .btn-primary { @apply bg-black text-white rounded-lg shadow-lg; }
+    .btn-primary:hover { @apply text-gray-800 shadow-xl; }
+    .btn-white { @apply bg-white rounded-full shadow-lg text-black; }
+
+    .btn-input { @apply py-4 px-5 border border-black bg-black text-white rounded-lg text-center; }
+
+    /* Gallery Images */
+    .image:focus { outline: none; }
+    .image:hover + .credits, .image:focus + .credits { @apply lg:translate-y-0 lg:opacity-100; }
+  
+   
+
+    /* Calendly */
+    /* .calendly-inline-widget {
+        height: 1200px;
+    } */
+
+    /* Lazysizes */
+}

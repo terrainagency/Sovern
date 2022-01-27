@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Portrait",
+        "slug": "portrait",
+        "blocks": [
+            [
+                { "src": "port_mei_li_1.jpg", "alt": "test", "credits": { "Model": "Mei Li with Mazza Models, One Management NYC", "Designer": "Hye.N.Dry" } }, 
+                { "src": "port_wis_1.jpg", "alt": "test", "credits": { "Model": "Wis Escher with Mazza Models" }  }
+            ],
+            [
+                { "src": "port_lacey_1.jpg", "alt": "test", "credits": { "Model": "Lacey Claire Rogers with No Ties Management", "Designer": "Bcalla by Underpin PR" } }, 
+                { "src": "port_cenie_1.jpg", "alt": "test", "credits": { "Model": "Cenie Friesen with Freedom Models LA" } }, 
+                { "src": "port_ceca_1.jpg", "alt": "test", "credits": { "Model": "Ceca with Elite Model Management LA" } }
+            ],
+            [
+                { "src": "port_madison_1.jpg", "alt": "test", "credits": { "Model": "Madison Rothschild with Management Rothschild, LA Models" } }, 
+                { "src": "port_anissa_1.jpg", "alt": "test", "credits": { "Model": "Anissa with Mazza Models" } }
+            ],
+            [
+                { "src": "port_james_1.jpg", "alt": "test", "credits": { "Model": "James with IMG LA" } }, 
+                { "src": "port_danah_1.jpg", "alt": "test", "credits": { "Model": "Danah Cleaton with Natural Models LA" } }
+            ],
+            [
+                { "src": "port_judah_1.jpg", "alt": "test", "credits": { "Model": "Judah Campbell with Natural Models LA" } }, 
+                { "src": "port_victoria_1.jpg", "alt": "test", "credits": { "Model": "Victoria with Natural Models LA" } }
+            ],
+            [
+                { "src": "port_nick_1.jpg", "alt": "test", "credits": { "Model": "Nick with Mazza Models" } }, 
+                { "src": "port_olga_1.jpg", "alt": "test", "credits": { "Model": "Olga with Freedom Models LA" } }
+            ],
+            [
+                { "src": "port_maximo_1.jpg", "alt": "test", "credits": { "Model": "Justice Beverley with Mazza Models", "Magazine": "Maximo Magazine" } }, 
+                { "src": "info.jpg", "alt": "test" }
+            ],
+            [
+                { "src": "port_claire_1.jpg", "alt": "test", "credits": { "Model": "Claire Sears with Mazza Models", "Styling": "Michelle Washington", "Magazine": "Fero's Magazine" } }, 
+                { "src": "port_claire_2.jpg", "alt": "test", "credits": { "Model": "Claire Sears with Mazza Models", "Styling": "Michelle Washington", "Magazine": "Fero's Magazine" }  }
+            ]
+        ]
+    },
+    {
+        "name": "Editorial",
+        "slug": "editorial",
+        "blocks": []
+    },
+    {
+        "name": "Beauty",
+        "slug": "beauty",
+        "blocks": []
+    }
+]
