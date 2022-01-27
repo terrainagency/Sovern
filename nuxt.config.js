@@ -22,7 +22,7 @@ export default {
         ]
     },
     buildModules: ['@nuxtjs/tailwindcss', '@nuxt/image', '@nuxtjs/dotenv', '@nuxtjs/axios'],
-    plugins: ['~/plugins/graphcms.js', '~/plugins/auth.client'],
+    plugins: ['~/plugins/graphcms', '~plugins/maps.client', '~/plugins/auth.client'],
     publicRuntimeConfig: {
         auth: {
             cookieName: 'idToken',

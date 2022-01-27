@@ -1,0 +1,44 @@
+{
+  "BookingFooter": {
+    "description": "Auto imported from components/BookingFooter.vue"
+  },
+  "BookingHeader": {
+    "description": "Auto imported from components/BookingHeader.vue"
+  },
+  "ContactForm": {
+    "description": "Auto imported from components/ContactForm.vue"
+  },
+  "DatePicker": {
+    "description": "Auto imported from components/DatePicker.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
+  },
+  "GalleryImage": {
+    "description": "Auto imported from components/GalleryImage.vue"
+  },
+  "HeaderDisabled": {
+    "description": "Auto imported from components/Header-disabled.vue"
+  },
+  "Header": {
+    "description": "Auto imported from components/Header.vue"
+  },
+  "Navigation": {
+    "description": "Auto imported from components/Navigation.vue"
+  },
+  "Project": {
+    "description": "Auto imported from components/Project.vue"
+  },
+  "ServiceCard": {
+    "description": "Auto imported from components/ServiceCard.vue"
+  },
+  "ServiceGallery": {
+    "description": "Auto imported from components/ServiceGallery.vue"
+  },
+  "SovernLogo": {
+    "description": "Auto imported from components/SovernLogo.vue"
+  },
+  "Waitlist": {
+    "description": "Auto imported from components/Waitlist.vue"
+  }
+}

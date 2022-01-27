@@ -1,46 +1,73 @@
 <template>
-    <div>
-        
-        <!-- <main class="lg:px-1/12 xl:px-2/12 overflow-x-hidden">
+    <main class="flex bg-[#ffffff]">
+        <div class="w-24 border-r border-black/10 h-screen flex justify-center pt-5">
+            <SovernLogo v-bind:size="`w-8 h-8`" />
 
-            <div v-for="block in galleries.home" :key="block.objectID">
+        </div>
+        <section class="w-1/3 h-screen border-r px-2 pt-5 border-black/10">
+        google button:
+            <div id="googleButton"></div>
 
-                <div v-if="block.length > 1" class="flex -mx-1 mb-20 md:mb-40">
-                    <div v-for="image in block" :key="image.objectID" class="w-1/2 px-1">
-                        <GalleryImage :image="image" :aspectRatio="`pb-5/4`" />
+            <header class="h-8 flex items-center mb-10 px-3 font-bold">Photoshoots</header>
+
+            <h3 class="pl-3 font-bold text-xl mb-3">Upcoming (1)</h3>
+            <ul> 
+            <li v-for="photoshoot in photoshoots" :key="photoshoot.id" class="shadow-sm rounded-xl mb-2 px-6 py-5 border border-black/10 hover:shadow-md transition duration-150 cursor-pointer">
+                <div class="w-full flex justify-between items-center mb-3">
+                    <div class="flex-grow flex">
+                        <div class="mr-3">{{ photoshoot.clientName }}</div>
+                        <div class="text-warning text-xs uppercase tracking-widest"><span class="inline-block h-2 w-2 rounded-full bg-warning mr-2"></span></div>
                     </div>
+                    <div class="rounded-full bg-success px-3 text-success bg-opacity-10 uppercase text-xs tracking-widest flex items-center">1 day</div>
                 </div>
-                <div v-else class="flex -mx-1 mb-20 md:mb-40">
-                    <div v-for="image in block" :key="image.objectID" class="w-full">
-                        <GalleryImage :image="image" :aspectRatio="`pb-3/5`" />
-                    </div>
-                </div>
+                <p class="text-gray mb-0 text-sm uppercase tracking-widest">12:00 PM - 2:00 PM</p>
+                <p class="mb-0">{{ photoshoot.price }}</p>
+                
+                
+            </li>
+            </ul>
+            <div class="mt-10">
+                <!-- Past photoshoots and cancelled photoshoots -->
+                <h3 class="pl-3 font-bold text-xl mb-3 opacity-30 hover:opacity-100 transition duration-150" role="button">Archived (0)</h3>
             </div>
-        </main> -->
-        <Navigation :galleries="galleries"></Navigation>
-        
-    </div>
+                        
+
+        </section>
+        <section class="flex-grow w-full h-screen pt-10">
+                <!--    Photoshoot details go here -->
+            <div class="mx-auto px-1/12">
+                <Project v-bind:project="photoshoots[0]" />
+            </div>
+            
+        </section>
+    </main>
 </template>
 
 <script>
 import { gql } from 'graphql-request'
 
 export default {
-  async asyncData({ $graphcms }) {
-    const { galleries } = await $graphcms.request(
-      gql`
-        {
-            galleries(where: {isPrimary: true}) {
-                id
-                title
-                slug
-            }
-        }
-      `
-    );
+    async asyncData({ $graphcms, params }) {
+        const { photoshoots } = await $graphcms.request(
+            gql`
+                query GetPhotoshoots {
+                    photoshoots {
+                        id
+                        clientName
+                        service {
+                            title
+                            featuredImages {
+                                id
+                                url
+                            }
+                        }
+                        price
+                    }
+                }
+            `
+        )
 
-    return { galleries };
-
-  }
+        return { photoshoots }
+    }
 }
 </script>
