@@ -1,0 +1,209 @@
+[
+    {
+        "title": "Los Angeles, CA",
+        "slug": "los-angeles",
+        "available": true,
+        "services": [
+            {
+                "title": "Studio",
+                "slug": "studio",
+                "available": true,
+                "startingPrice": "425",
+                "description": "<p>A combination of natural no-makeup looks with classic studio lighting. This is the most diverse package, and is used to build or update portfolios with fresh, clear, and natural work.</p><p>Styling ranges from high-fashion editorial to commercial depending on your needs, and body or beauty looks can be intermixed on request.</p>",
+                "images": [
+                    { "src": "studio_1.jpg" },
+                    { "src": "studio_2.jpg" },
+                    { "src": "studio_3.jpg" },
+                    { "src": "studio_4.jpg" },
+                    { "src": "studio_5.jpg" },
+                    { "src": "studio_6.jpg" }
+                ],
+                "specs": [
+                    { "name": "Cropping", "info": "Full body, 3/4 Body, Headshot" },
+                    { "name": "Aspect ratio", "info": "8.5x11, 17x11, 4x5" }
+                ],
+                "calendlyForm": "https://calendly.com/tonyredmer/los-angeles-studio"
+            },
+            {
+                "title": "Outdoor Studio",
+                "slug": "outdoor-studio",
+                "available": true,
+                "startingPrice": "375",
+                "description": "<p>A combination of natural no-makeup looks with classic studio lighting. This is the most diverse package, and is used to build or update portfolios with fresh, clear, and natural work.</p><p>Styling ranges from high-fashion editorial to commercial depending on your needs, and body or beauty looks can be intermixed on request.</p>",
+                "images": [
+                    { "src": "outdoor_1.jpg" },
+                    { "src": "outdoor_2.jpg" },
+                    { "src": "outdoor_3.jpg" },
+                    { "src": "outdoor_4.jpg" },
+                    { "src": "outdoor_5.jpg" },
+                    { "src": "outdoor_6.jpg" }
+                ],
+                "specs": [
+                    { "name": "Cropping", "info": "Full body, 3/4 Body, Headshot" },
+                    { "name": "Aspect ratio", "info": "8.5x11, 17x11, 4x5" }
+                ],
+                "calendlyForm": "https://calendly.com/tonyredmer/los-angeles-outdoor-studio"
+            }
+        ]
+    },
+    {
+        "title": "New York City, NY",
+        "slug": "new-york",
+        "available": false,
+        "frequency": "9 months",
+        "services": []
+    },
+    {
+        "title": "London, UK",
+        "slug": "london",
+        "available": false,
+        "frequency": "9 months",
+        "services": []
+    },
+    {
+        "title": "Salt Lake City, UT",
+        "slug": "salt-lake-city",
+        "available": false,
+        "frequency": "6 months",
+        "services": []
+    },
+    {
+        "title": "Las Vegas, NV",
+        "slug": "las-vegas",
+        "available": false,
+        "frequency": "6 months",
+        "services": []
+    },
+    {
+        "title": "Seattle, WA",
+        "slug": "seattle",
+        "available": false,
+        "frequency": "9 months",
+        "services": []
+    },
+    {
+        "title": "Miami, FL",
+        "slug": "miami",
+        "available": false,
+        "frequency": "6 months",
+        "services": []
+    },
+    {
+        "title": "Austin, TX",
+        "slug": "austin",
+        "available": true,
+        "frequency": "3 months",
+        "services": [
+            {
+                "title": "Studio",
+                "slug": "studio",
+                "available": true,
+                "startingPrice": "75",
+                "pricePerLook": "75",
+                "description": "<p>A combination of natural no-makeup looks with a mix of full body and headshots. This is the most diverse package, and is used to build or update portfolios with fresh, clear, and natural work.</p><p>Styling ranges from high-fashion editorial to commercial depending on your needs, and body or beauty looks can be intermixed on request.</p>",
+                "images": [
+                    { "src": "studio_1.jpg" },
+                    { "src": "studio_2.jpg" },
+                    { "src": "studio_3.jpg" },
+                    { "src": "studio_4.jpg" },
+                    { "src": "studio_5.jpg" },
+                    { "src": "studio_6.jpg" }
+                ],
+                "specs": [
+                    { "name": "Hair and Makeup", "info": "Optional" },
+                    { "name": "Cropping", "info": "Full body, 3/4 Body, Headshot" },
+                    { "name": "Aspect ratio", "info": "8.5x11, 17x11, 4x5" }
+                ],
+                "calendlyForm": "https://calendly.com/tonyredmer/austin-studio"
+            },
+            {
+                "title": "Outdoor Studio",
+                "slug": "outdoor-studio",
+                "available": false,
+                "startingPrice": "325",
+                "description": "<p>A natural light outdoor photoshoot that mimics studio settings. Looks are natural no-makeup with styling ranging from high fashion editorial to commercial.</p><p>Set design on this shoot utilizes a variety of backdrop and outdoor scenery. This package is a full range of headshot and full body.</p>",
+                "images": [
+                    { "src": "outdoor_1.jpg" },
+                    { "src": "outdoor_2.jpg" },
+                    { "src": "outdoor_3.jpg" },
+                    { "src": "outdoor_4.jpg" },
+                    { "src": "outdoor_5.jpg" },
+                    { "src": "outdoor_6.jpg" }
+                ],
+                "specs": [
+                    { "name": "Cropping", "info": "Full body, 3/4 Body, Headshot" },
+                    { "name": "Aspect ratio", "info": "8.5x11, 17x11, 4x5" }
+                ],
+                "calendlyForm": "https://calendly.com/tonyredmer/austin-outdoor-studio"
+            },
+            {
+                "title": "Body",
+                "slug": "body",
+                "available": true,
+                "startingPrice": "75",
+                "description": "<p>A body-focussed shoot with minimal styling and natural no-makeup looks.</p><p>This shoot centers around pose, silhouette, and physique. Styling will utilize lightweight materials, bodysuits, swimsuits, denim, lingerie, etc.</p>",
+                "images": [
+                    { "src": "body_1.jpg" },
+                    { "src": "body_2.jpg" },
+                    { "src": "body_3.jpg" },
+                    { "src": "body_4.jpg" },
+                    { "src": "body_5.jpg" },
+                    { "src": "body_6.jpg" }
+                ],
+                "specs": [
+                    { "name": "Hair and Makeup", "info": "Optional" },
+                    { "name": "Cropping", "info": "Full body, 3/4 Body, Headshot" },
+                    { "name": "Aspect ratio", "info": "8.5x11, 17x11, 4x5" }
+                ],
+                "calendlyForm": "https://calendly.com/tonyredmer/austin-body"
+            },
+            {
+                "title": "Location",
+                "slug": "location",
+                "available": true,
+                "startingPrice": "325",
+                "description": "<p>An on location fashion photoshoot. We'll pair a location based on color palette, resulting in luxury fashion images that feel editorial.</p><p>This package can be transformed into just about any outdoor photoshoot based on special requests.</p>",
+                "images": [
+                    { "src": "location_1.jpg" },
+                    { "src": "location_2.jpg" },
+                    { "src": "location_3.jpg" },
+                    { "src": "location_4.jpg" },
+                    { "src": "location_5.jpg" },
+                    { "src": "location_6.jpg" }
+                ],
+                "specs": [
+                    { "name": "Hair and Makeup", "info": "Optional" },
+                    { "name": "Cropping", "info": "Full body, 3/4 Body, Headshot" },
+                    { "name": "Aspect ratio", "info": "8.5x11, 17x11, 4x5" }
+                ],
+                "calendlyForm": "https://calendly.com/tonyredmer/austin-location"
+            },
+            {
+                "title": "Published Editorial",
+                "slug": "published-editorial",
+                "available": true,
+                "inquiryRequired": true,
+                "startingPrice": "2125",
+                "tag": "Limited",
+                "description": "<p>The ultimate fashion experience. Our team will produce a fully executed fashion editorial. We will utilize our extensive network to publish the photoshoot in a domestic or international fashion magazine.</p><p>The shoot will be built entirely around you, and we will work collaboratively to bring our vision to life together.</p>",
+                "images": [
+                    { "src": "published_1.jpg" },
+                    { "src": "published_2.jpg" },
+                    { "src": "published_3.jpg" },
+                    { "src": "published_4.jpg" },
+                    { "src": "published_5.jpg" },
+                    { "src": "published_6.jpg" }
+                ],
+                "specs": [
+                    { "name": "Creative Direction", "info": "Included" },
+                    { "name": "Styling", "info": "Included" },
+                    { "name": "Hair and Makeup", "info": "Included" },
+                    { "name": "Set Design", "info": "Optional" },
+                    { "name": "Cropping", "info": "Full body, 3/4 Body, Headshot" },
+                    { "name": "Aspect ratio", "info": "8.5x11, 17x11, 4x5" }
+                ],
+                "calendlyForm": "https://calendly.com/tonyredmer/austin-location"
+            }
+        ]
+    }
+]

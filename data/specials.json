@@ -1,0 +1,49 @@
+[
+    {
+        "title": "Los Angeles - Group Special",
+        "slug": "la-group-special",
+        "available": true,
+        "services": [
+            {
+                "title": "Studio",
+                "slug": "studio",
+                "available": true,
+                "subtitle": "Group Special",
+                "description": "<p>A combination of natural no-makeup looks with classic studio lighting. This is the most diverse package, and is used to build or update portfolios with fresh, clear, and natural work.</p><p>Styling ranges from high-fashion editorial to commercial depending on your needs, and body or beauty looks can be intermixed on request.</p>",
+                "images": [
+                    { "src": "studio_1.jpg" },
+                    { "src": "studio_2.jpg" },
+                    { "src": "studio_3.jpg" },
+                    { "src": "studio_4.jpg" },
+                    { "src": "studio_5.jpg" },
+                    { "src": "studio_6.jpg" }
+                ],
+                "specs": [
+                    { "name": "Cropping", "info": "Full body, 3/4 Body, Headshot" },
+                    { "name": "Aspect ratio", "info": "8.5x11, 17x11, 4x5" }
+                ],
+                "calendlyForm": "https://calendly.com/tonyredmer/los-angeles-studio"
+            },
+            {
+                "title": "Outdoor Studio",
+                "slug": "outdoor-studio",
+                "available": true,
+                "subtitle": "Group Special",
+                "description": "<p>A combination of natural no-makeup looks with classic studio lighting. This is the most diverse package, and is used to build or update portfolios with fresh, clear, and natural work.</p><p>Styling ranges from high-fashion editorial to commercial depending on your needs, and body or beauty looks can be intermixed on request.</p>",
+                "images": [
+                    { "src": "outdoor_1.jpg" },
+                    { "src": "outdoor_2.jpg" },
+                    { "src": "outdoor_3.jpg" },
+                    { "src": "outdoor_4.jpg" },
+                    { "src": "outdoor_5.jpg" },
+                    { "src": "outdoor_6.jpg" }
+                ],
+                "specs": [
+                    { "name": "Cropping", "info": "Full body, 3/4 Body, Headshot" },
+                    { "name": "Aspect ratio", "info": "8.5x11, 17x11, 4x5" }
+                ],
+                "calendlyForm": "https://calendly.com/tonyredmer/los-angeles-outdoor-studio"
+            }
+        ]
+    }
+]
