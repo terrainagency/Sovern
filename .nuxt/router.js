@@ -14,6 +14,7 @@ const _1adddfc8 = () => interopDefault(import('../pages/specials/index.vue' /* w
 const _1a31953e = () => interopDefault(import('../pages/waitlist.vue' /* webpackChunkName: "pages/waitlist" */))
 const _d5b5feb0 = () => interopDefault(import('../pages/admin/bookings/index.vue' /* webpackChunkName: "pages/admin/bookings/index" */))
 const _22ac3564 = () => interopDefault(import('../pages/admin/login.vue' /* webpackChunkName: "pages/admin/login" */))
+const _2bcaa1b6 = () => interopDefault(import('../pages/admin/projects.vue' /* webpackChunkName: "pages/admin/projects" */))
 const _7ed60090 = () => interopDefault(import('../pages/bookings/_id.vue' /* webpackChunkName: "pages/bookings/_id" */))
 const _0ffdbdf2 = () => interopDefault(import('../pages/gallery/_slug.vue' /* webpackChunkName: "pages/gallery/_slug" */))
 const _6f7d80d3 = () => interopDefault(import('../pages/packages/_slug.vue' /* webpackChunkName: "pages/packages/_slug" */))
@@ -74,6 +75,10 @@ export const routerOptions = {
     path: "/admin/login",
     component: _22ac3564,
     name: "admin-login"
+  }, {
+    path: "/admin/projects",
+    component: _2bcaa1b6,
+    name: "admin-projects"
   }, {
     path: "/bookings/:id",
     component: _7ed60090,

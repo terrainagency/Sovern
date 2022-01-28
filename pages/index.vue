@@ -6,7 +6,7 @@
         <section class="w-1/3 border-r px-2 pt-5 border-black/10">
             <h3 class="pl-3 font-bold text-xl mb-3">Upcoming (1)</h3>
             <ul> 
-            <li v-for="photoshoot in photoshoots" :key="photoshoot.id" class="shadow-sm rounded-xl mb-2 px-6 py-5 border border-black/10 hover:shadow-md transition duration-150 cursor-pointer">
+            <!-- <li v-for="photoshoot in photoshoots" :key="photoshoot.id" class="shadow-sm rounded-xl mb-2 px-6 py-5 border border-black/10 hover:shadow-md transition duration-150 cursor-pointer">
                 <div class="w-full flex justify-between items-center mb-3">
                     <div class="flex-grow flex">
                         <div class="mr-3">{{ photoshoot.clientName }}</div>
@@ -18,7 +18,7 @@
                 <p class="mb-0">{{ photoshoot.price }}</p>
                 
                 
-            </li>
+            </li> -->
             </ul>
             <div class="mt-10">
                 <!-- Past photoshoots and cancelled photoshoots -->
@@ -30,7 +30,7 @@
         <section class="flex-grow w-full pt-10">
                 <!--    Photoshoot details go here -->
             <div class="mx-auto px-1/12">
-                <Project v-bind:project="photoshoots[0]" />
+                <!-- <Project v-bind:project="photoshoots[0]" /> -->
             </div>
             
         </section>
@@ -38,30 +38,5 @@
 </template>
 
 <script>
-import { gql } from 'graphql-request'
 
-export default {
-    async asyncData({ $graphcms, params }) {
-        const { photoshoots } = await $graphcms.request(
-            gql`
-                query GetPhotoshoots {
-                    photoshoots {
-                        id
-                        clientName
-                        service {
-                            title
-                            featuredImages {
-                                id
-                                url
-                            }
-                        }
-                        price
-                    }
-                }
-            `
-        )
-
-        return { photoshoots }
-    }
-}
 </script>

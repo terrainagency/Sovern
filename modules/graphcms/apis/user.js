@@ -48,7 +48,8 @@ export default (graphcmsConfig) => {
             const query = gql`
                 query FindCreator($gID: String!) {
                     creator(where: {gID: $gID}) {
-                        gID
+                        name
+                        image
                     }
                 }
             `

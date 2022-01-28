@@ -7,9 +7,9 @@
       <div class="flex-grow"></div>
       <template v-if="isLoggedIn">
         <div class="flex items-center">
-          <span class="pr-3">{{ user.fullName }}</span>
+          <span class="pr-3">{{ user.name }}</span>
           <div class="w-10 h-10">
-            <img :src="user.profileUrl" class="rounded-full shadow-md w-full min-h-full">
+            <img :src="user.image" class="rounded-full shadow-md w-full min-h-full">
           </div> 
           
         </div>
@@ -30,6 +30,9 @@ export default {
     isLoggedIn() {
       return this.$store.state.auth.isLoggedIn
     }
+  },
+  mounted() {
+    
   }
 }
 </script>

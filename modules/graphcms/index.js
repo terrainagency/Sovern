@@ -8,6 +8,4 @@ export default function() {
     this.nuxt.hook('render:setupMiddleware', (app) => {
         app.use('/api/user', userRouter(apis))
     })
-
-    
 }
