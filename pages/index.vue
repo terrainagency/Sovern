@@ -1,15 +1,9 @@
 <template>
     <main class="flex bg-[#ffffff]">
         <div class="w-24 border-r border-black/10 h-screen flex justify-center pt-5">
-            <SovernLogo v-bind:size="`w-8 h-8`" />
-
+            
         </div>
-        <section class="w-1/3 h-screen border-r px-2 pt-5 border-black/10">
-        google button:
-            <div id="googleButton"></div>
-
-            <header class="h-8 flex items-center mb-10 px-3 font-bold">Photoshoots</header>
-
+        <section class="w-1/3 border-r px-2 pt-5 border-black/10">
             <h3 class="pl-3 font-bold text-xl mb-3">Upcoming (1)</h3>
             <ul> 
             <li v-for="photoshoot in photoshoots" :key="photoshoot.id" class="shadow-sm rounded-xl mb-2 px-6 py-5 border border-black/10 hover:shadow-md transition duration-150 cursor-pointer">
@@ -33,7 +27,7 @@
                         
 
         </section>
-        <section class="flex-grow w-full h-screen pt-10">
+        <section class="flex-grow w-full pt-10">
                 <!--    Photoshoot details go here -->
             <div class="mx-auto px-1/12">
                 <Project v-bind:project="photoshoots[0]" />
