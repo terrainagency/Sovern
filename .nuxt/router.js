@@ -7,6 +7,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _25024237 = () => interopDefault(import('../pages/admin/index.vue' /* webpackChunkName: "pages/admin/index" */))
 const _51411428 = () => interopDefault(import('../pages/bookings/index.vue' /* webpackChunkName: "pages/bookings/index" */))
 const _c71c934e = () => interopDefault(import('../pages/info.vue' /* webpackChunkName: "pages/info" */))
+const _b47fa156 = () => interopDefault(import('../pages/no-access.vue' /* webpackChunkName: "pages/no-access" */))
 const _7134221b = () => interopDefault(import('../pages/packages/index.vue' /* webpackChunkName: "pages/packages/index" */))
 const _44a28a3e = () => interopDefault(import('../pages/retouching.vue' /* webpackChunkName: "pages/retouching" */))
 const _1adddfc8 = () => interopDefault(import('../pages/specials/index.vue' /* webpackChunkName: "pages/specials/index" */))
@@ -45,6 +46,10 @@ export const routerOptions = {
     path: "/info",
     component: _c71c934e,
     name: "info"
+  }, {
+    path: "/no-access",
+    component: _b47fa156,
+    name: "no-access"
   }, {
     path: "/packages",
     component: _7134221b,

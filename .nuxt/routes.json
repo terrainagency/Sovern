@@ -21,6 +21,13 @@
     "_name": "_c71c934e"
   },
   {
+    "name": "no-access",
+    "path": "/no-access",
+    "component": "/Users/tony/Documents/Sovern/pages/no-access.vue",
+    "chunkName": "pages/no-access",
+    "_name": "_b47fa156"
+  },
+  {
     "name": "packages",
     "path": "/packages",
     "component": "/Users/tony/Documents/Sovern/pages/packages/index.vue",
