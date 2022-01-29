@@ -1,20 +1,19 @@
 <template>
-    <div class="relative mb-2">
-        <div class="input py-1 px-2 flex flex-wrap mb-2">
-            
-            <input v-on:click="openDropdown" v-on:keyup="searchDropdown" ref="dropdownInput" class="relative py-3 px-1 h-full flex-grow bg-transparent pl-3 focus:outline-none" placeholder="Client(s)">
-                <button class="absolute right-2 top-2 bg-white-100 shadow-sm hover:bg-black hover:text-white transition duration-150 rounded-lg py-2 px-3 text-sm">+</button>
-            </div>
+    <div class="relative">
+        <input v-on:click="openDropdown" v-on:keyup="searchDropdown" ref="dropdownInput" class="input input-md mb-2" placeholder="Add client">
 
-        <div v-for="client in clientsSelected" :key="`selected-${client.id}`" class="py-2 px-3 mb-2 mr-2 rounded-lg bg-white-200 inline-block text-gray text-sm select-none">
-            <span class="mr-1">{{ client.name }}</span>
-            <button class="text-gray" title="Create new client">x</button>
-        </div>  
+        <div v-if="clientsSelected.length > 0" class="mb-2">
+            <div v-for="client in clientsSelected" :key="`selected-${client.id}`" class="py-2 px-3 mb-2 mr-2 rounded-lg bg-white-200 inline-block text-gray text-sm select-none">
+                <span class="mr-1">{{ client.name }}</span>
+                <button class="text-gray" title="Remove client">x</button>
+            </div>  
+        </div>
+        
         
         <!-- <div class="relative mb-2">
             <button class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white-100 shadow-sm hover:bg-black hover:text-white transition duration-150 rounded-lg py-2 px-3 text-sm">+</button>
         </div> -->
-        <div v-if="showDropdown" class="z-50 absolute w-full bg-white border rounded-md border-black/10 shadow-lg max-h-48 overflow-y-scroll scrollbar-none" tabindex="0">
+        <div v-if="showDropdown" class="z-50 absolute w-full bg-white border rounded-md border-black/10 shadow-lg max-h-48 overflow-y-scroll scrollbar-none">
             <div v-for="client in clientsDisplayList" :key="`list-${client.id}`" v-on:click="addClient(client.name, client.id)" class="flex justify-between py-2 hover:bg-white-100 select-none px-3 text-sm">
                 <span>{{ client.name }}</span>
                 <span class="text-gray">{{ client.email }}</span>

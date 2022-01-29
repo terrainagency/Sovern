@@ -1,17 +1,25 @@
 <template>
-    <div class="fixed top-0 left-0 flex items-center justify-center overflow-scroll w-screen h-screen bg-white/90">
-        <form v-on:submit.prevent="createProject" class="w-full max-w-md p-10 rounded-xl shadow-xl bg-white border border-white-100">
-            <!-- <h3 class="text-2xl font-bold text-center mb-4">Create new project</h3>
+<div>
+    <button @click="showForm = true" class="btn btn-lg btn-primary rounded-full mx-auto mt-7">+ new</button>
+    <!-- NOTE: Update the background to a blur via canvas -->
+    <div v-if="showForm" @click.prevent="showForm = false" class="fixed top-0 left-0 flex items-center justify-center overflow-scroll w-screen h-screen bg-black/10">
 
-            {{ project }} -->
+            <form v-on:submit.prevent="createProject" @click.stop="" class="relative w-full max-w-md pt-6 px-10 pb-10 rounded-xl shadow-xl bg-white border border-white-100">
+                <!-- <button @click="showForm = false" class="h-12 w-12 bg-white hover:text-gray border border-gray/10 transition duration-150 shadow-md rounded-full flex items-center justify-center absolute top-3 -left-6">
+                    <div class="h-2 w-2 border-l-2 border-b-2 border-current transform rotate-45"></div>
+                </button> -->
+
+                <header class="mb-8 font-bold text-center">New project</header>
+
+                <InputMoodboard />
+
+                <InputClient /> 
+
                 <div class="mb-2">
                     <input class="input input-md" type="text" placeholder="Title">
                 </div>
 
-
-                <InputMoodboard />
                 <!-- <input type="text" v-model="project.companyID" placeholder="companyID"> -->
-                <InputClient /> 
 
                 <DatePicker />
 
@@ -20,17 +28,20 @@
 
                 <!-- <input type="text" placeholder="Duration"> -->
 
-                <button type="submit" class="btn btn-lg btn-primary mx-auto mt-5">Create Project</button>
-            
-            <!-- <input type="text" v-model="project.serviceID" placeholder="serviceID"> -->
-        </form>
+                <button type="submit" class="btn btn-lg btn-primary mx-auto mt-5">Create</button>
+                
+                <!-- <input type="text" v-model="project.serviceID" placeholder="serviceID"> -->
+            </form>
+        </div>
     </div>
+    
 </template>
 <script>
 import { unWrap } from '~/utils/fetchUtils'
 export default {
     data() {
         return {
+            showForm: false,
             projectList: [],
             project: {
                 address: '',

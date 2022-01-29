@@ -91,7 +91,7 @@
         </ul>
       </nav>
 
-      <main class="h-full w-full bg-white px-10 py-2 flex">
+      <main class="h-full w-full bg-white pl-10 pr-16 pb-5 flex">
         <Nuxt />
       </main>
     </div>

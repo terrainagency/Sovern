@@ -16,7 +16,8 @@ theme: {
         white: {
             DEFAULT: '#FFFFFF',
             100: '#F7F7F8',
-            200: '#EAEAEA'
+            200: '#EAEAEA',
+            300: '#DFDFDF'
         },
         gray: {
             900: '#E6E6E6',
@@ -34,8 +35,8 @@ theme: {
             DEFAULT: '#E83100',
         },
         success: {
-            DEFAULT: '#00C379',
-        }
+            DEFAULT: '#00c34e',
+        },
     },
     extend: {
         height: {

@@ -1,40 +1,43 @@
 <template>
-<div class="w-full h-full">
-        <table class="w-full pb-7">
+<div class="w-full h-full ">
+    <div class="p-8 rounded-3xl border border-white-200">
+        <header class="font-bold mb-2">Upcoming ({{ projectList.length }})</header>
+
+        <!-- Projects where Workflow.id = XXX -->
+        <table class="w-full">
             <tr>
-                <th>Project</th>
-                <th>Call sheet</th>
-                <th>Photoshoot</th>
-                <th>Exported</th>
-                <th>Proofs</th>
-                <th>Selections</th>
-                <th>Edits</th>
-                <th>Final confirmation</th>
+                <th>Title</th>
+                <th>Date</th>
+                <th class="status">Call sheet</th>
+                <th class="status">Photoshoot</th>
+                <th class="status">Exported</th>
+                <th class="status">Proofs</th>
+                <th class="status">Selections</th>
+                <th class="status">Edits</th>
+                <th class="status">Final confirmation</th>
             </tr>
-            <tr v-for="project in projectList" :key="project.id" class="py-4 px-5 transition duration-150">
+            <tr v-for="project in projectList" :key="project.id" class="">
                 <td>
                     {{ project.title }}
                 </td>
-                <td class="bg-success/10 text-success status">
-                    Completed
+                <td>
+                    {{ project.date }}
                 </td>
-                <td class="bg-success/10 text-success status">
-                    Completed
-                </td>
-                <td class="bg-warning/10 text-warning status">
-                    Behind
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td class="status"><button class="bg-success text-white">Sent</button></td>
+                <td class="status"><button class="bg-success text-white">Completed</button></td>
+                <td class="status"><button class="bg-success text-white">Completed</button></td>
+                <td class="status"><button class="bg-warning text-white">Overdue</button></td>
+                <td class="status"><button class="hover:bg-white-200"> </button></td>
+                <td class="status"><button class="hover:bg-white-200"> </button></td>
+                <td class="status"><button class="hover:bg-white-200"> </button></td>
             </tr>
 
-            <!-- <CreateProject /> -->
         </table>
-            <button class="btn btn-lg btn-primary rounded-full mx-auto relative -top-7">+</button>
+                    <CreateProject />
 
+        <button class="font-bold mb-2 text-gray hover:text-black">Archived (0)</button>
 
+</div>
 </div>
         
 </template>
@@ -46,7 +49,8 @@ import { unWrap } from '~/utils/fetchUtils'
 export default {
     data() { 
         return {
-            projectList: []
+            projectList: [],
+            showCreateProject: false
         }
     },
     mounted() {
