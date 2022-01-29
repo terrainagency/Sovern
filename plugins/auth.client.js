@@ -27,8 +27,6 @@ export default ({ $config, store }, inject) => {
         })
     }
     async function parseUser(user) {
-        const profile = user.getBasicProfile()
-
         if(!user.isSignedIn()) {
             Cookie.remove($config.auth.cookieName)
             store.commit('auth/user', null)
@@ -39,11 +37,9 @@ export default ({ $config, store }, inject) => {
         Cookie.set($config.auth.cookieName, idToken, { expires: 1/24, sameSite: 'Lax' })
 
         try {
-            let user = await unWrap(await fetch('api/user'))
-            user = user.json.creator
+            let user = (await unWrap(await fetch('api/user'))).json
 
-            console.log("USER " + user)
-            console.log(user.creator)
+            console.log("USER " + JSON.stringify(user))
 
             store.commit('auth/user', {
                 name: user.name,

@@ -1,5 +1,5 @@
 import cookie from 'cookie'
-import { OAuth2Client, Oauth2Client } from 'google-auth-library'
+import { OAuth2Client } from 'google-auth-library'
 
 export default function() {
     const authConfig = this.options.publicRuntimeConfig.auth

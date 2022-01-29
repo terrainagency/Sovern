@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request'
-import { getGraphQLClient } from "../helpers"
+import { getGraphQLClient } from "../../helpers"
 
 export default (graphcmsConfig) => {
     const graphcms = getGraphQLClient(graphcmsConfig)
@@ -7,42 +7,41 @@ export default (graphcmsConfig) => {
     return {
         create: async (identity) => {
             const mutation = gql`
-                    mutation AddCreator(
-                        $gID: String!,
-                        $name: String!, 
-                        $email: String!, 
-                        $image: String!, 
-                        $joined: String!
+                mutation AddCreator(
+                    $gID: String!,
+                    $name: String!, 
+                    $email: String!, 
+                    $image: String!, 
+                    $joined: String!
+                ){
+                    createCreator(
+                        data: {
+                            gID: $gID
+                            name: $name,
+                            email: $email,
+                            image: $image,
+                            joined: $joined
+                        }
                     ){
-                        createCreator(
-                            data: {
-                                gID: $gID
-                                name: $name,
-                                email: $email,
-                                image: $image,
-                                joined: $joined
-                            }
-                        ){
-                            gID
-                            name
-                            email
-                            image
-                            joined
-                        }
-                        publishCreator(where: {gID: $gID}){ 
-                            gID 
-                        }
+                        gID
+                        name
+                        email
+                        image
+                        joined
                     }
-                `
-                const variables = {
-                    gID: identity.id,
-                    name: identity.name,
-                    email: identity.email,
-                    image: identity.image || '',
-                    joined: new Date().toISOString()
+                    publishCreator(where: {gID: $gID}){ 
+                        gID 
+                    }
                 }
-                const data = await graphcms.request(mutation, variables)
-                return data
+            `
+            const variables = {
+                gID: identity.id,
+                name: identity.name,
+                email: identity.email,
+                image: identity.image || '',
+                joined: new Date().toISOString()
+            }
+            return await graphcms.request(mutation, variables)
         },
         getByID: async (identityId) => {
             const query = gql`
@@ -53,8 +52,7 @@ export default (graphcmsConfig) => {
                     }
                 }
             `
-            const data = await graphcms.request(query, { gID: identityId })
-            return data
+            return await graphcms.request(query, { gID: identityId })
         }
     }
 }

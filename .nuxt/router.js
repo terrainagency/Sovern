@@ -12,9 +12,9 @@ const _7134221b = () => interopDefault(import('../pages/packages/index.vue' /* w
 const _44a28a3e = () => interopDefault(import('../pages/retouching.vue' /* webpackChunkName: "pages/retouching" */))
 const _1adddfc8 = () => interopDefault(import('../pages/specials/index.vue' /* webpackChunkName: "pages/specials/index" */))
 const _1a31953e = () => interopDefault(import('../pages/waitlist.vue' /* webpackChunkName: "pages/waitlist" */))
-const _d5b5feb0 = () => interopDefault(import('../pages/admin/bookings/index.vue' /* webpackChunkName: "pages/admin/bookings/index" */))
+const _aca7a788 = () => interopDefault(import('../pages/admin/dashboard/index.vue' /* webpackChunkName: "pages/admin/dashboard/index" */))
 const _22ac3564 = () => interopDefault(import('../pages/admin/login.vue' /* webpackChunkName: "pages/admin/login" */))
-const _2bcaa1b6 = () => interopDefault(import('../pages/admin/projects.vue' /* webpackChunkName: "pages/admin/projects" */))
+const _eba2f430 = () => interopDefault(import('../pages/admin/projects/index.vue' /* webpackChunkName: "pages/admin/projects/index" */))
 const _7ed60090 = () => interopDefault(import('../pages/bookings/_id.vue' /* webpackChunkName: "pages/bookings/_id" */))
 const _0ffdbdf2 = () => interopDefault(import('../pages/gallery/_slug.vue' /* webpackChunkName: "pages/gallery/_slug" */))
 const _6f7d80d3 = () => interopDefault(import('../pages/packages/_slug.vue' /* webpackChunkName: "pages/packages/_slug" */))
@@ -68,16 +68,16 @@ export const routerOptions = {
     component: _1a31953e,
     name: "waitlist"
   }, {
-    path: "/admin/bookings",
-    component: _d5b5feb0,
-    name: "admin-bookings"
+    path: "/admin/dashboard",
+    component: _aca7a788,
+    name: "admin-dashboard"
   }, {
     path: "/admin/login",
     component: _22ac3564,
     name: "admin-login"
   }, {
     path: "/admin/projects",
-    component: _2bcaa1b6,
+    component: _eba2f430,
     name: "admin-projects"
   }, {
     path: "/bookings/:id",

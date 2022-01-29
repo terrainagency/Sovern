@@ -1,4 +1,4 @@
-import { sendJSON } from '../helpers'
+import { sendJSON } from '../../helpers'
 
 export default (apis) => {
     return async function getUserRoute(req, res, next) {
@@ -6,7 +6,7 @@ export default (apis) => {
         const userData = await apis.user.getByID(identity.id)
 
         if(userData.creator) {
-            sendJSON(userData, res)
+            sendJSON(userData.creator, res)
             return
         }
 

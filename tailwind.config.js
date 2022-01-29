@@ -15,7 +15,8 @@ theme: {
     colors: {
         white: {
             DEFAULT: '#FFFFFF',
-            100: '#F0F0F0',
+            100: '#F7F7F8',
+            200: '#EAEAEA'
         },
         gray: {
             900: '#E6E6E6',
@@ -60,6 +61,9 @@ theme: {
         borderWidth: {
             '3': '3px',
         },
+        dropShadow: {
+            '3xl': '0 10px 10px rgba(0, 0, 0, 0.02)',
+        },
         spacing: {
             '1/2': '50%',
             '1/3': '33.333333%',
@@ -94,6 +98,7 @@ theme: {
             '3/2': '150%',
             '5/4': '125%',
         },
+        
     },
 },
 variants: {
