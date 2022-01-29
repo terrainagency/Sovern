@@ -37,7 +37,7 @@ export default ({ $config, store }, inject) => {
         Cookie.set($config.auth.cookieName, idToken, { expires: 1/24, sameSite: 'Lax' })
 
         try {
-            let user = (await unWrap(await fetch('api/user'))).json
+            let user = (await unWrap(await fetch('/api/user'))).json
 
             console.log("USER " + JSON.stringify(user))
 

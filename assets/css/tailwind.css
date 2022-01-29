@@ -55,6 +55,11 @@
 
 
     /* py-4 px-8 rounded-full w-full bg-white shadow-sm */
+    /* Tables */
+    tr, td { @apply py-5 px-6 font-light; }
+    td.status { @apply text-center; }
+    th { @apply py-3 text-left font-normal border-b border-white-200; }
+
 }
 @layer components { 
     .btn { @apply cursor-pointer flex items-center justify-center transition duration-300 uppercase font-bold tracking-wider text-sm; }

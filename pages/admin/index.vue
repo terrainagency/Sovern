@@ -1,5 +1,4 @@
 <template>
-    <div class="bg-white w-full px-10 py-2 flex">
         <!-- Dashboard -->
         <div class="w-full mr-10">
             <section class="w-full bg-white-100 rounded-3xl p-8 mb-10 flex h-[32rem]">
@@ -71,7 +70,6 @@
             <h2 class="font-bold mb-2 text-center">Views</h2>
         </div> -->
         
-    </div>
 </template>
 <script>
 import Cookie from 'js-cookie'

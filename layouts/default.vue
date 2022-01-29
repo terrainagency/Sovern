@@ -31,7 +31,7 @@
           </div> 
         </div>
       </template>
-      <div v-show="!isLoggedIn" id="googleButton" class=""></div>
+      <div v-show="!isLoggedIn" id="googleButton"></div>
     </header>
     <div class="flex h-full">
       <nav class="w-20 bg-white h-full border-r border-black/10 flex justify-center flex-shrink-0">
@@ -91,7 +91,7 @@
         </ul>
       </nav>
 
-      <main class="h-full w-full bg-white flex">
+      <main class="h-full w-full bg-white px-10 py-2 flex">
         <Nuxt />
       </main>
     </div>
