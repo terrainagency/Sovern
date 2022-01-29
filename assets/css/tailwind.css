@@ -32,7 +32,7 @@
     .label { @apply absolute left-4 md:left-auto md:right-8 top-1/2 transform -translate-y-1/2 text-gray transition duration-150; }
     .input:focus + label.label { @apply -translate-y-6 text-xs md:-translate-y-1/2 md:text-base; }
 
-    button.card:hover span { @apply text-black }
+    .hover-span-to-black:hover span { @apply text-black }
     /* Checkboxes */
     input[type="checkbox"] { @apply hidden; }
     label.checkbox { @apply w-full bg-transparent border border-gray-800 rounded-lg text-center cursor-pointer flex items-center justify-center text-gray transition duration-150; }

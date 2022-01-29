@@ -47,11 +47,23 @@ export default (graphcmsConfig) => {
                     projects(where: {creator: {gID: $gID}}) {
                         id
                         title
+                        moodboard {
+                            id
+                            moodboardImages(first: 2) {
+                                url
+                            }
+                        }
                         clients {
                             id
                             name
                         }
+                        address
+                        geoLocation {
+                            latitude
+                            longitude
+                        }
                         startTime
+                        endTime
                         price
                     }
                 }
@@ -60,5 +72,31 @@ export default (graphcmsConfig) => {
             let data = await graphcms.request(query, variables)
             return data.projects
         },
+        // getByID: async function(id) {
+        //     const query = gql`
+        //         query FindProjectsByCreator(
+        //             $ID: String!
+        //         ){
+        //             project(where: {id: $ID}) {
+        //                 id
+        //                 title
+        //                 moodboard {
+        //                     moodboardImages {
+        //                         url
+        //                     }
+        //                 }
+        //                 clients {
+        //                     id
+        //                     name
+        //                 }
+        //                 startTime
+        //                 price
+        //             }
+        //         }
+        //     `
+        //     const variables = { id: id }
+        //     let data = await graphcms.request(query, variables)
+        //     return data.project
+        // },
     }
 }

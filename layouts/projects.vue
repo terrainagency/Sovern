@@ -6,6 +6,8 @@
       </div>
       <div class="flex-grow px-10 relative font-bold flex">
         <h1 class="">Projects</h1>
+
+        <div class="mx-auto">Model Tests</div>
         <!-- <div class="flex items-center justify-center flex-grow">
           <button class="w-6 h-6 flex items-center justify-center mx-2">
             <div class="w-2 h-2 border-b-2 border-l-2 border-black transform rotate-45"></div>

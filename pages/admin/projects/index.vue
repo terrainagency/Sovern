@@ -27,7 +27,9 @@
                 <th class="status">Final confirmation</th>
             </tr>
             <tr v-for="project in projectList" :key="project.id" class="">
-                <td class=""><button class="hover:bg-white-100 w-full h-full rounded-md select-none text-left px-6">{{ project.title }}</button></td>
+                <td class="text-black">
+                    <button @click="selectedProject = project; showProject = true" class="hover:bg-white-100 w-full h-full rounded-md select-none text-left px-6">{{ project.title }}</button>
+                </td>
                 <td class="w-0 whitespace-nowrap px-6">{{ project.startTime }}</td>
                 <td class="w-0 whitespace-nowrap pl-6 pr-9"><span v-for="client in project.clients" :key="client.id">{{ client.name }}</span></td>
                 <td class="status"><button class="bg-success text-white">Sent</button></td>
@@ -41,13 +43,11 @@
             <tr>
                 <td class="mb-2"><ModalCreateProject /></td>
             </tr>
-
         </table>
 
         <button class="font-bold mb-2 text-gray hover:text-black">Archived (0)</button>
 
-        {{ projectList }}
-
+        <ModalViewProject v-if="showProject" v-bind:project="selectedProject" />
 </div>
 </div>
         
@@ -62,7 +62,9 @@ export default {
     data() { 
         return {
             projectList: [],
-            showCreateProject: false
+            selectedProject: {},
+            showCreateProject: false,
+            showProject: false,
         }
     },
     mounted() {

@@ -22,6 +22,7 @@ You can directly use them in pages and other components without the need to impo
 - `<SovernLogo>` | `<sovern-logo>` (components/SovernLogo.vue)
 - `<Waitlist>` | `<waitlist>` (components/Waitlist.vue)
 - `<ModalCreateProject>` | `<modal-create-project>` (components/Modal/CreateProject.vue)
+- `<ModalViewProject>` | `<modal-view-project>` (components/Modal/ViewProject.vue)
 - `<InputClient>` | `<input-client>` (components/Input/Client.vue)
 - `<InputLocation>` | `<input-location>` (components/Input/Location.vue)
 - `<InputMoodboard>` | `<input-moodboard>` (components/Input/Moodboard.vue)
