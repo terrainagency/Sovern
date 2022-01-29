@@ -58,7 +58,7 @@
     /* Tables */
     table { border-spacing: 1em; }
     td { @apply h-14 text-gray; }
-    th.status, td.status { @apply w-36 text-center; }
+    th.status, td.status { @apply w-12 lg:w-36 xl:w-48 text-center; }
     .status button { @apply w-full h-full rounded-md text-center select-none; }
     th { @apply py-3 text-left font-normal; }
 

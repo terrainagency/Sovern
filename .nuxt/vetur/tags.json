@@ -8,9 +8,6 @@
   "ContactForm": {
     "description": "Auto imported from components/ContactForm.vue"
   },
-  "CreateProject": {
-    "description": "Auto imported from components/CreateProject.vue"
-  },
   "DatePicker": {
     "description": "Auto imported from components/DatePicker.vue"
   },
@@ -46,6 +43,9 @@
   },
   "Waitlist": {
     "description": "Auto imported from components/Waitlist.vue"
+  },
+  "ModalCreateProject": {
+    "description": "Auto imported from components/Modal/CreateProject.vue"
   },
   "InputClient": {
     "description": "Auto imported from components/Input/Client.vue"

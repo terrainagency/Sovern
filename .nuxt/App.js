@@ -9,8 +9,10 @@ import NuxtBuildIndicator from './components/nuxt-build-indicator'
 import '../assets/css/tailwind.css'
 
 import _6f6c098b from '../layouts/default.vue'
+import _57ff370c from '../layouts/moodboards.vue'
+import _1c274e70 from '../layouts/projects.vue'
 
-const layouts = { "_default": sanitizeComponent(_6f6c098b) }
+const layouts = { "_default": sanitizeComponent(_6f6c098b),"_moodboards": sanitizeComponent(_57ff370c),"_projects": sanitizeComponent(_1c274e70) }
 
 export default {
   render (h, props) {

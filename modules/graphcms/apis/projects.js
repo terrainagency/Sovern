@@ -46,9 +46,12 @@ export default (graphcmsConfig) => {
                 ){
                     projects(where: {creator: {gID: $gID}}) {
                         id
-                        price
+                        title
+                        clients {
+                            id
+                            name
+                        }
                         startTime
-                        endTime
                         price
                     }
                 }
