@@ -24,13 +24,15 @@
     }
 
     /* Forms */
-    input:focus, textarea:focus, select:focus { @apply outline-none; }
-    input[type="text"], input[type="password"], input[type="tel"], input[type="email"], textarea, label.checkbox, select { @apply pt-6 pb-3 px-4 md:py-4 md:px-5 border rounded-lg border-gray-800 w-full bg-transparent transition duration-150 mb-2; } 
-    input[type="text"]:hover, input[type="password"]:hover, input[type="tel"]:hover, input[type="email"]:hover, textarea:hover, label.checkbox:hover, select:hover { @apply border-gray; }
-    input[type="text"]:focus, input[type="password"]:focus, input[type="tel"]:focus, input[type="email"]:focus, textarea:focus, select:focus { @apply border-black; }
-    label.label { @apply absolute left-4 md:left-auto md:right-8 top-1/2 transform -translate-y-1/2 text-gray transition duration-150; }
-    input[type="text"]:focus + label.label, input[type="email"]:focus + label.label { @apply -translate-y-6 text-xs md:-translate-y-1/2 md:text-base; }
+    .input { @apply outline-none; }
+    .input-md { @apply py-4 px-5; }
+    .input, .checkbox { @apply border rounded-lg border-gray-800 w-full bg-transparent transition duration-150; } 
+    .input:hover, .checkbox:hover { @apply border-gray; }
+    .input:focus { @apply border-black; }
+    .label { @apply absolute left-4 md:left-auto md:right-8 top-1/2 transform -translate-y-1/2 text-gray transition duration-150; }
+    .input:focus + label.label { @apply -translate-y-6 text-xs md:-translate-y-1/2 md:text-base; }
 
+    button.card:hover span { @apply text-black }
     /* Checkboxes */
     input[type="checkbox"] { @apply hidden; }
     label.checkbox { @apply w-full bg-transparent border border-gray-800 rounded-lg text-center cursor-pointer flex items-center justify-center text-gray transition duration-150; }

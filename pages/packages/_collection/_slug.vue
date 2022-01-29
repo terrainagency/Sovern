@@ -19,15 +19,15 @@
                 <p class="uppercase text-xs tracking-widest font-bold text-gray">Starting at $475</p>
 
                 <fieldset class="w-full flex-shrink-0">
-                    <select v-on:change="updatePrice" class="shadow-md mb-0 mt-3" name="pricingOption" v-model="pricingOption">
+                    <select v-on:change="updatePrice" class="shadow-md mb-0 mt-3" name="serviceOption" v-model="serviceOption">
                         <option :value="undefined">Select a pricing option</option>
-                        <option v-for="option in collection.services[0].pricingOptions" :key="option.id" :value="`${ option.description }-$${ option.price }`">{{ option.description }} <span v-if="option.isRecommended">(Recommended)</span> - ${{ option.price }}</option>
+                        <option v-for="option in collection.services[0].serviceOptions" :key="option.id" :value="`${ option.description }-$${ option.price }`">{{ option.description }} <span v-if="option.isRecommended">(Recommended)</span> - ${{ option.price }}</option>
                     </select>                        
                 </fieldset>
             </header>
 
-            <div class="w-full bg-white rounded-xl p-10 max-w-lg mx-auto shadow-xl" v-if="pricingOption">
-                <form v-on:submit.prevent="createPhotoshoot" class="">
+            <div class="w-full bg-white rounded-xl p-10 max-w-lg mx-auto shadow-xl" v-if="serviceOption">
+                <form v-on:submit.prevent="createProject" class="">
                     <fieldset class="w-full mr-36 pb-8 flex-shrink-0">
                         <p class="mb-3">1. Contact info</p>
 
@@ -84,7 +84,7 @@ export default {
             clientInstagram: '',
             clientPhone: '',
             clientEmail: '',
-            pricingOption: undefined,
+            serviceOption: undefined,
             price: '',
             agentEmail: '',
             address: ''
@@ -111,7 +111,7 @@ export default {
                                 id
                                 url
                             }
-                            pricingOptions {
+                            serviceOptions {
                                 id
                                 price
                                 description
@@ -128,18 +128,18 @@ export default {
     },
     methods: {
         updatePrice() {
-            this.price = this.pricingOption.split("-")[1]
+            this.price = this.serviceOption.split("-")[1]
         },
         updateTimes(obj) {
             this.startTime = obj.startTime
             this.endTime = obj.endTime
             console.log(this.collection.services[0])
         },
-        async createPhotoshoot() {
+        async createProject() {
             const graphQLClient = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/cktunnv680pby01w52lp7c0xv/master')
 
             const mutation = gql`
-                mutation AddPhotoshoot(
+                mutation AddProject(
                     $clientName: String!, 
                     $clientInstagram: String!, 
                     $clientPhone: String!, 
@@ -151,7 +151,7 @@ export default {
                     $price: String!, 
                     $service_id: ID) 
                 {
-                    createPhotoshoot(
+                    createProject(
                         data: {
                             clientName: $clientName, 
                             clientInstagram: $clientInstagram, 
@@ -198,7 +198,7 @@ export default {
             console.log(JSON.stringify(data, undefined, 2))
         },
         mounted() {
-            createPhotoshoot().catch((error) => console.error(error))
+            createProject().catch((error) => console.error(error))
         }
     }
 }

@@ -38,13 +38,13 @@
         <ul class="w-full flex flex-col py-5 items-center">
           <li class="relative w-16 h-16 flex items-center justify-center">
 
-            <div class="w-12 h-12 mx-auto rounded-xl text-white bg-black flex items-center justify-center">
+            <nuxt-link to="/admin" class="w-12 h-12 mx-auto rounded-xl text-white bg-black flex items-center justify-center">
               <svg class="w-8 h-8 stroke-current" viewBox="0 0 24 24">
                 <path id="Path_39" data-name="Path 39" d="M19.071,9.172c3.905,1.562,3.905,4.095,0,5.657a21.924,21.924,0,0,1-14.142,0c-3.905-1.562-3.905-4.095,0-5.657a21.924,21.924,0,0,1,14.142,0" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
                 <path id="Path_40" data-name="Path 40" d="M14.828,4.929a21.924,21.924,0,0,1,0,14.142c-1.562,3.905-4.095,3.905-5.657,0a21.924,21.924,0,0,1,0-14.142c1.562-3.905,4.095-3.905,5.657,0" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
                 <path id="Path_41" data-name="Path 41" d="M19.071,4.929a10,10,0,1,1-14.142,0,10,10,0,0,1,14.142,0" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
               </svg>
-            </div>
+            </nuxt-link>
             
             <!-- <div class="absolute top-1/2 transform -translate-y-1/2 right-0 rounded-l-lg w-2 h-3 bg-black"></div> -->
           </li>
