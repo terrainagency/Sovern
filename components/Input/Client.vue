@@ -1,8 +1,9 @@
 <template>
     <div class="relative">
+        
         <input v-on:click="openDropdown" v-on:keyup="searchDropdown" ref="dropdownInput" class="input input-md mb-2" placeholder="Add client">
 
-        <div v-if="clientsSelected.length > 0" class="mb-2">
+        <div v-if="clientsSelected.length > 0" class="">
             <div v-for="client in clientsSelected" :key="`selected-${client.id}`" class="py-2 px-3 mb-2 mr-2 rounded-lg bg-white-200 inline-block text-gray text-sm select-none">
                 <span class="mr-1">{{ client.name }}</span>
                 <button class="text-gray" title="Remove client">x</button>

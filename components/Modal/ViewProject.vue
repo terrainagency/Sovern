@@ -49,6 +49,7 @@
                 </div>
                  @meilizheng
             </button>
+            
             <button class="border border-white-200 rounded-xl flex items-center p-2 w-full hover:bg-white-100 transition duration-150 mb-1">
                 <div class="mr-2">
                     <img src="https://ssl.gstatic.com/images/branding/product/2x/hh_drive_96dp.png" alt="" class="w-6 h-6">
@@ -63,7 +64,13 @@
 
             <!-- Tasks -->
             <!-- Files -->
+            <div class="mt-5">
+                <button class="mx-auto btn btn-md btn-primary">Edit</button>
+            </div>
+                    
+
         </div>
+
         
     </div>
 </template>

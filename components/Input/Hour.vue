@@ -1,5 +1,3 @@
 <template>
-    <div>
-        <input type="number" v-mode="hour">
-    </div>
+    <input type="text" class="w-24 input-time input-md mb-2">
 </template>

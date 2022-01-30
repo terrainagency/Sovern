@@ -1,9 +1,9 @@
 <template>
-    <div class="mb-10">
+    <div class="relative">
         <!-- <div class="text-center">March 26th, 1995</div> -->
-
+        <input type="text" class="input input-sm" @focus="showDatePicker = true">
         <!-- Dates -->
-        <div class=" select-none">
+        <div v-if="showDatePicker" class="absolute w-full z-50 p-2 bg-white border border-white-200 rounded-xl shadow-xl select-none">
             <!-- Hidden input -->
             <!-- <input type="text" name="startTime" :value="`${selectedDate}T${selectedTime}`" disabled  class="hidden"/>
             <input type="text" name="endTime" :value="endTime" disabled  class="hidden"/> -->
@@ -26,7 +26,7 @@
             </nav>
 
             <!-- Days -->
-            <div class="grid grid-cols-7 gap-2 mb-8 tracking-wider relative">
+            <div class="grid grid-cols-7 gap-2 tracking-wider relative">
 
                 <div v-for="(day, i) in days" :key="`d${day}-${i}`" class="w-full flex items-center justify-center text-black opacity-30 select-none">{{ daysAbbr[i] }}</div>
                     
@@ -55,6 +55,7 @@
 export default {
     data() { 
         return {
+            showDatePicker: false,
             months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             days: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
             daysAbbr: ['S','M','T','W','T','F','S'],
@@ -90,8 +91,6 @@ export default {
             this.populateDates();
         },
         populateDates: function() {
-            this.deselectDay();
-
             let days = []
             let obj = {}
             let monthStartDate = new Date(`${this.month} 01, ${this.year}`)
@@ -133,13 +132,9 @@ export default {
             return val
         },
         updateDate() {
-            if(this.selectedDay != "") {this.selectedDate = `${this.year}-${this.monthNum}-${this.selectedDay}`} else { this.selectedDate = undefined };
-        },
-        deselectDay() {
-            this.$refs.dayFallback.checked = true
-            this.selectedDay = undefined
-            this.selectedDate = undefined
-        },
+            if(this.selectedDay != "") this.selectedDate = `${this.months[parseInt(this.monthNum) - 1]} ${this.selectedDay}, ${this.year}`
+            this.$emit('update-date', this.selectedDate)
+        }
     },
     mounted() {
         this.month = this.months[this.monthNum];

@@ -25,7 +25,8 @@
 
     /* Forms */
     .input { @apply outline-none; }
-    .input-md { @apply py-4 px-5; }
+    .input-sm { @apply py-2 px-3; }
+    .input-md { @apply py-3 px-4; }
     .input, .checkbox { @apply border rounded-lg border-gray-800 w-full bg-transparent transition duration-150; } 
     .input:hover, .checkbox:hover { @apply border-gray; }
     .input:focus { @apply border-black; }
@@ -48,6 +49,8 @@
     textarea { min-height: 150px; resize: none; }
 
     /* Day */
+    /* .input-time { @apply border-b border-black py-2 px-3; } */
+    .input-time { @apply border py-2 px-3 bg-white shadow-sm rounded-lg border-white-200; }
     input[type="radio"]:checked + .input-date { @apply bg-black text-white; }
 
     input:disabled { @apply bg-gray/20 text-black/20; }
