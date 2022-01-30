@@ -44,12 +44,6 @@
   "Waitlist": {
     "description": "Auto imported from components/Waitlist.vue"
   },
-  "ModalCreateProject": {
-    "description": "Auto imported from components/Modal/CreateProject.vue"
-  },
-  "ModalViewProject": {
-    "description": "Auto imported from components/Modal/ViewProject.vue"
-  },
   "InputClient": {
     "description": "Auto imported from components/Input/Client.vue"
   },
@@ -61,5 +55,11 @@
   },
   "InputPrice": {
     "description": "Auto imported from components/Input/Price.vue"
+  },
+  "ModalCreateProject": {
+    "description": "Auto imported from components/Modal/CreateProject.vue"
+  },
+  "ModalViewProject": {
+    "description": "Auto imported from components/Modal/ViewProject.vue"
   }
 }

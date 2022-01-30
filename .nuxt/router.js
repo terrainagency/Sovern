@@ -4,25 +4,25 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _25024237 = () => interopDefault(import('../pages/admin/index.vue' /* webpackChunkName: "pages/admin/index" */))
-const _51411428 = () => interopDefault(import('../pages/bookings/index.vue' /* webpackChunkName: "pages/bookings/index" */))
-const _c71c934e = () => interopDefault(import('../pages/info.vue' /* webpackChunkName: "pages/info" */))
-const _b47fa156 = () => interopDefault(import('../pages/no-access.vue' /* webpackChunkName: "pages/no-access" */))
-const _7134221b = () => interopDefault(import('../pages/packages/index.vue' /* webpackChunkName: "pages/packages/index" */))
-const _44a28a3e = () => interopDefault(import('../pages/retouching.vue' /* webpackChunkName: "pages/retouching" */))
-const _1adddfc8 = () => interopDefault(import('../pages/specials/index.vue' /* webpackChunkName: "pages/specials/index" */))
-const _1a31953e = () => interopDefault(import('../pages/waitlist.vue' /* webpackChunkName: "pages/waitlist" */))
-const _22ac3564 = () => interopDefault(import('../pages/admin/login.vue' /* webpackChunkName: "pages/admin/login" */))
-const _b1c5179c = () => interopDefault(import('../pages/admin/moodboards/index.vue' /* webpackChunkName: "pages/admin/moodboards/index" */))
-const _eba2f430 = () => interopDefault(import('../pages/admin/projects/index.vue' /* webpackChunkName: "pages/admin/projects/index" */))
-const _7ed60090 = () => interopDefault(import('../pages/bookings/_id.vue' /* webpackChunkName: "pages/bookings/_id" */))
-const _0ffdbdf2 = () => interopDefault(import('../pages/gallery/_slug.vue' /* webpackChunkName: "pages/gallery/_slug" */))
-const _6f7d80d3 = () => interopDefault(import('../pages/packages/_slug.vue' /* webpackChunkName: "pages/packages/_slug" */))
-const _19273e80 = () => interopDefault(import('../pages/specials/_slug.vue' /* webpackChunkName: "pages/specials/_slug" */))
-const _6218fbcb = () => interopDefault(import('../pages/bookings/_service/_slug.vue' /* webpackChunkName: "pages/bookings/_service/_slug" */))
-const _6967e001 = () => interopDefault(import('../pages/packages/_collection/_slug.vue' /* webpackChunkName: "pages/packages/_collection/_slug" */))
-const _dad177aa = () => interopDefault(import('../pages/specials/_service/_slug.vue' /* webpackChunkName: "pages/specials/_service/_slug" */))
-const _7ada3eb7 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _0bdd3b3a = () => interopDefault(import('../pages/admin/index.vue' /* webpackChunkName: "pages/admin/index" */))
+const _3c71f47c = () => interopDefault(import('../pages/bookings/index.vue' /* webpackChunkName: "pages/bookings/index" */))
+const _635b2fad = () => interopDefault(import('../pages/info.vue' /* webpackChunkName: "pages/info" */))
+const _5b9d2afe = () => interopDefault(import('../pages/no-access.vue' /* webpackChunkName: "pages/no-access" */))
+const _5c65026f = () => interopDefault(import('../pages/packages/index.vue' /* webpackChunkName: "pages/packages/index" */))
+const _3f64e535 = () => interopDefault(import('../pages/retouching.vue' /* webpackChunkName: "pages/retouching" */))
+const _060ec01c = () => interopDefault(import('../pages/specials/index.vue' /* webpackChunkName: "pages/specials/index" */))
+const _1b5376dc = () => interopDefault(import('../pages/waitlist.vue' /* webpackChunkName: "pages/waitlist" */))
+const _788df50c = () => interopDefault(import('../pages/admin/login.vue' /* webpackChunkName: "pages/admin/login" */))
+const _2c3a7ef4 = () => interopDefault(import('../pages/admin/moodboards/index.vue' /* webpackChunkName: "pages/admin/moodboards/index" */))
+const _20c2d73c = () => interopDefault(import('../pages/admin/projects/index.vue' /* webpackChunkName: "pages/admin/projects/index" */))
+const _4baae5e4 = () => interopDefault(import('../pages/bookings/_id.vue' /* webpackChunkName: "pages/bookings/_id" */))
+const _4474f9c4 = () => interopDefault(import('../pages/gallery/_slug.vue' /* webpackChunkName: "pages/gallery/_slug" */))
+const _5aae6127 = () => interopDefault(import('../pages/packages/_slug.vue' /* webpackChunkName: "pages/packages/_slug" */))
+const _04581ed4 = () => interopDefault(import('../pages/specials/_slug.vue' /* webpackChunkName: "pages/specials/_slug" */))
+const _77fd39f7 = () => interopDefault(import('../pages/bookings/_service/_slug.vue' /* webpackChunkName: "pages/bookings/_service/_slug" */))
+const _15723b56 = () => interopDefault(import('../pages/packages/_collection/_slug.vue' /* webpackChunkName: "pages/packages/_collection/_slug" */))
+const _af08fb52 = () => interopDefault(import('../pages/specials/_service/_slug.vue' /* webpackChunkName: "pages/specials/_service/_slug" */))
+const _ddc0203a = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -37,79 +37,79 @@ export const routerOptions = {
 
   routes: [{
     path: "/admin",
-    component: _25024237,
+    component: _0bdd3b3a,
     name: "admin"
   }, {
     path: "/bookings",
-    component: _51411428,
+    component: _3c71f47c,
     name: "bookings"
   }, {
     path: "/info",
-    component: _c71c934e,
+    component: _635b2fad,
     name: "info"
   }, {
     path: "/no-access",
-    component: _b47fa156,
+    component: _5b9d2afe,
     name: "no-access"
   }, {
     path: "/packages",
-    component: _7134221b,
+    component: _5c65026f,
     name: "packages"
   }, {
     path: "/retouching",
-    component: _44a28a3e,
+    component: _3f64e535,
     name: "retouching"
   }, {
     path: "/specials",
-    component: _1adddfc8,
+    component: _060ec01c,
     name: "specials"
   }, {
     path: "/waitlist",
-    component: _1a31953e,
+    component: _1b5376dc,
     name: "waitlist"
   }, {
     path: "/admin/login",
-    component: _22ac3564,
+    component: _788df50c,
     name: "admin-login"
   }, {
     path: "/admin/moodboards",
-    component: _b1c5179c,
+    component: _2c3a7ef4,
     name: "admin-moodboards"
   }, {
     path: "/admin/projects",
-    component: _eba2f430,
+    component: _20c2d73c,
     name: "admin-projects"
   }, {
     path: "/bookings/:id",
-    component: _7ed60090,
+    component: _4baae5e4,
     name: "bookings-id"
   }, {
     path: "/gallery/:slug?",
-    component: _0ffdbdf2,
+    component: _4474f9c4,
     name: "gallery-slug"
   }, {
     path: "/packages/:slug",
-    component: _6f7d80d3,
+    component: _5aae6127,
     name: "packages-slug"
   }, {
     path: "/specials/:slug",
-    component: _19273e80,
+    component: _04581ed4,
     name: "specials-slug"
   }, {
     path: "/bookings/:service/:slug?",
-    component: _6218fbcb,
+    component: _77fd39f7,
     name: "bookings-service-slug"
   }, {
     path: "/packages/:collection/:slug?",
-    component: _6967e001,
+    component: _15723b56,
     name: "packages-collection-slug"
   }, {
     path: "/specials/:service/:slug?",
-    component: _dad177aa,
+    component: _af08fb52,
     name: "specials-service-slug"
   }, {
     path: "/",
-    component: _7ada3eb7,
+    component: _ddc0203a,
     name: "index"
   }],
 

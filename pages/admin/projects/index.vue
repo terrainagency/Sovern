@@ -27,8 +27,8 @@
                 <th class="status">Final confirmation</th>
             </tr>
             <tr v-for="project in projectList" :key="project.id" class="">
-                <td class="text-black">
-                    <button @click="selectedProject = project; showProject = true" class="hover:bg-white-100 w-full h-full rounded-md select-none text-left px-6">{{ project.title }}</button>
+                <td class="text-black whitespace-nowrap">
+                    <button @click="selectedProject = project; showProjectModal = true" class="hover:bg-white-100 w-full h-full rounded-md select-none text-left px-6">{{ project.title }}</button>
                 </td>
                 <td class="w-0 whitespace-nowrap px-6">{{ project.startTime }}</td>
                 <td class="w-0 whitespace-nowrap pl-6 pr-9"><span v-for="client in project.clients" :key="client.id">{{ client.name }}</span></td>
@@ -36,9 +36,9 @@
                 <td class="status"><button class="bg-success text-white">Completed</button></td>
                 <td class="status"><button class="bg-success text-white">Completed</button></td>
                 <td class="status"><button class="bg-warning text-white">Overdue</button></td>
-                <td class="status"><button class="hover:bg-white-200"> </button></td>
-                <td class="status"><button class="hover:bg-white-200"> </button></td>
-                <td class="status"><button class="hover:bg-white-200"> </button></td>
+                <td class="status"><button class="hover:bg-white-100"> </button></td>
+                <td class="status"><button class="hover:bg-white-100"> </button></td>
+                <td class="status"><button class="hover:bg-white-100"> </button></td>
             </tr>
             <tr>
                 <td class="mb-2"><ModalCreateProject /></td>
@@ -47,7 +47,7 @@
 
         <button class="font-bold mb-2 text-gray hover:text-black">Archived (0)</button>
 
-        <ModalViewProject v-if="showProject" v-bind:project="selectedProject" />
+        <ModalViewProject v-if="showProjectModal" v-bind:project="selectedProject" @showModal="closeProjectModal" />
 </div>
 </div>
         
@@ -63,8 +63,7 @@ export default {
         return {
             projectList: [],
             selectedProject: {},
-            showCreateProject: false,
-            showProject: false,
+            showProjectModal: false
         }
     },
     mounted() {
@@ -73,6 +72,9 @@ export default {
     methods: { 
         async setProjectsList(){
             this.projectList = (await unWrap(await fetch('/api/projects/user/'))).json
+        },
+        closeProjectModal() {
+            this.showProjectModal = false
         }
     },
     asyncData({ $config, redirect }){

@@ -13,12 +13,12 @@ export { default as ServiceCard } from '../../components/ServiceCard.vue'
 export { default as ServiceGallery } from '../../components/ServiceGallery.vue'
 export { default as SovernLogo } from '../../components/SovernLogo.vue'
 export { default as Waitlist } from '../../components/Waitlist.vue'
-export { default as ModalCreateProject } from '../../components/Modal/CreateProject.vue'
-export { default as ModalViewProject } from '../../components/Modal/ViewProject.vue'
 export { default as InputClient } from '../../components/Input/Client.vue'
 export { default as InputLocation } from '../../components/Input/Location.vue'
 export { default as InputMoodboard } from '../../components/Input/Moodboard.vue'
 export { default as InputPrice } from '../../components/Input/Price.vue'
+export { default as ModalCreateProject } from '../../components/Modal/CreateProject.vue'
+export { default as ModalViewProject } from '../../components/Modal/ViewProject.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

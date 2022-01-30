@@ -42,6 +42,7 @@
             </div>
         
             <div class="font-bold mb-5">Files</div>
+            
 
             <div class="btn btn-lg border border-black/10 shadow-sm hover:border-black/20 transition duration-150 rounded-lg max-w-xs">Call sheet</div>
         </div>
