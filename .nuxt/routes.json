@@ -3,133 +3,114 @@
     "name": "admin",
     "path": "/admin",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/admin/index.vue",
-    "chunkName": "pages/admin/index",
-    "_name": "_0bdd3b3a"
+    "chunkName": "pages/admin/index"
   },
   {
     "name": "bookings",
     "path": "/bookings",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/bookings/index.vue",
-    "chunkName": "pages/bookings/index",
-    "_name": "_3c71f47c"
+    "chunkName": "pages/bookings/index"
   },
   {
     "name": "info",
     "path": "/info",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/info.vue",
-    "chunkName": "pages/info",
-    "_name": "_635b2fad"
+    "chunkName": "pages/info"
   },
   {
     "name": "no-access",
     "path": "/no-access",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/no-access.vue",
-    "chunkName": "pages/no-access",
-    "_name": "_5b9d2afe"
+    "chunkName": "pages/no-access"
   },
   {
     "name": "packages",
     "path": "/packages",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/packages/index.vue",
-    "chunkName": "pages/packages/index",
-    "_name": "_5c65026f"
+    "chunkName": "pages/packages/index"
   },
   {
     "name": "retouching",
     "path": "/retouching",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/retouching.vue",
-    "chunkName": "pages/retouching",
-    "_name": "_3f64e535"
+    "chunkName": "pages/retouching"
   },
   {
     "name": "specials",
     "path": "/specials",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/specials/index.vue",
-    "chunkName": "pages/specials/index",
-    "_name": "_060ec01c"
+    "chunkName": "pages/specials/index"
   },
   {
     "name": "waitlist",
     "path": "/waitlist",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/waitlist.vue",
-    "chunkName": "pages/waitlist",
-    "_name": "_1b5376dc"
+    "chunkName": "pages/waitlist"
   },
   {
     "name": "admin-login",
     "path": "/admin/login",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/admin/login.vue",
-    "chunkName": "pages/admin/login",
-    "_name": "_788df50c"
+    "chunkName": "pages/admin/login"
   },
   {
     "name": "admin-moodboards",
     "path": "/admin/moodboards",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/admin/moodboards/index.vue",
-    "chunkName": "pages/admin/moodboards/index",
-    "_name": "_2c3a7ef4"
+    "chunkName": "pages/admin/moodboards/index"
   },
   {
     "name": "admin-projects",
     "path": "/admin/projects",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/admin/projects/index.vue",
-    "chunkName": "pages/admin/projects/index",
-    "_name": "_20c2d73c"
+    "chunkName": "pages/admin/projects/index"
   },
   {
     "name": "bookings-id",
     "path": "/bookings/:id",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/bookings/_id.vue",
-    "chunkName": "pages/bookings/_id",
-    "_name": "_4baae5e4"
+    "chunkName": "pages/bookings/_id"
   },
   {
     "name": "gallery-slug",
     "path": "/gallery/:slug?",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/gallery/_slug.vue",
-    "chunkName": "pages/gallery/_slug",
-    "_name": "_4474f9c4"
+    "chunkName": "pages/gallery/_slug"
   },
   {
     "name": "packages-slug",
     "path": "/packages/:slug",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/packages/_slug.vue",
-    "chunkName": "pages/packages/_slug",
-    "_name": "_5aae6127"
+    "chunkName": "pages/packages/_slug"
   },
   {
     "name": "specials-slug",
     "path": "/specials/:slug",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/specials/_slug.vue",
-    "chunkName": "pages/specials/_slug",
-    "_name": "_04581ed4"
+    "chunkName": "pages/specials/_slug"
   },
   {
     "name": "bookings-service-slug",
     "path": "/bookings/:service/:slug?",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/bookings/_service/_slug.vue",
-    "chunkName": "pages/bookings/_service/_slug",
-    "_name": "_77fd39f7"
+    "chunkName": "pages/bookings/_service/_slug"
   },
   {
     "name": "packages-collection-slug",
     "path": "/packages/:collection/:slug?",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/packages/_collection/_slug.vue",
-    "chunkName": "pages/packages/_collection/_slug",
-    "_name": "_15723b56"
+    "chunkName": "pages/packages/_collection/_slug"
   },
   {
     "name": "specials-service-slug",
     "path": "/specials/:service/:slug?",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/specials/_service/_slug.vue",
-    "chunkName": "pages/specials/_service/_slug",
-    "_name": "_af08fb52"
+    "chunkName": "pages/specials/_service/_slug"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/tony/Documents/GitHub/Sovern/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_ddc0203a"
+    "chunkName": "pages/index"
   }
 ]

@@ -48,7 +48,6 @@
     textarea { min-height: 150px; resize: none; }
 
     /* Day */
-    .input-date { @apply rounded-full bg-gray/20 transition duration-150 hover:bg-black/10; }
     input[type="radio"]:checked + .input-date { @apply bg-black text-white; }
 
     input:disabled { @apply bg-gray/20 text-black/20; }

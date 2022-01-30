@@ -8,12 +8,6 @@
   "ContactForm": {
     "description": "Auto imported from components/ContactForm.vue"
   },
-  "DatePicker": {
-    "description": "Auto imported from components/DatePicker.vue"
-  },
-  "DateScheduler": {
-    "description": "Auto imported from components/DateScheduler.vue"
-  },
   "Footer": {
     "description": "Auto imported from components/Footer.vue"
   },
@@ -47,6 +41,15 @@
   "InputClient": {
     "description": "Auto imported from components/Input/Client.vue"
   },
+  "InputDatePicker": {
+    "description": "Auto imported from components/Input/DatePicker.vue"
+  },
+  "InputDateTimeScheduler": {
+    "description": "Auto imported from components/Input/DateTimeScheduler.vue"
+  },
+  "InputHour": {
+    "description": "Auto imported from components/Input/Hour.vue"
+  },
   "InputLocation": {
     "description": "Auto imported from components/Input/Location.vue"
   },
@@ -56,10 +59,16 @@
   "InputPrice": {
     "description": "Auto imported from components/Input/Price.vue"
   },
+  "InputWorkflow": {
+    "description": "Auto imported from components/Input/Workflow.vue"
+  },
   "ModalCreateProject": {
     "description": "Auto imported from components/Modal/CreateProject.vue"
   },
   "ModalViewProject": {
     "description": "Auto imported from components/Modal/ViewProject.vue"
+  },
+  "InputUtilsDropdown": {
+    "description": "Auto imported from components/Input/Utils/Dropdown.vue"
   }
 }

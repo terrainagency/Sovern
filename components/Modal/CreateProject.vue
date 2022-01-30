@@ -2,35 +2,48 @@
 <div class="h-full">
     <button @click="showForm = true" class="w-full border border-white-200 rounded-md h-full text-gray hover:text-black">Create new project</button>
     <!-- NOTE: Update the background to a blur via canvas -->
+    
+        
+    
     <div v-if="showForm" @click.prevent="showForm = false" class="fixed top-0 left-0 flex items-center justify-center overflow-scroll w-screen h-screen bg-black/10">
 
-            <form v-on:submit.prevent="createProject" @click.stop="" class="relative w-full max-w-md pt-6 px-10 pb-10 rounded-xl shadow-xl bg-white border border-white-100">
+            <form v-on:submit.prevent="createProject" @click.stop="" class="relative w-full max-w-screen-md pt-6 px-10 pb-10 rounded-xl shadow-xl bg-white border border-white-100">
                 <!-- <button @click="showForm = false" class="h-12 w-12 bg-white hover:text-gray border border-gray/10 transition duration-150 shadow-md rounded-full flex items-center justify-center absolute top-3 -left-6">
                     <div class="h-2 w-2 border-l-2 border-b-2 border-current transform rotate-45"></div>
                 </button> -->
 
+                
+
                 <header class="mb-8 font-bold text-center">New project</header>
 
-                <InputMoodboard />
+                <!-- <button>From template</button>
+                <button>From scratch</button> -->
 
-                <InputClient /> 
+                <div class="flex">
 
-                <div class="mb-2">
-                    <input class="input input-md" type="text" placeholder="Title">
+                    <fieldset class="w-1/2 mr-4">
+                        <InputDatePicker />
+                        <InputHour />
+                        <InputHour />
+                    </fieldset>
+
+                    <fieldset class="w-1/2 ml-4">
+                        <InputMoodboard />
+
+                        <InputClient /> 
+
+                        <InputWorkflow />
+
+                        <div class="mb-2">
+                            <input class="input input-md" type="text" placeholder="Title">
+                        </div>
+
+                        <InputLocation />
+                        <InputPrice />
+
+                        <button type="submit" class="btn btn-lg btn-primary mx-auto mt-5">Create</button>
+                    </fieldset>
                 </div>
-
-                <!-- <input type="text" v-model="project.companyID" placeholder="companyID"> -->
-
-                <DatePicker />
-
-                <InputLocation />
-                <InputPrice />
-
-                <!-- <input type="text" placeholder="Duration"> -->
-
-                <button type="submit" class="btn btn-lg btn-primary mx-auto mt-5">Create</button>
-                
-                <!-- <input type="text" v-model="project.serviceID" placeholder="serviceID"> -->
             </form>
         </div>
     </div>
