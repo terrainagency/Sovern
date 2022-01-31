@@ -30,7 +30,7 @@
             <!-- <CardAutomation v-bind:automation="'task'" />
             
             <CardAutomation  v-bind:automation="'notification'"/> -->
-
+ 
 
                     <button class="my-5 btn btn-sm bg-black rounded-lg w-36 h-14">
                             <div class="w-[2px] rounded-full h-3 bg-white absolute"></div>
