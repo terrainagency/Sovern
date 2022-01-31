@@ -20,6 +20,9 @@
   "Header": {
     "description": "Auto imported from components/Header.vue"
   },
+  "Icon": {
+    "description": "Auto imported from components/Icon.vue"
+  },
   "Navigation": {
     "description": "Auto imported from components/Navigation.vue"
   },
@@ -65,8 +68,14 @@
   "InputPrice": {
     "description": "Auto imported from components/Input/Price.vue"
   },
+  "InputTextarea": {
+    "description": "Auto imported from components/Input/Textarea.vue"
+  },
   "InputWorkflow": {
     "description": "Auto imported from components/Input/Workflow.vue"
+  },
+  "CardAutomation": {
+    "description": "Auto imported from components/Card/Automation.vue"
   },
   "InputUtilsDropdown": {
     "description": "Auto imported from components/Input/Utils/Dropdown.vue"

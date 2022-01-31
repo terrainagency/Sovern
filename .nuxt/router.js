@@ -16,6 +16,7 @@ const _22ac3564 = () => interopDefault(import('../pages/admin/login.vue' /* webp
 const _eba2f430 = () => interopDefault(import('../pages/admin/projects/index.vue' /* webpackChunkName: "pages/admin/projects/index" */))
 const _0cc26a51 = () => interopDefault(import('../pages/admin/settings/index.vue' /* webpackChunkName: "pages/admin/settings/index" */))
 const _1e8d8abe = () => interopDefault(import('../pages/admin/templates/index.vue' /* webpackChunkName: "pages/admin/templates/index" */))
+const _683894a3 = () => interopDefault(import('../pages/admin/projects/editworkflow.vue' /* webpackChunkName: "pages/admin/projects/editworkflow" */))
 const _9701cd16 = () => interopDefault(import('../pages/admin/projects/newworkflow.vue' /* webpackChunkName: "pages/admin/projects/newworkflow" */))
 const _7ed60090 = () => interopDefault(import('../pages/bookings/_id.vue' /* webpackChunkName: "pages/bookings/_id" */))
 const _0ffdbdf2 = () => interopDefault(import('../pages/gallery/_slug.vue' /* webpackChunkName: "pages/gallery/_slug" */))
@@ -85,6 +86,10 @@ export const routerOptions = {
     path: "/admin/templates",
     component: _1e8d8abe,
     name: "admin-templates"
+  }, {
+    path: "/admin/projects/editworkflow",
+    component: _683894a3,
+    name: "admin-projects-editworkflow"
   }, {
     path: "/admin/projects/newworkflow",
     component: _9701cd16,

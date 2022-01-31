@@ -1,21 +1,24 @@
 <template>
-    <div class="w-full">
-        <h2>New Workflow</h2>
-        <form action="" class="relative max-w-lg mx-auto flex flex-col items-center z-0">
-            <div class="w-[2px] h-full absolute left-1/2 transform -translate-x-1/2 bg-white-200 -z-10"></div>
+    <div class="w-full max-w-xl bg-white-gradient rounded-3xl py-10 overflow-y-scroll scrollbar-none h-full">
+        <form action="" class="relative max-w-lg mx-auto flex flex-col items-center  z-0">
+            <div class="w-[2px] h-full absolute left-1/2 transform -translate-x-1/2 bg-black/5 -z-10"></div>
 
-            <div class="relative rounded-xl bg-white-100 inline-block px-5 py-3">
+            <div class="relative rounded-xl bg-white-200 inline-block px-5 py-3">
                <div class="text-center text-gray">Project created</div>
             </div>
 
-                        <button class="btn btn-sm btn-primary my-5">+</button>
+                        <button class="my-5 bg-white rounded-full flex items-center justify-center w-10 h-10 shadow-md border border-black/5">
+                            <div class="w-[2px] rounded-full h-3 bg-black absolute"></div>
+                            <div class="h-[2px] rounded-full w-3 bg-black absolute"></div>
+                        </button>
 
             <div class="w-full relative rounded-xl px-3 py-5 bg-white border-gradient">
                <div class="font-bold text-center mb-4">Initial email</div>
                <div class="text-gray rounded-lg p-3 mb-2">Booking with Tony Redmer confirmed!</div>
                <div class="rounded-lg p-3 mb-4 text-gray">
-                    <p><span class="py-1 px-2 bg-[#92D4F7] bg-opacity-30 text-[#4E7FEF] rounded-md ">$client_first_name</span>,</p>
-                    <p>Your photoshoot at <span class="py-1 px-2 bg-[#92D4F7] bg-opacity-30 text-[#4E7FEF] rounded-md">$project_datetime</span> is confirmed!</p><p>You'll receive a call sheet with more information 48 hours before our photoshoot.</p>
+                    <p><span class="py-1 px-2 bg-graydient rounded-md text-[#4E7FEF] font-light">client_first_name</span>,</p>
+                    <p>Your photoshoot at <span class="py-1 px-2 bg-graydient rounded-md text-[#4E7FEF] font-light">project_start_time</span>
+ is confirmed!</p><p>You'll receive a call sheet with more information 48 hours before our photoshoot.</p>
                </div>
                 <div class="px-6 text-center">
                     <div class="py-3 px-4 rounded-lg border border-white-200 inline-block">Immediately</div>
@@ -24,7 +27,10 @@
                 </div>
             </div>
 
-                        <button class="btn btn-sm btn-primary my-5">+</button>
+                        <button class="my-5 bg-white rounded-full flex items-center justify-center w-10 h-10 shadow-md border border-black/5">
+                            <div class="w-[2px] rounded-full h-3 bg-black absolute"></div>
+                            <div class="h-[2px] rounded-full w-3 bg-black absolute"></div>
+                        </button>
 
 
             <div class="w-full relative bg-white rounded-xl px-4 py-5 border-gradient">
@@ -44,8 +50,10 @@
 
                 </div>
             </div>
-                        <button class="btn btn-sm btn-primary my-5">+</button>
-
+<button class="my-5 bg-white rounded-full flex items-center justify-center w-10 h-10 shadow-md border border-black/5">
+                            <div class="w-[2px] rounded-full h-3 bg-black absolute"></div>
+                            <div class="h-[2px] rounded-full w-3 bg-black absolute"></div>
+                        </button>
             <div class="relative bg-white rounded-xl px-8 py-5 border-gradient">
                <div class="font-bold text-center mb-4">Photoshoot</div>
                 <div class="flex justify-between">
@@ -55,8 +63,10 @@
                 </div>
             </div>
 
-                                    <button class="btn btn-sm btn-primary my-5">+</button>
-
+<button class="my-5 bg-white rounded-full flex items-center justify-center w-10 h-10 shadow-md border border-black/5">
+                            <div class="w-[2px] rounded-full h-3 bg-black absolute"></div>
+                            <div class="h-[2px] rounded-full w-3 bg-black absolute"></div>
+                        </button>
 
             <div class="relative bg-white rounded-xl px-8 py-5 border-gradient mb-10">
                <div class="font-bold text-center mb-4">Exported</div>
