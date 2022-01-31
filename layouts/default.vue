@@ -60,7 +60,7 @@
             </nuxt-link>
           </li>
           <li class="w-16 h-16 flex items-center justify-center">
-            <nuxt-link to="/admin/moodboards" class="w-12 h-12 border border-transparent hover:border-black/10 rounded-xl transition duration-150 flex items-center justify-center">
+            <nuxt-link to="/admin/templates" class="w-12 h-12 border border-transparent hover:border-black/10 rounded-xl transition duration-150 flex items-center justify-center">
                 <svg class="w-8 h-8 stroke-current" viewBox="0 0 24 24">
                     <g id="Group_172" data-name="Group 172">
                         <path id="Path_48" data-name="Path 48" d="M19,21H16a2,2,0,0,1-2-2V14a2,2,0,0,1,2-2h3a2,2,0,0,1,2,2v5A2,2,0,0,1,19,21Z" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>

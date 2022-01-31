@@ -13,6 +13,6 @@
 
 <script>
 export default {
-    layout: 'moodboards'
+    layout: 'templates'
 }
 </script>

@@ -63,7 +63,10 @@ theme: {
             '3': '3px',
         },
         dropShadow: {
-            '3xl': '0 10px 10px rgba(0, 0, 0, 0.02)',
+            'card': '0 30px 30px rgba(0, 0, 0, 0.1)',
+        },
+        opacity: {
+            '5': '.05',
         },
         spacing: {
             '1/2': '50%',

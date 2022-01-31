@@ -1,7 +1,7 @@
 <template>
     <div class="relative">
         <!-- <div class="text-center">March 26th, 1995</div> -->
-        <input type="text" class="input input-sm" @focus="showDatePicker = true">
+        <input type="text" class="input input-md" @focus="showDatePicker = true">
         <!-- Dates -->
         <div v-if="showDatePicker" class="absolute w-full z-50 p-2 bg-white border border-white-200 rounded-xl shadow-xl select-none">
             <!-- Hidden input -->

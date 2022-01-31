@@ -5,7 +5,7 @@
         <SovernLogo v-bind:size="`w-8 h-8`" />
       </div>
       <div class="flex-grow px-10 relative font-bold flex">
-        <h1 class="">Moodboards</h1>
+        <h1 class="">Templates</h1>
         <!-- <div class="flex items-center justify-center flex-grow">
           <button class="w-6 h-6 flex items-center justify-center mx-2">
             <div class="w-2 h-2 border-b-2 border-l-2 border-black transform rotate-45"></div>
