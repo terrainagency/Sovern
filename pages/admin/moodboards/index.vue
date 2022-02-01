@@ -1,5 +1,6 @@
 <template>
     <div class="w-full overflow-x-hidden">
+        <h3>Moodboards</h3>
         <div class="flex -mx-2">
             <div class="bg-white-100 rounded-xl w-1/6 mx-2">
                 <div class="pb-full"></div>
@@ -13,6 +14,6 @@
 
 <script>
 export default {
-    layout: 'templates'
+    layout: 'moodboards'
 }
 </script>

@@ -41,11 +41,23 @@
   "Waitlist": {
     "description": "Auto imported from components/Waitlist.vue"
   },
-  "ModalCreateProject": {
-    "description": "Auto imported from components/Modal/CreateProject.vue"
+  "CardAutomation": {
+    "description": "Auto imported from components/Card/Automation.vue"
   },
-  "ModalViewProject": {
-    "description": "Auto imported from components/Modal/ViewProject.vue"
+  "FormCreateAutomation": {
+    "description": "Auto imported from components/Form/CreateAutomation.vue"
+  },
+  "FormCreateProject": {
+    "description": "Auto imported from components/Form/CreateProject.vue"
+  },
+  "FormCreateWorkflow": {
+    "description": "Auto imported from components/Form/CreateWorkflow.vue"
+  },
+  "FormViewProject": {
+    "description": "Auto imported from components/Form/ViewProject.vue"
+  },
+  "InputAutomationAction": {
+    "description": "Auto imported from components/Input/AutomationAction.vue"
   },
   "InputClient": {
     "description": "Auto imported from components/Input/Client.vue"
@@ -73,9 +85,6 @@
   },
   "InputWorkflow": {
     "description": "Auto imported from components/Input/Workflow.vue"
-  },
-  "CardAutomation": {
-    "description": "Auto imported from components/Card/Automation.vue"
   },
   "InputUtilsDropdown": {
     "description": "Auto imported from components/Input/Utils/Dropdown.vue"

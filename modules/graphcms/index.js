@@ -1,6 +1,8 @@
 import bodyParser from 'body-parser'
 import userRouter from './routers/user'
 import projectsRouter from './routers/projects'
+import workflowsRouter from './routers/workflows'
+import automationsRouter from './routers/automations'
 import getApis from './apis'
 
 export default function() {
@@ -11,5 +13,7 @@ export default function() {
         app.use(bodyParser.json())
         app.use('/api/user', userRouter(apis))
         app.use('/api/projects', projectsRouter(apis))
+        app.use('/api/workflows', workflowsRouter(apis))
+        app.use('/api/automations', automationsRouter(apis))
     })
 }

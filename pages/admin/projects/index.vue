@@ -26,6 +26,7 @@
                 <th class="status">Edits</th>
                 <th class="status">Final confirmation</th>
             </tr>
+            
             <tr v-for="project in projectList" :key="project.id" class="">
                 <td class="text-black whitespace-nowrap">
                     <button @click="selectedProject = project; showProjectModal = true" class="hover:bg-white-100 w-full h-full rounded-md select-none text-left px-6">{{ project.title }}</button>

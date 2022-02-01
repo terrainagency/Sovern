@@ -13,11 +13,11 @@ const _44a28a3e = () => interopDefault(import('../pages/retouching.vue' /* webpa
 const _1adddfc8 = () => interopDefault(import('../pages/specials/index.vue' /* webpackChunkName: "pages/specials/index" */))
 const _1a31953e = () => interopDefault(import('../pages/waitlist.vue' /* webpackChunkName: "pages/waitlist" */))
 const _22ac3564 = () => interopDefault(import('../pages/admin/login.vue' /* webpackChunkName: "pages/admin/login" */))
+const _b1c5179c = () => interopDefault(import('../pages/admin/moodboards/index.vue' /* webpackChunkName: "pages/admin/moodboards/index" */))
 const _eba2f430 = () => interopDefault(import('../pages/admin/projects/index.vue' /* webpackChunkName: "pages/admin/projects/index" */))
 const _0cc26a51 = () => interopDefault(import('../pages/admin/settings/index.vue' /* webpackChunkName: "pages/admin/settings/index" */))
-const _1e8d8abe = () => interopDefault(import('../pages/admin/templates/index.vue' /* webpackChunkName: "pages/admin/templates/index" */))
-const _683894a3 = () => interopDefault(import('../pages/admin/projects/editworkflow.vue' /* webpackChunkName: "pages/admin/projects/editworkflow" */))
 const _9701cd16 = () => interopDefault(import('../pages/admin/projects/newworkflow.vue' /* webpackChunkName: "pages/admin/projects/newworkflow" */))
+const _60d9b1be = () => interopDefault(import('../pages/admin/settings/workflows/_id.vue' /* webpackChunkName: "pages/admin/settings/workflows/_id" */))
 const _7ed60090 = () => interopDefault(import('../pages/bookings/_id.vue' /* webpackChunkName: "pages/bookings/_id" */))
 const _0ffdbdf2 = () => interopDefault(import('../pages/gallery/_slug.vue' /* webpackChunkName: "pages/gallery/_slug" */))
 const _6f7d80d3 = () => interopDefault(import('../pages/packages/_slug.vue' /* webpackChunkName: "pages/packages/_slug" */))
@@ -75,6 +75,10 @@ export const routerOptions = {
     component: _22ac3564,
     name: "admin-login"
   }, {
+    path: "/admin/moodboards",
+    component: _b1c5179c,
+    name: "admin-moodboards"
+  }, {
     path: "/admin/projects",
     component: _eba2f430,
     name: "admin-projects"
@@ -83,17 +87,13 @@ export const routerOptions = {
     component: _0cc26a51,
     name: "admin-settings"
   }, {
-    path: "/admin/templates",
-    component: _1e8d8abe,
-    name: "admin-templates"
-  }, {
-    path: "/admin/projects/editworkflow",
-    component: _683894a3,
-    name: "admin-projects-editworkflow"
-  }, {
     path: "/admin/projects/newworkflow",
     component: _9701cd16,
     name: "admin-projects-newworkflow"
+  }, {
+    path: "/admin/settings/workflows/:id?",
+    component: _60d9b1be,
+    name: "admin-settings-workflows-id"
   }, {
     path: "/bookings/:id",
     component: _7ed60090,

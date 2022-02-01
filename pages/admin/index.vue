@@ -49,7 +49,15 @@
                 </div>
 
                 <div class="w-1/3">
-                    <h2 class="font-bold mb-2">Goals</h2>
+                    <h2 class="font-bold mb-2">Activity</h2>
+
+
+                    <!-- Lists recent actions -->
+
+
+
+
+                    
                     <!-- <div v-for="project in projectList" :key="project.id" role="button" class="w-full relative rounded-2xl shadow-sm border border-gray/20 bg-white py-3 px-4 mb-2 hover:border-gray/50 transition duration-150">
                         <div class="mb-4">
                                 Client name <span class="bg-gray/20 rounded-full py-1 px-3 text-sm ml-2">1 Day</span>

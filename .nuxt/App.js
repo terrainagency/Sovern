@@ -9,11 +9,11 @@ import NuxtBuildIndicator from './components/nuxt-build-indicator'
 import '../assets/css/tailwind.css'
 
 import _6f6c098b from '../layouts/default.vue'
+import _57ff370c from '../layouts/moodboards.vue'
 import _1c274e70 from '../layouts/projects.vue'
 import _a59e1bce from '../layouts/settings.vue'
-import _14374c03 from '../layouts/templates.vue'
 
-const layouts = { "_default": sanitizeComponent(_6f6c098b),"_projects": sanitizeComponent(_1c274e70),"_settings": sanitizeComponent(_a59e1bce),"_templates": sanitizeComponent(_14374c03) }
+const layouts = { "_default": sanitizeComponent(_6f6c098b),"_moodboards": sanitizeComponent(_57ff370c),"_projects": sanitizeComponent(_1c274e70),"_settings": sanitizeComponent(_a59e1bce) }
 
 export default {
   render (h, props) {

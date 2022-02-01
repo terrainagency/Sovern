@@ -16,10 +16,8 @@
                     </svg>
                 </div>
 
-
                 <div v-if="automation.type === 'task'" class="relative z-10 h-14 w-14 flex items-center bg-white-100 rounded-xl justify-center mr-4 flex-shrink-0">
-
-                     <svg v-if="automation.type === 'task'" class="w-10 h-10" viewBox="0 0 66.5 66.5">
+                     <svg class="w-10 h-10" viewBox="0 0 66.5 66.5">
                         <defs>
                             <filter id="Rectangle_138" x="0" y="0" width="66.5" height="66.5" filterUnits="userSpaceOnUse">
                             <feOffset dy="5" input="SourceAlpha"/>
@@ -34,9 +32,8 @@
                         </g>
                         <path id="Path_73" data-name="Path 73" d="M2017.677,3372.446l4.7,4.7,10.251-10.251" transform="translate(-1991.903 -3343.771)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
                     </svg>
-
-
                 </div>
+
                 <input type="text" class="input-toggle text-black input-sm font-bold" v-model="automation.title" v-bind:disabled="!expanded" />
             </div>
             
@@ -52,9 +49,9 @@
         </div>
 
         <div v-if="automation.type === 'email'" class="py-3">
-            <input ref="subject" type="text" class="input-toggle-full input-sm mb-2" value="Your booking with Tony Redmer is confirmed!" v-bind:disabled="!expanded" />
+            <input ref="subject" v-model="automation.fields.subject" type="text" class="input-toggle-full input-sm mb-2" v-bind:disabled="!expanded" />
             
-            <InputTextarea ref="message" class="input-toggle-full" v-bind:disabled="!expanded" />
+            <InputTextarea ref="message" v-model="automation.fields.email" class="input-toggle-full" v-bind:disabled="!expanded" />
         </div>
     </div>
 </template>
@@ -69,6 +66,7 @@ export default {
     data() {
         return {
             expanded: false,
+            automation: this.automation
         }
     },
     mounted() {
@@ -78,12 +76,12 @@ export default {
         edit() {
             this.expanded = true
             this.$refs.module.classList.remove("mb-2", "cursor-pointer")
-            this.$refs.module.classList.add("shadow-lg", "mt-3", "mb-6")
+            this.$refs.module.classList.add("shadow-lg", "mb-8")
         },
         save() {
             this.expanded = false
 
-            this.$refs.module.classList.remove("shadow-lg", "mt-3", "mb-6")
+            this.$refs.module.classList.remove("shadow-lg", "mb-8")
             this.$refs.module.classList.add("mb-2", "cursor-pointer")
         }
     }

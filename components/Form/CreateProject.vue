@@ -3,8 +3,6 @@
     <button @click="showForm = true" class="w-full border border-white-200 rounded-md h-full text-gray hover:text-black">Create new project</button>
     <!-- NOTE: Update the background to a blur via canvas -->
     
-        
-    
     <div v-if="showForm" @click.prevent="showForm = false" class="fixed top-0 left-0 flex items-center justify-center overflow-scroll w-screen h-screen bg-black/10">
 
             <form v-on:submit.prevent="createProject" @click.stop="" class="relative w-full max-w-screen-md pt-6 px-4 pb-6 rounded-xl shadow-xl bg-white border border-white-100">

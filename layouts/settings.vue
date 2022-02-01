@@ -80,12 +80,12 @@
           </li>
           <!-- Settings will house automations/documents/templates/etc -->
           <li class="mt-auto w-16 h-16 flex items-center justify-center">
-            <div class="mx-auto rounded-xl text-white bg-black flex items-center justify-center">
+            <nuxt-link to="/admin/settings" class="mx-auto rounded-xl text-white bg-black flex items-center justify-center">
               <svg class="w-8 h-8 stroke-current" viewBox="0 0 24 24">
                 <path id="Path_15" data-name="Path 15" d="M13.909,10.091a2.7,2.7,0,1,1-3.818,0,2.7,2.7,0,0,1,3.818,0" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
                 <path id="Path_16" data-name="Path 16" d="M5.25,12a7.137,7.137,0,0,0,.063.882L3.725,14.124A.9.9,0,0,0,3.5,15.28l1.412,2.443a.9.9,0,0,0,1.112.384l1.422-.571a.912.912,0,0,1,.846.1,6.863,6.863,0,0,0,.684.4.916.916,0,0,1,.509.682L9.7,20.23a.9.9,0,0,0,.888.77h2.817a.9.9,0,0,0,.888-.77l.217-1.512a.918.918,0,0,1,.512-.683,6.6,6.6,0,0,0,.681-.4.915.915,0,0,1,.85-.1l1.419.57a.9.9,0,0,0,1.112-.384L20.5,15.28a.9.9,0,0,0-.224-1.156l-1.588-1.242A7.138,7.138,0,0,0,18.75,12a7.138,7.138,0,0,0-.063-.882l1.588-1.242A.9.9,0,0,0,20.5,8.72L19.087,6.277a.9.9,0,0,0-1.112-.384l-1.419.57a.918.918,0,0,1-.85-.1,6.6,6.6,0,0,0-.681-.4.918.918,0,0,1-.512-.683L14.3,3.77A.9.9,0,0,0,13.409,3H10.592a.9.9,0,0,0-.888.77L9.486,5.284a.92.92,0,0,1-.509.682,7.062,7.062,0,0,0-.684.4.917.917,0,0,1-.847.1L6.025,5.893a.9.9,0,0,0-1.112.384L3.5,8.72a.9.9,0,0,0,.224,1.156l1.588,1.242A7.138,7.138,0,0,0,5.25,12Z" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
               </svg>
-            </div>
+            </nuxt-link>
           </li>
         </ul>
       </nav>
