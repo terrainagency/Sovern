@@ -4,7 +4,7 @@
         <section class="flex flex-wrap w-full justify-center mb-8">
             <h3 class="w-full mb-4 font-bold text-center">Type</h3>
 
-            <input type="radio" v-model="automation.type" name="type" value="email" id="type_email">
+            <input type="radio" v-model="newAutomation.type" name="type" value="email" id="type_email">
             <label for="type_email" role="button" class="w-36 h-36 checkbox relative bg-white mb-2 mr-3">
                 <div class="relative z-10 h-14 w-14 flex items-center bg-conic rounded-xl justify-center flex-shrink-0">
                     <svg class="w-7 h-7" viewBox="0 0 36.5 28.389">
@@ -21,7 +21,7 @@
                 <span class="tracking-wide text-gray absolute bottom-3 left-1/2 transform -translate-x-1/2">Email</span>
             </label>
 
-            <input type="radio" v-model="automation.type" name="type" value="task" id="type_task">
+            <input type="radio" v-model="newAutomation.type" name="type" value="task" id="type_task">
             <label for="type_task" role="button" class="w-36 h-36 checkbox relative pt-8  pb-12 px-10 bg-white mb-2 ml-3">
                 <div class="relative z-10 h-14 w-14 flex items-center bg-white-100 rounded-xl justify-center flex-shrink-0">
                     <svg class="w-10 h-10" viewBox="0 0 66.5 66.5">
@@ -44,63 +44,79 @@
             </label>
         </section>
 
-        <section v-if="automation.type === 'email'" class="mb-8">
+        <section v-if="newAutomation.type === 'email'" class="mb-8">
             <h3 class="mb-2 font-bold">Subject</h3>
-            <input v-model="automation.fields.subject" type="text" class="input-toggle-full input-sm mb-2" />
+            <input v-model="newAutomation.title" type="text" class="input-toggle-full input-sm mb-2" />
             
             <h3 class="mb-2 font-bold">Message</h3>
             <InputTextarea @update-value="updateMessage" class="input-toggle-full" />
         </section>
 
-        <section v-if="automation.type" class="mb-8">
+        <section v-if="newAutomation.type === 'task'">
+            <h3 class="mb-2 font-bold">Task name</h3>
+            <input v-model="newAutomation.title" type="text" class="input-toggle-full input-sm mb-2" />
+        </section>
+
+        <section v-if="newAutomation.type" class="mb-8">
             <div class="flex justify-between items-center py-3">
+
         
                 <div class="text-right flex-grow text-gray input input-md">
-                    <InputAutomationAction @update-value="updateAction" />
+                    <InputAutomationAction @update-value="updateAction" v-bind:workflowID="workflowID" />
                 </div>
             </div>
         </section>
 
         <button @click.prevent="createAutomation" class="btn py-3 px-8 btn-black rounded-lg w-32 mx-auto">Create</button>
+            <!-- 0000-00-00T00:00:00 -->
     </form>
+
 
 </template>
 <script>
 export default {
+    props: {
+        workflowID: {
+            type: String,
+            required: true
+        },
+        automations: {
+            type: Array,
+            required: true
+        }
+    },
     data() {
         return {
-            automation: {
+            newAutomation: {
                 type: null,
                 title: null,
-                fields: {
-                    subject: null,
-                    message: null
-                },
+                fields: {},
                 timing: null,
                 when: null,
-                reference: null
-            }
+                reference: null,
+                preset: null,
+                workflowID: this.workflowID
+            },
         }
     },
     methods: {
         updateMessage(e) {
-            console.log(e)
-            this.automation.fields.message = e
+            this.newAutomation.fields.message = e
         },
         async createAutomation() {
-            await fetch('/api/workflows/automations', {
+            await fetch('/api/automations', {
                 method: 'POST',
-                body: JSON.stringify(this.automation),
+                body: JSON.stringify(this.newAutomation),
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
         },
         updateAction(e) {
-            console.log(e)
-            this.automation.timing = e.timing
-            this.automation.when = e.when
-            this.automation.reference = e.reference
+            this.newAutomation.timing = e.timing
+            this.newAutomation.when = e.when
+            this.newAutomation.reference = e.reference
+            this.newAutomation.preset = e.preset
         }
     }
 }

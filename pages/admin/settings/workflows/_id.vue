@@ -5,7 +5,7 @@
 
             <!-- <div class="w-[2px] h-full absolute left-1/2 transform -translate-x-1/2 bg-black/5 -z-10"></div> -->
 
-            <div class="relative rounded-lg border inline-block px-5 py-3 mb-10">
+            <div class="relative rounded-lg border inline-block px-5 py-3 mb-10 border-white-200 text-white-200">
                <div class="text-center">Project created</div>
             </div>
 
@@ -16,7 +16,7 @@
                 <div class="h-[2px] rounded-full w-3 bg-white absolute"></div>
             </button>
 
-            <FormCreateAutomation v-if="showCreateAutomation" />
+            <ModalCreateAutomation v-if="showCreateAutomation" v-bind:workflowID="$route.params.id" v-bind:automations="workflow.automations" />
         </section>
     </div>
 </template>
@@ -38,16 +38,7 @@ export default {
     methods: {
         async setWorkflow(id){
             this.workflow = (await unWrap(await fetch(`/api/workflows/${id}`))).json
-        },
-        async getWorkflow(id) {
-            await fetch('/api/workflows/workflow/user/', {
-                method: 'GET',
-                body: JSON.stringify({'id': id}),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-        },     
+        },    
         async createAutomation() {
             await fetch('/api/workflows/automation/user', {
                 method: 'POST',

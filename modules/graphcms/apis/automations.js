@@ -5,15 +5,16 @@ export default (graphcmsConfig) => {
     const graphcms = getGraphQLClient(graphcmsConfig)
     
     return {
-        create: async (variables) => {
-            const create = gql`
+        createWithReference: async (variables) => {
+            const mutation = gql`
                 mutation CreateAutomation(
                     $gID: String!
                     $title: String!
-                    $fields: JSON!
-                    $timing: DateTime!
-                    $when: String!
-                    $reference: JSON!
+                    $timing: String!
+                    $when: When!
+                    $type: AutomationType!
+                    $workflowID: ID!
+                    $referenceID: ID!
                 ){
                     createAutomation(
                         data: {
@@ -22,19 +23,27 @@ export default (graphcmsConfig) => {
                                     gID: $gID
                                 }
                             }
+                            workflow: {
+                                connect: {
+                                    id: $workflowID
+                                }
+                            }
+                            reference: {
+                                connect: {
+                                    id: $referenceID
+                                }
+                            }
                             title: $title
                             type: $type
-                            fields: $fields
                             timing: $timing
                             when: $when
-                            reference: $reference
                         }
                     ){
                         id
                     }
                 }
             `
-            let data = await graphcms.request(create, variables)
+            let data = await graphcms.request(mutation, variables)
                 
             let publish = await graphcms.request(
                 gql`mutation PublishAutomation($id: ID){ publishAutomation(where: { id: $id }) {id} }`, 
@@ -43,5 +52,70 @@ export default (graphcmsConfig) => {
 
             return data
         },
+        createWithPreset: async (variables) => {
+            const mutation = gql`
+                mutation CreateAutomation(
+                    $gID: String!
+                    $title: String!
+                    $timing: String!
+                    $when: When!
+                    $type: AutomationType!
+                    $workflowID: ID!
+                    $preset: AutomationPreset!
+                ){
+                    createAutomation(
+                        data: {
+                            creator: {
+                                connect: {
+                                    gID: $gID
+                                }
+                            }
+                            workflow: {
+                                connect: {
+                                    id: $workflowID
+                                }
+                            }
+                            title: $title
+                            type: $type
+                            timing: $timing
+                            when: $when
+                            preset: $preset
+                        }
+                    ){
+                        id
+                    }
+                }
+            `
+            let data = await graphcms.request(mutation, variables)
+                
+            let publish = await graphcms.request(
+                gql`mutation PublishAutomation($id: ID){ publishAutomation(where: { id: $id }) {id} }`, 
+                { id: data.createAutomation.id }
+            )
+
+            return data
+        },
+        getByWorkflowID: async (variables) => {
+            const query = gql `
+                query getAutomationsByWorkflowID(
+                    $workflowID: ID!
+                ){
+                    automations(where: {workflow: { id: $workflowID } }) {
+                        id
+                        title
+                        reference {
+                            id
+                            title
+                        }
+                        preset
+                    }
+                }
+            `
+            let data = await graphcms.request(query, variables)
+            return data.automations
+        },
+        destroyByID: async (variables) => {
+            
+        }
     }
 }

@@ -58,19 +58,21 @@ export default (graphcmsConfig) => {
                         id
                         title
                         automations {
-                            fields
                             id
                             title
                             type
                             timing
                             reference {
-                              title
+                                title
                             }
+                            when
+                            preset
                         }
                     }
                 }
             `
             let data = await graphcms.request(query, variables)
+
             return data.workflows[0]
         },
     }

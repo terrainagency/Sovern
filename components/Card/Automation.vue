@@ -1,5 +1,5 @@
 <template>
-    <div @click.prevent="edit" ref="module" class="border-gradient cursor-pointer w-full relative rounded-lg hover:shadow-lg px-3 bg-white transition duration-150 mb-2">
+    <div @click.prevent="edit" ref="module" class="border-gradient border-gradient-rounded-lg cursor-pointer w-full relative rounded-lg hover:shadow-lg px-3 bg-white transition duration-150 mb-2">
         <div class="flex justify-between items-center py-3">
 
             <div class="flex items-center min-w-64">
@@ -35,23 +35,27 @@
                 </div>
 
                 <input type="text" class="input-toggle text-black input-sm font-bold" v-model="automation.title" v-bind:disabled="!expanded" />
+                
             </div>
             
             <div class="text-right flex-grow text-gray">
-                <div class="py-3 px-4 w-36 text-center rounded-lg bg-white-100 inline-block">{{ automation.timing.spacing }}</div>
-                <div class="py-3 px-4 w-24 text-center inline-block">{{ automation.timing.when }}</div>
-                <div class="py-3 px-4 w-36 text-center rounded-lg bg-white-100 inline-block">{{ automation.timing.event }}</div>
+                <div class="py-3 px-4 w-36 text-center rounded-lg bg-white-100 inline-block">{{ automation.timing }}</div>
+                <div class="py-3 px-4 w-24 text-center inline-block">{{ automation.when }}</div>
+                <div class="py-3 px-4 w-36 text-center rounded-lg bg-white-100 inline-block">
+                    <span v-if="automation.reference">{{ automation.reference.title }}</span><span v-if="automation.preset">{{ automation.preset }}</span>
+                </div>
             </div>
 
-            <div @click.stop="" v-if="expanded" class="ml-2 flex-shrink-0">
+            <div @click.stop="" v-if="expanded" class="ml-8 flex-shrink-0 flex">
                 <button @click.prevent="save" class="btn py-3 px-8 btn-black rounded-lg w-32">Save</button>
+                <button @click.prevent="destroy" class="btn py-3 px-5 bg-warning text-white ml-2 rounded-lg w-auto">x</button>
             </div>
         </div>
 
         <div v-if="automation.type === 'email'" class="py-3">
-            <input ref="subject" v-model="automation.fields.subject" type="text" class="input-toggle-full input-sm mb-2" v-bind:disabled="!expanded" />
+            <input ref="subject" v-model="automation.fields" type="text" class="input-toggle-full input-sm mb-2" v-bind:disabled="!expanded" />
             
-            <InputTextarea ref="message" v-model="automation.fields.email" class="input-toggle-full" v-bind:disabled="!expanded" />
+            <InputTextarea ref="message" v-model="automation.fields" class="input-toggle-full" v-bind:disabled="!expanded" />
         </div>
     </div>
 </template>
@@ -66,7 +70,6 @@ export default {
     data() {
         return {
             expanded: false,
-            automation: this.automation
         }
     },
     mounted() {
@@ -83,6 +86,9 @@ export default {
 
             this.$refs.module.classList.remove("shadow-lg", "mb-8")
             this.$refs.module.classList.add("mb-2", "cursor-pointer")
+        },
+        destroy() {
+            // destroyByID
         }
     }
 }
