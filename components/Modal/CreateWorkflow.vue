@@ -2,7 +2,7 @@
     <div class="w-full max-w-xs mx-2">
         <button @click="showModal = true" class="relative border border-white-200 rounded-xl w-full hover:border-gray/40 transition duration-150">
             <div class="pb-full"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-gray">New project</div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-gray">New workflow</div>
         </button>
 
         <div v-if="showModal" @click.prevent="showModal = false" class="fixed top-0 left-0 flex items-center justify-center overflow-scroll w-screen h-screen bg-black/10">
