@@ -91,6 +91,13 @@
     "_name": "_9701cd16"
   },
   {
+    "name": "admin-settings-services-id",
+    "path": "/admin/settings/services/:id?",
+    "component": "/Users/tony/Documents/Sovern/pages/admin/settings/services/_id.vue",
+    "chunkName": "pages/admin/settings/services/_id",
+    "_name": "_5243c64c"
+  },
+  {
     "name": "admin-settings-workflows-id",
     "path": "/admin/settings/workflows/:id?",
     "component": "/Users/tony/Documents/Sovern/pages/admin/settings/workflows/_id.vue",

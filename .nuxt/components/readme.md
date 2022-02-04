@@ -12,7 +12,6 @@ You can directly use them in pages and other components without the need to impo
 - `<Footer>` | `<footer>` (components/Footer.vue)
 - `<GalleryImage>` | `<gallery-image>` (components/GalleryImage.vue)
 - `<HeaderDisabled>` | `<header-disabled>` (components/Header-disabled.vue)
-- `<Header>` | `<header>` (components/Header.vue)
 - `<Icon>` | `<icon>` (components/Icon.vue)
 - `<Navigation>` | `<navigation>` (components/Navigation.vue)
 - `<Project>` | `<project>` (components/Project.vue)

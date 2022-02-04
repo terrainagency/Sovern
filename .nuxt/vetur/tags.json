@@ -17,9 +17,6 @@
   "HeaderDisabled": {
     "description": "Auto imported from components/Header-disabled.vue"
   },
-  "Header": {
-    "description": "Auto imported from components/Header.vue"
-  },
   "Icon": {
     "description": "Auto imported from components/Icon.vue"
   },
