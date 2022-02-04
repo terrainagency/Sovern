@@ -68,6 +68,9 @@
   "InputPrice": {
     "description": "Auto imported from components/Input/Price.vue"
   },
+  "InputTaskCondition": {
+    "description": "Auto imported from components/Input/TaskCondition.vue"
+  },
   "InputTextarea": {
     "description": "Auto imported from components/Input/Textarea.vue"
   },

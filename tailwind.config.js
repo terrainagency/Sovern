@@ -37,6 +37,9 @@ theme: {
         success: {
             DEFAULT: '#00c34e',
         },
+        pending: {
+            DEFAULT: '#edc307'
+        }
     },
     extend: {
         height: {

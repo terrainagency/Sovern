@@ -103,6 +103,7 @@ export default (graphcmsConfig) => {
                     automations(where: {workflow: { id: $workflowID } }) {
                         id
                         title
+                        type
                         reference {
                             id
                             title

@@ -29,6 +29,7 @@ You can directly use them in pages and other components without the need to impo
 - `<InputLocation>` | `<input-location>` (components/Input/Location.vue)
 - `<InputMoodboard>` | `<input-moodboard>` (components/Input/Moodboard.vue)
 - `<InputPrice>` | `<input-price>` (components/Input/Price.vue)
+- `<InputTaskCondition>` | `<input-task-condition>` (components/Input/TaskCondition.vue)
 - `<InputTextarea>` | `<input-textarea>` (components/Input/Textarea.vue)
 - `<InputWorkflow>` | `<input-workflow>` (components/Input/Workflow.vue)
 - `<ModalCreateAutomation>` | `<modal-create-automation>` (components/Modal/CreateAutomation.vue)
