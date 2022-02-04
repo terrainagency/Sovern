@@ -1,6 +1,6 @@
 <template>
     <div class="relative h-full">
-        <button @click.prevent="viewConditions = !viewConditions" :class="`text-white bg-${newCondition.color} capitalize`">{{ newCondition.condition.replace(/_/g, ' ') }}</button>
+        <button @click.prevent="viewConditions = !viewConditions" :class="`text-white bg-${updatedColor} capitalize`">{{ updatedTask.condition.replace(/_/g, ' ') }}</button>
 
         <div v-if="viewConditions" class="absolute w-full h-full top-0 bg-white">            
             <button v-for="condition in conditions" :key="condition.condition" @click.prevent="updateCondition(condition)" :class="`bg-${condition.color} text-white mb-1 capitalize`">{{ condition.condition.replace(/_/g, ' ') }}</button>
@@ -19,10 +19,6 @@ export default {
     data() {
         return {
             viewConditions: false,
-            newCondition: {
-                condition: this.task.condition,
-                color: undefined,
-            },
             conditions: [
                 { condition: "in_progress", color: "gray" },
                 { condition: "completed", color: "success" },
@@ -30,6 +26,7 @@ export default {
                 { condition: "pending", color: "gray" },
                 { condition: "overdue", color: "warning" }
             ],
+            updatedColor: undefined,
             updatedTask: {
                 id: this.task.id,
                 condition: this.task.condition
@@ -37,15 +34,12 @@ export default {
         }
     },
     mounted() {
-        // this.newCondition.color = conditions[this.task.condition]
-        // this.newCondition.condition = this.condition
+        this.updatedColor = this.conditions.find(({condition}) => condition === this.task.condition).color
     },
     methods: {
         updateCondition(condition) {
-            this.newCondition.condition = condition.condition
-            this.newCondition.color = condition.color
-
             this.updatedTask.condition = condition.condition
+            this.updatedColor = this.conditions.find(({condition}) => condition === this.updatedTask.condition).color
 
             // Post update to APIs
             this.updateTask()
