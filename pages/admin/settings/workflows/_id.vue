@@ -1,7 +1,9 @@
 <template>
-    <div class="w-full">
-        <h1 class="font-bold text-center mb-10">{{ workflow.title }}</h1>
+    <div class="w-full flex pr-1/12">
+        <SettingsNavigation :current="workflow.id" />
+        
         <section class="relative max-w-screen-lg mx-auto flex flex-col items-center  z-0">
+            <h1 class="font-bold text-center mb-10">{{ workflow.title }}</h1>
 
             <!-- <div class="w-[2px] h-full absolute left-1/2 transform -translate-x-1/2 bg-black/5 -z-10"></div> -->
 

@@ -8,7 +8,7 @@ export default (apis) => {
             if(req.url == '/listing') {
                 return await getCollectionListing(req.identity.id, res)
             } else {
-                // return await getWorkflowByID(req.identity.id, req.url.replace(/^\/+/g, ''), res)
+                return await getCollectionByID(req.identity.id, req.url.replace(/^\/+/g, ''), res)
             }
         }
         if(req.method == 'POST'){
@@ -23,6 +23,15 @@ export default (apis) => {
 
     async function getCollectionListing(gID, res){
         sendJSON(await apis.collections.getListing(gID), res)
+    }
+
+    async function getCollectionByID(gID, collectionID, res){
+        const variables = {
+            collectionID: collectionID,
+            gID: gID
+        }
+
+        sendJSON(await apis.collections.getByID(variables), res)
     }
     
     async function createCollection(gID, body, res){

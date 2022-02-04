@@ -48,33 +48,20 @@ export default (graphcmsConfig) => {
             let data = await graphcms.request(query, { gID: gID})
             return data.collections
         },
+        getByID: async function(variables) {
+            const query = gql`
+                query FindCollectionsByID(
+                    $gID: String!
+                    $collectionID: ID
+                ){
+                    collections(where: {creator: {gID: $gID}, id: $collectionID}) {
+                        id
+                        title
+                    }
+                }
+            `
+            let data = await graphcms.request(query, variables)
+            return data.collections[0]
+        },
     }
-        // getByID: async function(variables) {
-        //     const query = gql`
-        //         query FindWorkflowsByID(
-        //             $gID: String!
-        //             $workflowID: ID
-        //         ){
-        //             workflows(where: {creator: {gID: $gID}, id: $workflowID}) {
-        //                 id
-        //                 title
-        //                 automations {
-        //                     id
-        //                     title
-        //                     type
-        //                     timing
-        //                     reference {
-        //                         title
-        //                     }
-        //                     when
-        //                     preset
-        //                 }
-        //             }
-        //         }
-        //     `
-        //     let data = await graphcms.request(query, variables)
-
-        //     return data.workflows[0]
-        // },
-    // }
 }

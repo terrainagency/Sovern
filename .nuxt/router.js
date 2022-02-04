@@ -17,7 +17,7 @@ const _b1c5179c = () => interopDefault(import('../pages/admin/moodboards/index.v
 const _eba2f430 = () => interopDefault(import('../pages/admin/projects/index.vue' /* webpackChunkName: "pages/admin/projects/index" */))
 const _0cc26a51 = () => interopDefault(import('../pages/admin/settings/index.vue' /* webpackChunkName: "pages/admin/settings/index" */))
 const _9701cd16 = () => interopDefault(import('../pages/admin/projects/newworkflow.vue' /* webpackChunkName: "pages/admin/projects/newworkflow" */))
-const _5243c64c = () => interopDefault(import('../pages/admin/settings/services/_id.vue' /* webpackChunkName: "pages/admin/settings/services/_id" */))
+const _bcdcf002 = () => interopDefault(import('../pages/admin/settings/collections/_id.vue' /* webpackChunkName: "pages/admin/settings/collections/_id" */))
 const _60d9b1be = () => interopDefault(import('../pages/admin/settings/workflows/_id.vue' /* webpackChunkName: "pages/admin/settings/workflows/_id" */))
 const _7ed60090 = () => interopDefault(import('../pages/bookings/_id.vue' /* webpackChunkName: "pages/bookings/_id" */))
 const _0ffdbdf2 = () => interopDefault(import('../pages/gallery/_slug.vue' /* webpackChunkName: "pages/gallery/_slug" */))
@@ -92,9 +92,9 @@ export const routerOptions = {
     component: _9701cd16,
     name: "admin-projects-newworkflow"
   }, {
-    path: "/admin/settings/services/:id?",
-    component: _5243c64c,
-    name: "admin-settings-services-id"
+    path: "/admin/settings/collections/:id?",
+    component: _bcdcf002,
+    name: "admin-settings-collections-id"
   }, {
     path: "/admin/settings/workflows/:id?",
     component: _60d9b1be,

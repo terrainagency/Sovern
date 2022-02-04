@@ -69,7 +69,7 @@
             </g>
         </svg>
 
-        <svg v-if="icon === 'workflow'" class="w-full h-full" viewBox="0 0 24 24">
+        <svg v-if="icon === 'workflow'" class="w-full h-full fill-current" viewBox="0 0 24 24">
             <path id="Path_78" data-name="Path 78" d="M18.823,11.575l-6.011,8.683a.987.987,0,0,1-1.8-.562V13.973H5.989a.987.987,0,0,1-.811-1.549l6.011-8.683a.987.987,0,0,1,1.8.562v5.723h5.025a.987.987,0,0,1,.811,1.549Z"/>
         </svg>
 
