@@ -32,6 +32,9 @@
   "ServiceGallery": {
     "description": "Auto imported from components/ServiceGallery.vue"
   },
+  "SettingsNavigation": {
+    "description": "Auto imported from components/SettingsNavigation.vue"
+  },
   "SovernLogo": {
     "description": "Auto imported from components/SovernLogo.vue"
   },
@@ -40,6 +43,18 @@
   },
   "CardAutomation": {
     "description": "Auto imported from components/Card/Automation.vue"
+  },
+  "ModalCreateAutomation": {
+    "description": "Auto imported from components/Modal/CreateAutomation.vue"
+  },
+  "ModalCreateProject": {
+    "description": "Auto imported from components/Modal/CreateProject.vue"
+  },
+  "ModalCreateWorkflow": {
+    "description": "Auto imported from components/Modal/CreateWorkflow.vue"
+  },
+  "ModalViewProject": {
+    "description": "Auto imported from components/Modal/ViewProject.vue"
   },
   "InputAutomationAction": {
     "description": "Auto imported from components/Input/AutomationAction.vue"
@@ -73,18 +88,6 @@
   },
   "InputWorkflow": {
     "description": "Auto imported from components/Input/Workflow.vue"
-  },
-  "ModalCreateAutomation": {
-    "description": "Auto imported from components/Modal/CreateAutomation.vue"
-  },
-  "ModalCreateProject": {
-    "description": "Auto imported from components/Modal/CreateProject.vue"
-  },
-  "ModalCreateWorkflow": {
-    "description": "Auto imported from components/Modal/CreateWorkflow.vue"
-  },
-  "ModalViewProject": {
-    "description": "Auto imported from components/Modal/ViewProject.vue"
   },
   "InputUtilsDropdown": {
     "description": "Auto imported from components/Input/Utils/Dropdown.vue"
