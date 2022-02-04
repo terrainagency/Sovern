@@ -34,7 +34,7 @@ export default (graphcmsConfig) => {
 
             return data
         },
-        getListingByUserID: async function(gID) {
+        getListings: async function(gID) {
             const query = gql`
                 query FindWorkflowsByCreator(
                     $gID: String!

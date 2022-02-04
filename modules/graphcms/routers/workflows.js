@@ -5,8 +5,8 @@ export default (apis) => {
 
 
         if(req.method == 'GET'){
-            if(req.url == '/listing/user') {
-                return await getWorkflowsByUser(req.identity.id, res)
+            if(req.url == '/listing') {
+                return await getWorkflowsListing(req.identity.id, res)
             } else {
                 return await getWorkflowByID(req.identity.id, req.url.replace(/^\/+/g, ''), res)
             }
@@ -28,8 +28,8 @@ export default (apis) => {
         rejectHitBadRequest(res)
     }
 
-    async function getWorkflowsByUser(gID, res){
-        sendJSON(await apis.workflows.getListingByUserID(gID), res)
+    async function getWorkflowsListing(gID, res){
+        sendJSON(await apis.workflows.getListings(gID), res)
     }
 
     async function getWorkflowByID(gID, workflowID, res){

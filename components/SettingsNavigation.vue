@@ -2,64 +2,91 @@
     <nav class="w-1/3 max-w-xs h-full">
         <h3 class="font-light tracking-wide mb-4">Workflows</h3>
         <ul class="mb-8">
-            <li>
-                
-                <button class="py-4 px-5 border border-transparent hover:border-black/10 transition duration-100 rounded-xl relative w-full flex justify-start items-center">
-                    <!-- <Icon :icon="'collapse'" class="mr-3"/> -->
-                    <span class="inline-block w-6 h-6 rounded-md mr-4"><Icon :icon="'workflow'" class="w-full h-full" /></span>Model Test
-                </button>
+            <li v-for="workflow in workflows" :key="workflow.id">
+                <nuxt-link :to="`settings/workflows/${workflow.id}`" class="py-4 px-5 border border-transparent hover:border-black/10 transition duration-100 rounded-xl relative w-full flex justify-start items-center">
+                    <span class="inline-block w-6 h-6 rounded-md mr-4"><Icon :icon="'workflow'" class="w-full h-full" /></span>{{ workflow.title }}
+                </nuxt-link>
             </li>
             <li>
-                <button class="py-4 px-5 w-full text-left hover:bg-white-100 font-light tracking-wide text-gray rounded-xl">+ New workflow</button>
+                <input type="text" v-model="newWorkflow.title" @keyup.enter.prevent="createWorkflow" class="py-4 px-5 focus:outline-none w-full text-left hover:bg-white-100 text-black rounded-xl" placeholder="+ new workflow">
             </li>
         </ul>
         
         <h3 class="font-light tracking-wide mb-4">Collections</h3>
         <ul class="mb-8">
-            <li>
-                
-                <button class="py-4 px-5 border shadow-md border-black/5 transition duration-100 rounded-xl relative w-full flex justify-start items-center mb-3">
-                    <!-- <Icon :icon="'collapse'" class="mr-3"/> -->
-                    <span class="inline-block w-6 h-6 rounded-md mr-4"><Icon :icon="'folder-open'" class="w-full h-full" /></span>Austin
-                </button>
-                <!-- <ul class="pl-4">
-                    <li>
-                        
-                        <button class="py-3 px-4 ml-4 rounded-lg relative w-full text-left hover:bg-white-100 flex justify-start items-center">
-                            Studio
-                        </button>
-                    </li>
-                    <li>
-                        <button class="py-3 px-4 ml-4 rounded-lg relative w-full text-left hover:bg-white-100">Location</button>
-                    </li>
-                </ul> -->
+            <li v-for="collection in collections" :key="collection.id">
+                <nuxt-link v-if="current === collection.id" :to="`settings/collections/${collection.id}`" class="py-4 px-5 border shadow-md border-black/5 transition duration-100 rounded-xl relative w-full flex justify-start items-center mb-3">
+                    <span class="inline-block w-6 h-6 rounded-md mr-4"><Icon :icon="'folder-open'" class="w-full h-full" /></span>{{ collection.title }}
+                </nuxt-link>
+                <nuxt-link v-else :to="`settings/collections/${collection.id}`" class="py-4 px-5 border border-transparent hover:border-black/10 transition duration-100 rounded-xl relative w-full flex justify-start items-center">
+                    <span class="inline-block w-6 h-6 rounded-md mr-4"><Icon :icon="'folder'" class="w-full h-full" /></span>{{ collection.title }}
+                </nuxt-link>
             </li>
             
-            <li>
+            <!-- <li>
                 <button class="py-4 px-5 border border-transparent hover:border-black/10 transition duration-100 rounded-xl relative w-full flex justify-start items-center">
-                    <!-- <Icon :icon="'expand'" class="mr-3"/> -->
                     <span class="inline-block w-6 h-6 rounded-md mr-4"><Icon :icon="'folder'" class="w-full h-full" /></span>Los Angeles
                 </button>
             </li>
             <li>
                 <button class="py-4 px-5 border border-transparent hover:border-black/10 transition duration-100 rounded-xl relative w-full flex justify-start items-center">
-                    <!-- <Icon :icon="'expand'" class="mr-3"/> -->
                     <span class="inline-block w-6 h-6 rounded-md mr-4"><Icon :icon="'folder'" class="w-full h-full" /></span>New York
                 </button>
-            </li>
+            </li> -->
+
             <li>
-                <button class="py-4 px-5 w-full text-left hover:bg-white-100 font-light tracking-wide text-gray rounded-xl">+ New collection</button>
+                <input type="text" v-model="newCollection.title" @keyup.enter.prevent="createCollection" class="py-4 px-5 focus:outline-none w-full text-left hover:bg-white-100 text-black rounded-xl" placeholder="+ new collection">
             </li>
         </ul>
     </nav>
 </template>
 
 <script>
+import { unWrap } from '~/utils/fetchUtils'
+
 export default {
     props: {
         current: {
             type: String,
             required: true
+        }
+    },
+    data() {
+        return {
+            workflows: [],
+            collections: [],
+            newWorkflow: { title: null },
+            newCollection: { title: null },
+        }
+    },
+    mounted() {
+        this.workflows = this.setWorkflowsList()
+        this.collections = this.setCollectionsList()
+    },
+    methods: {
+        async setWorkflowsList(){
+            this.workflows = (await unWrap(await fetch(`/api/workflows/listing`))).json
+        },
+        async setCollectionsList(){
+            this.collections = (await unWrap(await fetch(`/api/collections/listing`))).json
+        },
+        async createWorkflow() {
+            await fetch('/api/workflows', {
+                method: 'POST',
+                body: JSON.stringify(this.newWorkflow),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+        },
+        async createCollection() {
+            await fetch('/api/collections', {
+                method: 'POST',
+                body: JSON.stringify(this.newCollection),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
         }
     }
     // Get workflows
