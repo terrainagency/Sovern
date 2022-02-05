@@ -15,7 +15,7 @@ theme: {
     colors: {
         white: {
             DEFAULT: '#FFFFFF',
-            100: '#F7F9FB',
+            100: '#F7F7F8',
             200: '#EAEAEA',
             300: '#DFDFDF'
         },

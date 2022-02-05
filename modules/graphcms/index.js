@@ -1,10 +1,11 @@
 import bodyParser from 'body-parser'
 import userRouter from './routers/user'
 import projectsRouter from './routers/projects'
+import collectionsRouter from './routers/collections'
+import servicesRouter from './routers/services'
 import workflowsRouter from './routers/workflows'
 import automationsRouter from './routers/automations'
 import tasksRouter from './routers/tasks'
-import collectionsRouter from './routers/collections'
 import getApis from './apis'
 
 export default function() {
@@ -16,6 +17,7 @@ export default function() {
         app.use('/api/user', userRouter(apis))
         app.use('/api/projects', projectsRouter(apis))
         app.use('/api/collections', collectionsRouter(apis))
+        app.use('/api/services', servicesRouter(apis))
         app.use('/api/workflows', workflowsRouter(apis))
         app.use('/api/automations', automationsRouter(apis))
         app.use('/api/tasks', tasksRouter(apis))

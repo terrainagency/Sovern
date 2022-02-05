@@ -57,6 +57,24 @@ export default (graphcmsConfig) => {
                     collections(where: {creator: {gID: $gID}, id: $collectionID}) {
                         id
                         title
+                        service {
+                            id
+                            title
+                            moodboard {
+                                id
+                            }
+                            workflow {
+                                id
+                            }
+                            description {
+                                raw
+                            }
+                            specs
+                            pricingOptions
+                            duration
+                            timeSlots
+                            isAvailable
+                        }
                     }
                 }
             `

@@ -2,8 +2,30 @@
     <div class="w-full flex pr-1/12">
         <SettingsNavigation :current="collection.id" />
         
-        <section class="relative max-w-screen-lg mx-auto flex flex-col items-center  z-0">
-            <h1 class="font-bold text-center mb-10">{{ collection.title }}</h1>
+        <section class="w-full px-10">
+            <div class="relative mx-auto flex flex-col items-center rounded-xl p-10 bg-white border border-black/5 shadow-md w-full">
+                <header class="relative w-full mb-8">
+                    <h1 class="font-bold text-center text-3xl flex-grow">{{ collection.title }}</h1>
+                    
+                    
+                        <div class="flex items-center absolute top-1/2 transform -translate-y-1/2 right-0">
+                            Public:
+                            <InputToggle />
+                        </div> 
+                </header>
+                                   
+
+                <section class="">
+                    <div v-for="service in collection.packages" :key="service.id">
+                        {{ service }}
+                    </div>
+                    
+                    <ModalCreateService :collectionID="collection.id" />
+                </section>
+    
+            </div>
+
+            
 
         </section>
     </div>

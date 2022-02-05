@@ -44,6 +44,21 @@
   "CardAutomation": {
     "description": "Auto imported from components/Card/Automation.vue"
   },
+  "ModalCreateAutomation": {
+    "description": "Auto imported from components/Modal/CreateAutomation.vue"
+  },
+  "ModalCreateProject": {
+    "description": "Auto imported from components/Modal/CreateProject.vue"
+  },
+  "ModalCreateService": {
+    "description": "Auto imported from components/Modal/CreateService.vue"
+  },
+  "ModalCreateWorkflow": {
+    "description": "Auto imported from components/Modal/CreateWorkflow.vue"
+  },
+  "ModalViewProject": {
+    "description": "Auto imported from components/Modal/ViewProject.vue"
+  },
   "InputAutomationAction": {
     "description": "Auto imported from components/Input/AutomationAction.vue"
   },
@@ -74,20 +89,11 @@
   "InputTextarea": {
     "description": "Auto imported from components/Input/Textarea.vue"
   },
+  "InputToggle": {
+    "description": "Auto imported from components/Input/Toggle.vue"
+  },
   "InputWorkflow": {
     "description": "Auto imported from components/Input/Workflow.vue"
-  },
-  "ModalCreateAutomation": {
-    "description": "Auto imported from components/Modal/CreateAutomation.vue"
-  },
-  "ModalCreateProject": {
-    "description": "Auto imported from components/Modal/CreateProject.vue"
-  },
-  "ModalCreateWorkflow": {
-    "description": "Auto imported from components/Modal/CreateWorkflow.vue"
-  },
-  "ModalViewProject": {
-    "description": "Auto imported from components/Modal/ViewProject.vue"
   },
   "InputUtilsDropdown": {
     "description": "Auto imported from components/Input/Utils/Dropdown.vue"
