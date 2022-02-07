@@ -1,6 +1,8 @@
 import bodyParser from 'body-parser'
 import userRouter from './routers/user'
 import projectsRouter from './routers/projects'
+import moodboardsRouter from './routers/moodboards'
+import moodboardImagesRouter from './routers/moodboardImages'
 import collectionsRouter from './routers/collections'
 import servicesRouter from './routers/services'
 import workflowsRouter from './routers/workflows'
@@ -16,6 +18,8 @@ export default function() {
         app.use(bodyParser.json())
         app.use('/api/user', userRouter(apis))
         app.use('/api/projects', projectsRouter(apis))
+        app.use('/api/moodboards', moodboardsRouter(apis))
+        app.use('/api/moodboardimages', moodboardImagesRouter(apis))
         app.use('/api/collections', collectionsRouter(apis))
         app.use('/api/services', servicesRouter(apis))
         app.use('/api/workflows', workflowsRouter(apis))

@@ -105,6 +105,13 @@
     "_name": "_60d9b1be"
   },
   {
+    "name": "admin-moodboards-id",
+    "path": "/admin/moodboards/:id",
+    "component": "/Users/tony/Documents/Sovern/pages/admin/moodboards/_id.vue",
+    "chunkName": "pages/admin/moodboards/_id",
+    "_name": "_5b7edb1a"
+  },
+  {
     "name": "bookings-id",
     "path": "/bookings/:id",
     "component": "/Users/tony/Documents/Sovern/pages/bookings/_id.vue",

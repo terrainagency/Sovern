@@ -57,7 +57,7 @@ export default (graphcmsConfig) => {
                     collections(where: {creator: {gID: $gID}, id: $collectionID}) {
                         id
                         title
-                        service {
+                        services {
                             id
                             title
                             moodboard {

@@ -44,21 +44,6 @@
   "CardAutomation": {
     "description": "Auto imported from components/Card/Automation.vue"
   },
-  "ModalCreateAutomation": {
-    "description": "Auto imported from components/Modal/CreateAutomation.vue"
-  },
-  "ModalCreateProject": {
-    "description": "Auto imported from components/Modal/CreateProject.vue"
-  },
-  "ModalCreateService": {
-    "description": "Auto imported from components/Modal/CreateService.vue"
-  },
-  "ModalCreateWorkflow": {
-    "description": "Auto imported from components/Modal/CreateWorkflow.vue"
-  },
-  "ModalViewProject": {
-    "description": "Auto imported from components/Modal/ViewProject.vue"
-  },
   "InputAutomationAction": {
     "description": "Auto imported from components/Input/AutomationAction.vue"
   },
@@ -73,6 +58,9 @@
   },
   "InputHour": {
     "description": "Auto imported from components/Input/Hour.vue"
+  },
+  "InputImageUploader": {
+    "description": "Auto imported from components/Input/ImageUploader.vue"
   },
   "InputLocation": {
     "description": "Auto imported from components/Input/Location.vue"
@@ -94,6 +82,27 @@
   },
   "InputWorkflow": {
     "description": "Auto imported from components/Input/Workflow.vue"
+  },
+  "ModalCreateAutomation": {
+    "description": "Auto imported from components/Modal/CreateAutomation.vue"
+  },
+  "ModalCreateMoodboard": {
+    "description": "Auto imported from components/Modal/CreateMoodboard.vue"
+  },
+  "ModalCreateProject": {
+    "description": "Auto imported from components/Modal/CreateProject.vue"
+  },
+  "ModalCreateService": {
+    "description": "Auto imported from components/Modal/CreateService.vue"
+  },
+  "ModalCreateWorkflow": {
+    "description": "Auto imported from components/Modal/CreateWorkflow.vue"
+  },
+  "ModalMoodboardLightbox": {
+    "description": "Auto imported from components/Modal/MoodboardLightbox.vue"
+  },
+  "ModalViewProject": {
+    "description": "Auto imported from components/Modal/ViewProject.vue"
   },
   "InputUtilsDropdown": {
     "description": "Auto imported from components/Input/Utils/Dropdown.vue"
