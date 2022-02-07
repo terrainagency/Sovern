@@ -52,8 +52,11 @@
 
     /* Textarea */
     .textarea-sm { 
-        @apply overflow-hidden scrollbar-none resize-none py-2 px-3; 
+        @apply overflow-hidden scrollbar-none resize-none p-2; 
         /* height: 2.625rem;  */
+    }
+    .textarea-single {
+        height: 2.625rem;
     }
 
     /* Day */

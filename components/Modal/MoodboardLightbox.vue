@@ -6,12 +6,15 @@
 
                 <form @submit.prevent="createComment" class="absolute left-0 w-full max-w-screen-xs z-50" :style="`left: ${newComment.locationX}%; top: ${newComment.locationY}%`">
                     <div class="w-3 h-3 rounded-full bg-white"></div>
-                    <div class="bg-white rounded-full w-full ml-1 shadow-xl border border-black/5 flex items-center">
+
+                    <div class="bg-white rounded-3xl w-full ml-1 shadow-xl border border-black/5 flex">
                         <div class="rounded-full m-1 h-10 w-10 overflow-hidden bg-white shadow-lg border border-black/5 flex-none">
                         <!-- {{ user}} -->
                             <img :src="user.image" class="w-full h-full object-cover" />
                         </div>
-                        <input type="text" v-model="newComment.comment" class="h-full w-full pl-2 focus:outline-none bg-transparent" />
+
+                        <InputUtilsTextarea class="w-full my-1" :singleLine="true" :placeholder="'Write your comment...'" />
+                        <!-- <input type="text" v-model="newComment.comment" class="h-full w-full pl-2 focus:outline-none bg-transparent" /> -->
                     </div>
                 </form>
             </div>

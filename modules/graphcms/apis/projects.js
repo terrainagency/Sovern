@@ -49,7 +49,7 @@ export default (graphcmsConfig) => {
                         title
                         moodboard {
                             id
-                            moodboardImages(first: 2) {
+                            images(first: 2) {
                                 url
                             }
                         }

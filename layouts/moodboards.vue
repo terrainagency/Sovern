@@ -33,10 +33,11 @@
       </template>
       <div v-show="!isLoggedIn" id="googleButton"></div>
     </header>
+
     <div class="flex h-full">
       <Navigation v-bind:page="'moodboards'" />
 
-      <main class="h-full w-full bg-white pl-10 pr-16 pb-5 flex">
+      <main class="w-full bg-white pl-10 pr-16 pb-5 flex">
         <Nuxt />
       </main>
     </div>

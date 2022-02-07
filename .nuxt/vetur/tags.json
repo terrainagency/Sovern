@@ -41,48 +41,6 @@
   "Waitlist": {
     "description": "Auto imported from components/Waitlist.vue"
   },
-  "CardAutomation": {
-    "description": "Auto imported from components/Card/Automation.vue"
-  },
-  "InputAutomationAction": {
-    "description": "Auto imported from components/Input/AutomationAction.vue"
-  },
-  "InputClient": {
-    "description": "Auto imported from components/Input/Client.vue"
-  },
-  "InputDatePicker": {
-    "description": "Auto imported from components/Input/DatePicker.vue"
-  },
-  "InputDateTimeScheduler": {
-    "description": "Auto imported from components/Input/DateTimeScheduler.vue"
-  },
-  "InputHour": {
-    "description": "Auto imported from components/Input/Hour.vue"
-  },
-  "InputImageUploader": {
-    "description": "Auto imported from components/Input/ImageUploader.vue"
-  },
-  "InputLocation": {
-    "description": "Auto imported from components/Input/Location.vue"
-  },
-  "InputMoodboard": {
-    "description": "Auto imported from components/Input/Moodboard.vue"
-  },
-  "InputPrice": {
-    "description": "Auto imported from components/Input/Price.vue"
-  },
-  "InputTaskCondition": {
-    "description": "Auto imported from components/Input/TaskCondition.vue"
-  },
-  "InputTextarea": {
-    "description": "Auto imported from components/Input/Textarea.vue"
-  },
-  "InputToggle": {
-    "description": "Auto imported from components/Input/Toggle.vue"
-  },
-  "InputWorkflow": {
-    "description": "Auto imported from components/Input/Workflow.vue"
-  },
   "ModalCreateAutomation": {
     "description": "Auto imported from components/Modal/CreateAutomation.vue"
   },
@@ -104,7 +62,49 @@
   "ModalViewProject": {
     "description": "Auto imported from components/Modal/ViewProject.vue"
   },
+  "CardAutomation": {
+    "description": "Auto imported from components/Card/Automation.vue"
+  },
+  "InputAutomationAction": {
+    "description": "Auto imported from components/Input/AutomationAction.vue"
+  },
+  "InputClient": {
+    "description": "Auto imported from components/Input/Client.vue"
+  },
+  "InputImageUploader": {
+    "description": "Auto imported from components/Input/ImageUploader.vue"
+  },
+  "InputLocation": {
+    "description": "Auto imported from components/Input/Location.vue"
+  },
+  "InputMoodboard": {
+    "description": "Auto imported from components/Input/Moodboard.vue"
+  },
+  "InputTaskCondition": {
+    "description": "Auto imported from components/Input/TaskCondition.vue"
+  },
+  "InputWorkflow": {
+    "description": "Auto imported from components/Input/Workflow.vue"
+  },
+  "InputUtilsDatePicker": {
+    "description": "Auto imported from components/Input/Utils/DatePicker.vue"
+  },
+  "InputUtilsDateTimeScheduler": {
+    "description": "Auto imported from components/Input/Utils/DateTimeScheduler.vue"
+  },
   "InputUtilsDropdown": {
     "description": "Auto imported from components/Input/Utils/Dropdown.vue"
+  },
+  "InputUtilsHour": {
+    "description": "Auto imported from components/Input/Utils/Hour.vue"
+  },
+  "InputUtilsPrice": {
+    "description": "Auto imported from components/Input/Utils/Price.vue"
+  },
+  "InputUtilsTextarea": {
+    "description": "Auto imported from components/Input/Utils/Textarea.vue"
+  },
+  "InputUtilsToggle": {
+    "description": "Auto imported from components/Input/Utils/Toggle.vue"
   }
 }
