@@ -3,10 +3,10 @@
         <button v-if="!search" v-on:click.prevent="showList = true" class="input input-md mb-2">{{ selectedTitle }}</button>
         <input v-else type="text" @click.prevent="showList = true" @keyup="filter" class="input input-md mb-2" v-model="selectedTitle" :placeholder="placeholder">
 
-        <div :class="showList?'z-50 absolute w-full bg-white border rounded-md border-black/10 shadow-lg max-h-48 overflow-y-scroll':'hidden'">
+        <div :class="showList?'z-50 absolute w-full bg-white border rounded-lg border-black/10 shadow-lg max-h-48 overflow-y-scroll':'hidden'">
             <div v-for="(option, i) in filteredOptions" :key="`${i}-${_uid}-${option.value}`" class="">
-                <input type="radio" name="selection" :id="`${_uid}${option.value}${i}`" @change="selectOptionWithValues(option, i)" v-model="selectedValue" />
-                <label :for="`${_uid}${option.value}${i}`" class="dropdown flex justify-between py-2 hover:bg-white-100 select-none px-3 text-sm">{{ option.title }}</label>
+                <input type="radio" name="selection" :id="`${_uid}${option.title.replace(':', '')}${i}`" @change="selectOptionWithValues(option.title)" v-model="selectedValue" :value="option.value" />
+                <label :for="`${_uid}${option.title.replace(':', '')}${i}`" class="dropdown flex justify-between py-2 hover:bg-white-100 select-none px-3 text-sm">{{ option.title }}</label>
             </div>
         </div>
     </div>
@@ -33,8 +33,8 @@ export default {
     data() {
         return {
             showList: false,
+            selectedValue: '',
             selectedTitle: '',
-            selectedValue: null,
             filteredOptions: this.options
         }
     },
@@ -44,9 +44,10 @@ export default {
         }
     },
     methods: {
-        selectOptionWithValues(option, i) {
-            this.selectedTitle = option.title
-            this.selectedValue = option.value
+        selectOptionWithValues(title) {
+            this.selectedTitle = title
+            // this.selectedValue = option.value
+            console.log(this.selectedValue)
             this.$emit('update-value', this.selectedValue)
             this.showList = false
         },

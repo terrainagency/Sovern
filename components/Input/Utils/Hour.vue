@@ -3,7 +3,7 @@
         
             <InputUtilsDropdown ref="startTime" v-if="loaded" :options="start" :search="true" @update-value="updateStart" class="tracking-wider flex-grow mr-1" />
             <!-- <InputUtilsDropdown :options="['AM', 'PM']" class="w-16" /> -->
-            <span class="flex-none">to</span>
+            <span class="flex-none px-3 text-gray/50">to</span>
             <InputUtilsDropdown ref="endTime" v-if="loaded" :options="end" :search="true" @update-value="updateEnd" class="tracking-wider flex-grow ml-1" />
         <!-- <InputUtilsDropdown :options="['AM', 'PM']" class="w-16" /> -->
     </div>
@@ -47,7 +47,7 @@ export default {
         updateStart(e) {    
             console.log(e)
             // Remove end time if end time is before start time
-            if(this.endTime < this.startTime) this.$refs.endTime.clear()
+            if(this.endTime > this.startTime) this.$refs.endTime.clear()
             
             this.end = this.end.filter(time => time.value > e)
         },
