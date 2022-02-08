@@ -38,7 +38,7 @@
                         </template> -->
                         <div class="mb-2">
                             <div class="text-sm mb-1">Date</div>
-                            <InputDatePicker @update-date="updateDate" class="mb-4" />
+                            <InputUtilsDatePicker @update-value="updateDate" :past="true" class="mb-4" />
                         </div>  
                         <div class="mb-2">
                             <div class="text-sm mb-1">Workflow</div>

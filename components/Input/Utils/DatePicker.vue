@@ -1,17 +1,13 @@
 <template>
     <div class="relative">
-        <!-- <div class="text-center">March 26th, 1995</div> -->
-        <input type="text" class="input input-md" @focus="showDatePicker = true">
-        <!-- Dates -->
-        <div v-if="showDatePicker" class="absolute w-full z-50 p-2 bg-white border border-white-200 rounded-xl shadow-xl select-none">
-            <!-- Hidden input -->
-            <!-- <input type="text" name="startTime" :value="`${selectedDate}T${selectedTime}`" disabled  class="hidden"/>
-            <input type="text" name="endTime" :value="endTime" disabled  class="hidden"/> -->
+        <input type="text" class="input input-md focus:border-black mb-2" v-model="output" @focus="show = true">
+
+        <div v-if="show" class="absolute w-full z-50 p-2 bg-white border border-white-200 rounded-xl shadow-xl select-none">
 
             <!-- Navigation -->
             <nav class="grid grid-cols-7 gap-2 mb-5">
                 <div>
-                    <div v-if="showPrev" v-on:click="prevMonth" role="button" class="flex justify-center items-center h-10 select-none" tabindex="0">
+                    <div v-if="showPrev" v-on:click="prev" role="button" class="flex justify-center items-center h-10 select-none" tabindex="0">
                         <div class="border-l border-b border-black transform rotate-45 h-2 w-2"></div>
                     </div>
                 </div>
@@ -19,99 +15,87 @@
                     <div ref="month" class="h-full flex items-center justify-center text-lg">{{ month }} {{ year }}</div>
                 </div>
                 <div>
-                    <div v-if="showNext" v-on:click="nextMonth" role="button" class="flex justify-center items-center h-10 select-none" tabindex="0">
+                    <div v-if="showNext" v-on:click="next" role="button" class="flex justify-center items-center h-10 select-none" tabindex="0">
                         <div class="border-r border-t border-black transform rotate-45 h-2 w-2"></div>
                     </div>
                 </div>
             </nav>
 
             <!-- Days -->
-            <div class="grid grid-cols-7 gap-2 tracking-wider relative">
+            <div class="">
+                <ul class="grid grid-cols-7 tracking-wider relative text-gray/50">
+                    <li v-for="day in daysArr" :key="day" class="text-center mb-2">{{ day.charAt(0) }}</li>
+                </ul>
 
-                <div v-for="(day, i) in days" :key="`d${day}-${i}`" class="w-full flex items-center justify-center text-black opacity-30 select-none">{{ daysAbbr[i] }}</div>
-                    
-                <!-- Fallback for deselection -->
-                <input type="radio" v-on:change="updateDate" ref="dayFallback" name="r9n32d0m" :value="undefined" v-model="selectedDay" />
-
-                <div v-for="(day, i) in currentMonthDays" :key="`cmd${day}-${i}`" class="w-full pb-full relative">
-
-                    <div v-if="day" class="absolute h-full w-full flex items-center justify-center">
-                        <template v-if="day.available">
-                            <input v-on:change="updateDate" type="radio" name="r9n32d0m" :id="`m${month}d${day.date}i${i}`" :value="day.value" v-model="selectedDay" />
-                            <label :for="`m${month}d${day.date}i${i}`" class="input-date absolute top-0 right-0 left-0 bottom-0 hover:bg-white-100 rounded-full transition duration-150 flex items-center justify-center" role="button" tabindex="0">{{ day.date }}</label>
-                        </template>
-                        <div v-else class="opacity-50 absolute top-0 right-0 left-0 bottom-0 flex items-center justify-center">{{ day.date }}</div>
-                        
-                        <div v-if="day.current" class="w-1 h-1 rounded-full bg-black absolute left-1/2 transform -translate-x-1/2 bottom-2"></div>
-                    </div>
-                </div>
+                <ul class="grid grid-cols-7 tracking-wider relative">
+                    <li v-for="(day, i) in days" :key="day.date" class="relative text-center pb-full">
+                        <input v-if="day.available" v-on:change="updateDate" type="radio" name="date" :id="`m${month}d${day.date}i${i}`" :value="day.value" v-model="selectedDate" />
+                        <label v-if="day.available" :for="`m${month}d${day.date}i${i}`" class="input-date absolute top-0 right-0 left-0 bottom-0 hover:bg-white-100 rounded-full transition duration-150 flex items-center justify-center" role="button" tabindex="0">
+                            {{ day.date }}
+                            <svg v-if="day.current" class="absolute bottom-2 w-1 h-1 fill-current" viewBox="0 0 10 10">
+                                <circle cx="5" cy="5" r="5"/>
+                            </svg>
+                        </label>
+                    </li>
+                </ul>
             </div>
-            
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    data() { 
-        return {
-            showDatePicker: false,
-            months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-            days: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
-            daysAbbr: ['S','M','T','W','T','F','S'],
-            now: new Date(),
-            currentYear: new Date().getFullYear(),
-            currentMonth: new Date().getMonth(),
-            currentDate: new Date().getDate(),
-            monthNum: new Date().getMonth(),
-            year: new Date().getFullYear(),
-            month: undefined,
-            selectedDay: undefined,
-            selectedDate: undefined,
-            trueStartDate: new Date(this.startDate),
-            trueEndDate: new Date(this.endDate),
-            showPrev: false,
-            showNext: true,
-            currentMonthDays: undefined
+    props: {
+        past: {
+            type: Boolean,
+            default: false,
+            required: false
         }
     },
+    data() {
+        return {
+            show: false,
+            showPast: this.pase,
+            showPrev: this.past,
+            showNext: true,
+            now: new Date(),
+            monthsArr: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            daysArr: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+            month: new Date().getMonth(),
+            year: new Date().getFullYear(),
+            date: new Date().getDate(),
+            days: [],
+            selectedDate: undefined,
+            output: undefined
+        }
+    },
+    mounted() {
+        this.month = this.monthsArr[this.month]
+        this.populateDates()
+    },
     methods: {
-        prevMonth: function() {
-            let newMonth = this.months.indexOf(this.month) - 1;
-            if(newMonth < 0) { newMonth = 11; this.year--; }
-            this.month = this.months[newMonth];
+        updateDate() {
+            const date = `${this.month} ${this.selectedDate}, ${this.year}`
+            this.output = date
+            this.$emit('update-value', this.output)
 
-            this.populateDates();
+            this.show = false
         },
-        nextMonth: function() {
-            let newMonth = this.months.indexOf(this.month) + 1;
-            if(newMonth > 11) { newMonth = 0; this.year++; }
-            this.month = this.months[newMonth];
+        populateDates() {
+            const days = []
+            const monthStartDate = new Date(`${this.month} 01, ${this.year}`)
+            const firstDayOfMonth = monthStartDate.getDay()
+            const totalDaysOfMonth = new Date(this.year, this.monthsArr.indexOf(this.month) + 1, 0).getDate();
 
-            this.populateDates();
-        },
-        populateDates: function() {
-            let days = []
-            let obj = {}
-            let monthStartDate = new Date(`${this.month} 01, ${this.year}`)
+            // Empty month days
+            for(var i = 0; i < firstDayOfMonth; i++) { days.push("") }
 
-            this.monthNum = this.months.indexOf(this.month) + 1
-            if(this.monthNum < 10) { this.monthNum = `0${this.monthNum}`}
-
-            // Hide prev button for past tense months
-            if(monthStartDate <= this.now) { this.showPrev = false } else { this.showPrev = true }
-
-            const firstDay = monthStartDate.getDay()
-            for(var i = 0; i < firstDay; i++) { days.push("") }
-            const totalDays = new Date(this.year, this.months.indexOf(this.month) + 1, 0).getDate();
-
-        
-            for(var i = 0; i < totalDays; i++) { 
+            for(var i = 0; i < totalDaysOfMonth; i++) { 
                 // Show available dates
                 let obj = {
                     date: i+1,
                     current: this.isDateCurrent(i+1),
-                    available: this.isDateAvailable(i+1),
+                    available: true,
                     value: (() => {
                         let val = i+1
                         if(i < 9) { val = `0${val}`}
@@ -121,50 +105,31 @@ export default {
                 days.push(obj) 
             }
 
-            this.currentMonthDays = days
+            this.days = days
         },
-        isDateCurrent: function(i) {
-            return this.currentDate === i && this.currentMonth === this.month && this.currentYear === this.year
+        isDateCurrent(i) {
+            return this.now.getDate() === i && this.now.getMonth() === this.monthsArr.indexOf(this.month) && this.now.getFullYear() === this.year
         },
-        isDateAvailable(i) {
-            let val = true
-            if(this.currentDate-1 >= i && this.currentMonth === this.month && this.currentYear === this.year) val = false
-            return val
+        next() {
+            let newMonth = this.monthsArr.indexOf(this.month) + 1;
+            if(newMonth > 11) { newMonth = 0; this.year++; }
+            this.month = this.monthsArr[newMonth];
+
+            // Show/Hide Prev
+            if(this.showPast && this.monthsArr.indexOf(this.month) !== this.now.getMonth()) this.showPrev = true
+
+            this.populateDates();
         },
-        updateDate() {
-            if(this.selectedDay != "") this.selectedDate = `${this.months[parseInt(this.monthNum) - 1]} ${this.selectedDay}, ${this.year}`
-            this.$emit('update-date', this.selectedDate)
+        prev() {
+            let newMonth = this.monthsArr.indexOf(this.month) - 1;
+            if(newMonth < 0) { newMonth = 11; this.year--; }
+            this.month = this.monthsArr[newMonth];
+
+            // Show/Hide Prev
+            if(this.showPast && this.monthsArr.indexOf(this.month) === this.now.getMonth()) this.showPrev = false
+
+            this.populateDates();
         }
-    },
-    mounted() {
-        this.month = this.months[this.monthNum];
-        this.currentMonth = this.months[this.currentMonth];
-
-        // If this.startDate is earlier than today, change start date to today + this.schedulingBuffer
-
-
-        if(this.startDate === null || this.trueStartDate < this.now) {
-            let newStartDate = new Date()
-            newStartDate.setDate(newStartDate.getDate() + parseInt(this.schedulingBuffer))
-
-            this.trueStartDate = newStartDate;
-        }
-
-
-        if(this.endDate == null && this.schedulingRange !== null) {
-            let rangeEnd = new Date();
-            rangeEnd.setDate(rangeEnd.getDate() + parseInt(this.schedulingRange))
-
-            if(this.trueEndDate == undefined || this.trueEndDate > rangeEnd) {
-                this.trueEndDate = rangeEnd
-            }
-        }
-
-        console.log(this.trueStartDate)
-        console.log(this.trueEndDate)
-
-
-        this.populateDates();
     }
 }
 </script>
