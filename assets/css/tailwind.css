@@ -50,6 +50,8 @@
     /* label.checkbox { @apply w-full bg-transparent border border-gray-800 rounded-lg text-center cursor-pointer flex items-center justify-center text-gray transition duration-150; } */
     input[type="radio"]:checked + label.checkbox { @apply border-black text-black; }
 
+    input[type="radio"]:checked + label.dropdown { @apply bg-black text-white; }
+
     /* Textarea */
     .textarea-sm { 
         @apply overflow-hidden scrollbar-none resize-none p-2; 

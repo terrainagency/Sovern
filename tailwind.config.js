@@ -10,7 +10,7 @@ theme: {
         xl: '1440px',
     },
     fontFamily: {
-        'body': ['"PP Radio Grotesk"', 'ui-sans-serif', 'system-ui', 'Helvetica Neue', 'Helvetica']
+        'body': ['"Gilroy"', 'ui-sans-serif', 'system-ui', 'Helvetica Neue', 'Helvetica']
     },
     colors: {
         white: {
