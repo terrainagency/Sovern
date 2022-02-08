@@ -45,14 +45,13 @@ export default {
     },
     methods: {
         updateStart(e) {    
-            console.log(e)
-            // Remove end time if end time is before start time
-            if(this.endTime > this.startTime) this.$refs.endTime.clear()
-            
+            this.startTime = e
+
+            if(this.startTime >= this.endTime) this.$refs.endTime.clear()
             this.end = this.end.filter(time => time.value > e)
         },
         updateEnd(e) {
-            console.log(e)
+            this.endTime = e
         }
     }
 }

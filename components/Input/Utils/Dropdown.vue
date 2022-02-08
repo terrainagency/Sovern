@@ -5,7 +5,7 @@
 
         <div :class="showList?'z-50 absolute w-full bg-white border rounded-lg border-black/10 shadow-lg max-h-48 overflow-y-scroll':'hidden'">
             <div v-for="(option, i) in filteredOptions" :key="`${i}-${_uid}-${option.value}`" class="">
-                <input type="radio" name="selection" :id="`${_uid}${option.title.replace(':', '')}${i}`" @change="selectOptionWithValues(option.title)" v-model="selectedValue" :value="option.value" />
+                <input type="radio" :name="`${_uid}-selection`" :id="`${_uid}${option.title.replace(':', '')}${i}`" @change="selectOptionWithValues(option.title)" v-model="selectedValue" :value="option.value" />
                 <label :for="`${_uid}${option.title.replace(':', '')}${i}`" class="dropdown flex justify-between py-2 hover:bg-white-100 select-none px-3 text-sm">{{ option.title }}</label>
             </div>
         </div>
