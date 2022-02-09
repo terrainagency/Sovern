@@ -1,6 +1,6 @@
 <template>
     <div class="relative">
-        <div @click="show = !show" class="relative bg-gray/20 rounded-xl w-full h-64 card overflow-hidden flex flex-wrap" role="button">
+        <div @click="open" class="relative bg-gray/20 rounded-xl w-full h-64 card overflow-hidden flex flex-wrap" role="button">
             <div v-if="!selected.title" class="bg-white-300 absolute left-1/2 top-0 right-0 bottom-0"></div>
             <div v-for="image in selected.images" :key="image.id" class="w-1/3 h-1/2">
                 <img :src="image.url" class="w-full h-full object-cover">
@@ -14,7 +14,7 @@
         <button v-if="selected.title" @click="selected = {}; output = null" class="absolute top-2 right-2 w-8 h-8 bg-black/50 hover:bg-black shadow-sm transition duration-150 rounded-full z-50 text-white flex items-center justify-center">x</button>
 
         <div v-if="show" class="absolute overflow-x-hidden p-2 rounded-xl card mt-2 z-10 w-full">
-            <input @keyup="filter" type="text" class="input input-sm">
+            <input @keyup="filter" type="text" class="input input-sm" v-model="search">
             <ul class="flex flex-wrap py-1">
                 <li v-for="moodboard in moodboards" :key="moodboard.id" class="w-full py-1">
                     <input type="radio" name="moodboard" :id="moodboard.id" :value="moodboard.id" v-model="output">
@@ -42,7 +42,8 @@ export default {
             options: [],
             moodboards: [],
             selected: {},
-            output: null
+            output: null,
+            search: ''
         }
     },
     mounted() {
@@ -53,9 +54,22 @@ export default {
             this.options = (await unWrap(await fetch(`/api/moodboards/list`))).json
             this.moodboards = this.options
         },
-        filter(e) {
-            const value = e.target.value
-            let regex = new RegExp(value, 'gi')
+        open() {
+            if(!this.show) window.addEventListener('click', this.close)
+            this.show = true
+        },
+        close(e) {
+            if (!this.$el.contains(e.target)) {
+                this.show = false;
+                window.removeEventListener('click', this.close)
+                // Clear search
+                this.search = ''
+                this.filter()
+            }
+        },
+        filter() {
+            // const value = e.target.value
+            let regex = new RegExp(this.search, 'gi')
 
             this.moodboards = this.options.filter(obj => obj.title.match(regex))
         },
