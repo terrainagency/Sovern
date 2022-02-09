@@ -59,6 +59,9 @@
   "InputMoodboard": {
     "description": "Auto imported from components/Input/Moodboard.vue"
   },
+  "InputPrice": {
+    "description": "Auto imported from components/Input/Price.vue"
+  },
   "InputStartEnd": {
     "description": "Auto imported from components/Input/StartEnd.vue"
   },
@@ -100,9 +103,6 @@
   },
   "InputUtilsDropdown": {
     "description": "Auto imported from components/Input/Utils/Dropdown.vue"
-  },
-  "InputUtilsPrice": {
-    "description": "Auto imported from components/Input/Utils/Price.vue"
   },
   "InputUtilsTextarea": {
     "description": "Auto imported from components/Input/Utils/Textarea.vue"

@@ -52,6 +52,16 @@
 
     input[type="radio"]:checked + label.dropdown { @apply bg-white-100; }
 
+    /* Numbers */
+    input[type="number"] {
+        -moz-appearance:textfield;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
     /* Textarea */
     .textarea-sm { 
         @apply overflow-hidden scrollbar-none resize-none p-2; 

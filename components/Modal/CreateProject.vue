@@ -65,7 +65,7 @@
                         
                         <div class="mb-2">
                             <div class="text-sm mb-1">Price</div>
-                            <!-- <InputPrice /> -->
+                            <InputPrice />
                         </div>
                     </fieldset>
                 </div>
