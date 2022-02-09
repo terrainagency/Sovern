@@ -3,7 +3,7 @@
     
         <div ref="map" class="absolute top-0 left-0 right-0 bottom-0"></div>
             <!-- <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 bg-white text-gray transition duration-150 font-normal shadow-md rounded-full py-2 px-4">Get directions</span> -->
-        <input class="relative input-sm bg-white shadow-lg rounded-full border-white-200 w-full" type="text" ref="locationSelector" v-model="address" autocomplete="off" placeholder="Location" v-on:changed="updateAddress">
+        <input class="relative input-sm bg-white shadow-lg rounded-full border-white-200 w-full focus:outline-none" type="text" ref="locationSelector" v-model="address" autocomplete="off" placeholder="Location" v-on:changed="updateAddress">
 
     </div>
 

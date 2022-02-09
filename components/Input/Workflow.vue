@@ -1,6 +1,6 @@
 <template>
     <div>
-       <InputUtilsDropdown :options="options" :search="true" :placeholder="'workflow'" @update-value="update" />
+       <InputUtilsDropdown :options="options" :search="true" @update-value="update" />
     </div>
 </template>
 <script>
