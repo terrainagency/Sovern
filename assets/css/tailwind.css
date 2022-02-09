@@ -10,6 +10,7 @@
 }
 
 @layer base {
+    /* * { outline: solid 1px red; } */
     p { @apply mb-2; }
     a { @apply font-bold; }
     p a { @apply underline cursor-pointer; }
@@ -62,6 +63,8 @@
         -webkit-appearance: none;
         margin: 0;
     }
+
+    .highlight-parent:hover .highlight { @apply opacity-100; }
 
     /* Textarea */
     .textarea-sm { 

@@ -20,8 +20,13 @@
                 <div class="flex -mx-2">
                     <fieldset class="w-1/2 mx-2">
                         <InputMoodboard class="mb-4" />
-                        <InputLocation class="mb-8" />
+                        <InputLocation class="mb-4" />
 
+                        <button @click="showDirections = true" v-if="!showDirections" class="text-sm text-gray px-2 hover:text-black">+ Directions</button>
+                        <div v-if="showDirections">
+                            <div class="text-sm mb-1">Directions</div>
+                            <InputUtilsTextarea class="input input-md" :placeholder="'Directions'" />
+                        </div>
                         
 
                     </fieldset>
@@ -83,6 +88,7 @@ export default {
     data() {
         return {
             show: false,
+            showDirections: false,
             projectList: [],
             project: {
                 address: '',
