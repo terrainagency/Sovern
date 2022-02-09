@@ -51,6 +51,7 @@
     input[type="radio"]:checked + label.checkbox { @apply border-black text-black; }
 
     input[type="radio"]:checked + label.dropdown { @apply bg-white-100; }
+    input[type="radio"]:checked + label.moodboard .title { @apply text-black }
 
     /* Numbers */
     input[type="number"] {
@@ -85,7 +86,7 @@
     /* py-4 px-8 rounded-full w-full bg-white shadow-sm */
     /* Tables */
     table { border-spacing: 1em; }
-    td { @apply h-14 text-gray; }
+    td { @apply h-14; }
     th.status, td.status { @apply w-12 lg:w-36 xl:w-48 text-center; }
     .status button { @apply w-full h-full rounded-md text-center select-none; }
     th { @apply py-3 text-left font-normal; }
@@ -114,6 +115,12 @@
     /* Gallery Images */
     .image:focus { outline: none; }
     .image:hover + .credits, .image:focus + .credits { @apply lg:translate-y-0 lg:opacity-100; }
+
+
+
+
+
+    .card { @apply bg-white border border-black/5 shadow-lg; }
 
     .bg-graydient {
         /* background: linear-gradient(135deg, #8980dc 0%, #d2dc7f 100%) */

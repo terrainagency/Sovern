@@ -1,14 +1,14 @@
 <template>
     <!-- NOTE: Update the background to a blur via canvas -->
     <div class="h-full">
-        <button @click="show = true" class="w-full border border-white-200 rounded-md h-full text-gray hover:text-black">Create new project</button>
+        <button @click="show = true" class="w-full border border-white-200 rounded-md h-full hover:text-black">Create new project</button>
         
         <div v-if="show" @click.self="show = false" class="fixed top-0 left-0 flex items-center justify-center overflow-scroll w-screen h-screen bg-black/10">
 
             <form ref="modal" v-on:submit.prevent="createProject" class="relative w-full max-w-screen-md pt-6 px-4 pb-6 rounded-xl shadow-xl bg-white border border-white-100">
-                <button @click="show = false" class="h-12 w-12 bg-white hover:text-gray border border-gray/10 transition duration-150 shadow-md rounded-full flex items-center justify-center absolute top-3 -left-6">
+                <!-- <button @click="show = false" class="h-12 w-12 bg-white hover:text-gray border border-gray/10 transition duration-150 shadow-md rounded-full flex items-center justify-center absolute top-3 -left-6">
                     <div class="h-2 w-2 border-l-2 border-b-2 border-current transform rotate-45"></div>
-                </button>
+                </button> -->
 
                 
 
