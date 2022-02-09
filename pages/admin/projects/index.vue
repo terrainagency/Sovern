@@ -34,7 +34,9 @@
                 <td class="status"><button class="hover:bg-white-100"> </button></td> -->
             </tr>
             <tr>
-                <td class="mb-2"><ModalCreateProject /></td>
+                <td class="mb-2">
+                    <ModalCreateProject />
+                </td>
             </tr>
         </table>
 
@@ -61,7 +63,8 @@ export default {
             showProjectModal: false,
             workflowID: "ckz768n9c01vl0b81l32elx66",
             automations: [],
-            taskHeaders: []
+            taskHeaders: [],
+            showCreateProject: false,
         }
     },
     mounted() {

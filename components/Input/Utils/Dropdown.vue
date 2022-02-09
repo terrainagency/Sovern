@@ -1,9 +1,9 @@
 <template>
     <div class="relative">
-        <button v-if="!search" v-on:click.prevent="showList = true" class="input input-md mb-2">{{ selectedTitle }}</button>
-        <input v-else type="text" @click.prevent="showList = true" @keyup="filter" class="input input-md mb-2" v-model="selectedTitle" :placeholder="placeholder">
+        <button v-if="!search" @click="open" class="input input-md mb-2">{{ selectedTitle }}</button>
+        <input v-else type="text" @click="open" @keyup="filter" class="input input-md mb-2" v-model="selectedTitle" :placeholder="placeholder">
 
-        <div :class="showList?'z-50 absolute w-full bg-white border rounded-lg border-black/10 shadow-lg max-h-48 overflow-y-scroll':'hidden'">
+        <div ref="menu" :class="show?'z-50 absolute w-full bg-white border rounded-lg border-black/10 shadow-lg max-h-48 overflow-y-scroll':'hidden'">
             <div v-for="(option, i) in filteredOptions" :key="`${i}-${_uid}-${option.value}`" class="">
                 <input type="radio" :name="`${_uid}-selection`" :id="`${_uid}${option.title.replace(':', '')}${i}`" @change="selectOptionWithValues(option.title)" v-model="selectedValue" :value="option.value" />
                 <label :for="`${_uid}${option.title.replace(':', '')}${i}`" class="dropdown flex justify-between py-2 hover:bg-white-100 select-none px-3 text-sm">{{ option.title }}</label>
@@ -32,7 +32,7 @@ export default {
     },
     data() {
         return {
-            showList: false,
+            show: false,
             selectedValue: '',
             selectedTitle: '',
             filteredOptions: this.options
@@ -49,7 +49,17 @@ export default {
             // this.selectedValue = option.value
             console.log(this.selectedValue)
             this.$emit('update-value', this.selectedValue)
-            this.showList = false
+            this.show = false
+        },
+        open() {
+            if(!this.show) window.addEventListener('click', this.close)
+            this.show = true
+        },
+        close(e) {
+            if (!this.$el.contains(e.target)) {
+                this.show = false;
+                window.removeEventListener('click', this.close)
+            }
         },
         filter(e) {
             const value = e.target.value

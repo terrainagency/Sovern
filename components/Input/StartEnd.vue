@@ -1,11 +1,8 @@
 <template>
     <div class="flex items-center justify-between">
-        
-            <InputUtilsDropdown ref="startTime" v-if="loaded" :options="start" :search="true" @update-value="updateStart" class="tracking-wider flex-grow mr-1" />
-            <!-- <InputUtilsDropdown :options="['AM', 'PM']" class="w-16" /> -->
-            <span class="flex-none px-3 text-gray/50">to</span>
-            <InputUtilsDropdown ref="endTime" v-if="loaded" :options="end" :search="true" @update-value="updateEnd" class="tracking-wider flex-grow ml-1" />
-        <!-- <InputUtilsDropdown :options="['AM', 'PM']" class="w-16" /> -->
+        <InputUtilsDropdown ref="startTime" v-if="loaded" :options="start" :search="true" :placeholder="'Start'" @update-value="updateStart" class="tracking-wider flex-grow mr-1" />
+        <span class="flex-none px-3 text-gray/50">to</span>
+        <InputUtilsDropdown ref="endTime" v-if="loaded" :options="end" :search="true" :placeholder="'End'" @update-value="updateEnd" class="tracking-wider flex-grow ml-1" />
     </div>
 </template>
 

@@ -1,5 +1,35 @@
 <template>
     <div>
-        <input type="text" placeholder="Workflow" class="input input-md mb-2">
+       <InputUtilsDropdown :options="options" :search="true" :placeholder="'workflow'" @update-value="update" />
     </div>
 </template>
+<script>
+import { unWrap } from '~/utils/fetchUtils'
+export default {
+    data() {
+        return {
+            workflows: [],
+            options: []
+        }
+    },
+    mounted() {
+        this.getWorkflows().then(() => {
+            this.workflows.forEach(workflow => {
+                this.options.push({
+                    title: workflow.title,
+                    value: workflow.id
+                })
+            })
+        })
+        
+    },
+    methods: {
+        async getWorkflows() {
+            this.workflows = (await unWrap(await fetch(`/api/workflows/listing`))).json
+        },
+        update(e) {
+            console.log(e)
+        }
+    }
+}
+</script>

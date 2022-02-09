@@ -59,6 +59,9 @@
   "InputMoodboard": {
     "description": "Auto imported from components/Input/Moodboard.vue"
   },
+  "InputStartEnd": {
+    "description": "Auto imported from components/Input/StartEnd.vue"
+  },
   "InputTaskCondition": {
     "description": "Auto imported from components/Input/TaskCondition.vue"
   },
@@ -97,9 +100,6 @@
   },
   "InputUtilsDropdown": {
     "description": "Auto imported from components/Input/Utils/Dropdown.vue"
-  },
-  "InputUtilsHour": {
-    "description": "Auto imported from components/Input/Utils/Hour.vue"
   },
   "InputUtilsPrice": {
     "description": "Auto imported from components/Input/Utils/Price.vue"
