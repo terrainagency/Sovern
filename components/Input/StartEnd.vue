@@ -46,9 +46,11 @@ export default {
 
             if(this.startTime >= this.endTime) this.$refs.endTime.clear()
             this.end = this.end.filter(time => time.value > e)
+            this.$emit('output', { start: this.startTime, end: this.endTime })
         },
         updateEnd(e) {
             this.endTime = e
+            this.$emit('output', { start: this.startTime, end: this.endTime })
         }
     }
 }

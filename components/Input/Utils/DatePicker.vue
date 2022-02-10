@@ -77,7 +77,7 @@ export default {
         updateDate() {
             const date = `${this.month} ${this.selectedDate}, ${this.year}`
             this.output = date
-            this.$emit('update-value', this.output)
+            this.$emit('output', this.output)
 
             this.show = false
         },

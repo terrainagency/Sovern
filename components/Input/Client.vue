@@ -11,15 +11,14 @@
                     <button @click="removeClient(client)" class="text-gray hover:text-black" title="Remove client">x</button>
                     
                     <div :ref="`dis-${client.id}`" class="pointer-events-none absolute top-0 right-0 left-0 bottom-0 bg-black/5 opacity-0"></div>
-
                 </div>  
             </div>
 
-            <input v-on:click="open" @keyup="searchDropdown" @keyup.delete="removeLastClient" v-model="query" ref="dropdownInput" placeholder="Add client" class="bg-transparent px-2 h-12 w-1/2 flex-grow focus:outline-none">
+            <input @click="open" @keyup="searchDropdown" @keyup.delete="removeLastClient" v-model="query" ref="dropdownInput" placeholder="Add client" class="bg-transparent px-2 h-12 w-1/2 flex-grow focus:outline-none">
         </div>
         
         <div v-if="show" class="z-50 absolute w-full bg-white border rounded-md border-black/10 shadow-lg max-h-48 overflow-y-scroll scrollbar-none">
-            <div v-for="option in options" :key="`list-${option.id}`" v-on:click="addClient(option)" class="highlight-parent relative flex justify-between py-2 select-none px-3 text-sm">
+            <div v-for="option in options" :key="`list-${option.id}`" @click="addClient(option)" class="highlight-parent relative flex justify-between py-2 select-none px-3 text-sm">
                 <div class="relative overflow-x-hidden mr-2 flex-grow">
                     <span class="text-sm whitespace-nowrap">{{ option.firstName }} {{ option.lastName }}</span>
                     <div class="absolute top-0 bottom-0 right-0 bg-gradient-to-l from-white to-transparent w-4"></div>
@@ -27,7 +26,7 @@
                 <span class="text-gray">{{ option.email }}</span>
                 <div class="highlight bg-black/5 opacity-0 absolute top-0 right-0 left-0 bottom-0 pointer-events-none"></div>
             </div>
-            <div v-on:click="createClient = true" class="flex justify-between py-2 hover:bg-white-100 select-none px-3 text-sm text-gray">
+            <div @click="createClient = true" class="flex justify-between py-2 hover:bg-white-100 select-none px-3 text-sm text-gray">
                 Create new client
             </div>
         </div>
@@ -79,6 +78,7 @@ export default {
             this.reset()
             this.show = false
             this.query = ''
+            this.$emit('output', this.selectedClients)
         },
         searchDropdown() {
             if(this.query.length > 0) {
@@ -100,7 +100,6 @@ export default {
                 let target = this.$refs[`dis-${obj.id}`][0]
 
                 if(this.toggleDeletion) { 
-                    console.log("TRIGGER DELETION")
                     this.selectedClients.pop()
                     this.reset()
                 } 

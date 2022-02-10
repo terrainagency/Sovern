@@ -43,22 +43,22 @@
                         </template> -->
                         <div class="mb-2">
                             <div class="text-sm mb-1">Client(s)</div>
-                            <InputClient /> 
+                            <InputClient @output="updateClients" /> 
                         </div>
 
                         <div class="mb-2">
                             <div class="text-sm mb-1">Title</div>
-                            <input class="input input-md mb-2" type="text">
+                            <input v-model="project.title" class="input input-md mb-2" type="text">
                         </div>
 
                         <div class="mb-2">
                             <div class="text-sm mb-1">Date</div>
-                            <InputUtilsDatePicker @update-value="updateDate" :past="true" class="mb-4" />
+                            <InputUtilsDatePicker @output="updateDate" :past="true" class="mb-4" />
                         </div>  
 
                         <div class="mb-2">
                             <div class="text-sm mb-1">Timing</div>
-                            <InputStartEnd class="mb-4" />
+                            <InputStartEnd @output="updateTiming" class="mb-4" />
                         </div>  
                         <div class="mb-2">
                             <div class="text-sm mb-1">Workflow</div>
@@ -78,6 +78,7 @@
                 <button type="submit" class="btn btn-lg btn-black rounded-xl mx-auto mt-8">Create</button>
             </form>
         </div>
+        <div class="absolute top-0 left-0">{{ project }}</div>
     </div>
     
     
@@ -91,6 +92,8 @@ export default {
             showDirections: false,
             projectList: [],
             project: {
+                clients: [],
+                title: '',
                 address: '',
                 latitude: '',
                 longitude: '',
@@ -117,9 +120,12 @@ export default {
                 }
             })
         },
-        updateDate(e) {
-            this.date = e;
-        }
+        updateDate(e) { this.date = e },
+        updateTiming(e) {
+            this.project.startTime = new Date(`${this.date} ${e.start}`)
+            this.project.endTime = new Date(`${this.date} ${e.end}`)
+        },
+        updateClients(e) { this.project.clients = e } 
     }
 }
 </script>
