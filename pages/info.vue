@@ -6,7 +6,7 @@
             <div class="flex flex-col lg:flex-row lg:-mx-1 mb-20 lg:mb-40 overflow-hidden">
                 <div class="w-full lg:w-1/2 lg:mx-1">
                     <div class="relative pb-5/4 w-full">
-                        <img class="absolute w-full h-full object-cover" src="~/assets/images/info.jpg">
+                        <!-- <img class="absolute w-full h-full object-cover" src="~/assets/images/info.jpg"> -->
                     </div>  
                 </div>
                 <div class="w-full mt-4 lg:mt-0 lg:w-1/2 lg:h-full lg:mx-1">

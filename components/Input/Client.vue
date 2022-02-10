@@ -27,10 +27,11 @@
                 <span class="text-gray">{{ option.email }}</span>
                 <div class="highlight bg-black/5 opacity-0 absolute top-0 right-0 left-0 bottom-0 pointer-events-none"></div>
             </div>
-            <div v-on:click="close" class="flex justify-between py-2 hover:bg-white-100 select-none px-3 text-sm text-gray">
+            <div v-on:click="createClient = true" class="flex justify-between py-2 hover:bg-white-100 select-none px-3 text-sm text-gray">
                 Create new client
             </div>
         </div>
+        <ModalCreateClient v-if="createClient" @close="createClient = false" />
     </div>
 </template>
 <script>
@@ -41,6 +42,7 @@ export default {
             selectedClients: [],
             options: [],
             toggleDeletion: false,
+            createClient: false,
             clients: [
                 { id: 'cxw0329dj2dfe4d9jd2901', name: 'Stella Redmer', email: 'stella@gooddog.com' },
                 { id: 'c0wr3asadfsdfedj2d9jdsd', name: 'Patrizio Chiquini', email: 'patrizio@hotmail.com' },
@@ -111,7 +113,8 @@ export default {
                 var textB = b.name.toUpperCase();
                 return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
             });
-        }
+        },
+        
     }
 }
 </script>

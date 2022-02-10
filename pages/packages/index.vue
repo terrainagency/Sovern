@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col items-center">
         <div class="fixed top-0 right-0 left-0 bottom-0 -z-10">
-            <img src="~/assets/images/banner_dark.jpg">
+            <!-- <img src="~/assets/images/banner_dark.jpg"> -->
         </div>
         <BookingHeader></BookingHeader>
 
