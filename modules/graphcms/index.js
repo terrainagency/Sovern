@@ -1,5 +1,6 @@
 import bodyParser from 'body-parser'
 import userRouter from './routers/user'
+import clientsRouter from './routers/clients'
 import projectsRouter from './routers/projects'
 import moodboardsRouter from './routers/moodboards'
 import moodboardImagesRouter from './routers/moodboardImages'
@@ -17,6 +18,7 @@ export default function() {
     this.nuxt.hook('render:setupMiddleware', (app) => {
         app.use(bodyParser.json())
         app.use('/api/user', userRouter(apis))
+        app.use('/api/clients', clientsRouter(apis))
         app.use('/api/projects', projectsRouter(apis))
         app.use('/api/moodboards', moodboardsRouter(apis))
         app.use('/api/moodboardimages', moodboardImagesRouter(apis))

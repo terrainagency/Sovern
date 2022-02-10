@@ -1,6 +1,6 @@
 <template>
     <div class="relative">
-        <button v-if="!search" @click="open" class="input input-md mb-2">{{ selectedTitle }}</button>
+        <button v-if="!search" @click="open" :class="classes"><slot />{{ selectedTitle }}</button>
         <input v-else type="text" @click="open" @keyup="filter" class="input input-md mb-2" v-model="selectedTitle" :placeholder="placeholder">
 
         <div ref="menu" :class="show?'z-50 absolute w-full bg-white border rounded-lg border-black/10 shadow-lg max-h-48 overflow-y-scroll':'hidden'">
@@ -28,6 +28,14 @@ export default {
             type: String,
             default: '',
             required: false
+        },
+        classes: {
+            type: String,
+            required: false,
+        },
+        default: {
+            type: Object,
+            required: false,
         }
     },
     data() {
@@ -41,6 +49,12 @@ export default {
     watch: {
         options: function() {
             this.filteredOptions = this.options
+        }
+    },
+    mounted() {
+        if(this.default) {
+            this.selectedTitle = this.default.title
+            this.selectedValue = this.default.value
         }
     },
     methods: {

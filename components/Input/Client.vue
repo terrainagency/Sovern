@@ -4,7 +4,7 @@
             <div v-for="client in selectedClients" :key="`selected-${client.id}`" class="w-1/2 p-0.5">
                 <div class="relative flex bg-white-100 rounded-md h-full overflow-hidden px-3 py-1 items-center justify-between transition duration-150">
                     <div class="relative overflow-x-hidden mr-2 flex-grow">
-                        <span class="text-sm whitespace-nowrap">{{ client.name }}</span>
+                        <span class="text-sm whitespace-nowrap">{{ client.firstName }} {{ client.lastName }}</span>
                         <div class="absolute top-0 bottom-0 right-0 bg-gradient-to-l from-white-100 to-transparent w-4"></div>
                     </div>
                     
@@ -21,7 +21,7 @@
         <div v-if="show" class="z-50 absolute w-full bg-white border rounded-md border-black/10 shadow-lg max-h-48 overflow-y-scroll scrollbar-none">
             <div v-for="option in options" :key="`list-${option.id}`" v-on:click="addClient(option)" class="highlight-parent relative flex justify-between py-2 select-none px-3 text-sm">
                 <div class="relative overflow-x-hidden mr-2 flex-grow">
-                    <span class="text-sm whitespace-nowrap">{{ option.name }}</span>
+                    <span class="text-sm whitespace-nowrap">{{ option.firstName }} {{ option.lastName }}</span>
                     <div class="absolute top-0 bottom-0 right-0 bg-gradient-to-l from-white to-transparent w-4"></div>
                 </div>
                 <span class="text-gray">{{ option.email }}</span>
@@ -31,10 +31,13 @@
                 Create new client
             </div>
         </div>
+
         <ModalCreateClient v-if="createClient" @close="createClient = false" />
     </div>
 </template>
 <script>
+import { unWrap } from '~/utils/fetchUtils'
+
 export default {
     data() {
         return {
@@ -43,22 +46,21 @@ export default {
             options: [],
             toggleDeletion: false,
             createClient: false,
-            clients: [
-                { id: 'cxw0329dj2dfe4d9jd2901', name: 'Stella Redmer', email: 'stella@gooddog.com' },
-                { id: 'c0wr3asadfsdfedj2d9jdsd', name: 'Patrizio Chiquini', email: 'patrizio@hotmail.com' },
-                { id: 'cwwi329adfdjsderfhghg2d', name: 'Andrew Peters', email: 'afpeters95@gmail.com' },
-                { id: 'c0wr3afdsdfderj2d9jdsd', name: 'Natural Models LA', email: 'patrizio@hotmail.com' },
-                { id: 'cwwi329dsdfwetjsdfhghg2d', name: 'WeSpeak Models New York', email: 'afpeters95@gmail.com' },
-            ],
+            clients: [],
             show: false,
             query: ''
         }
     },
     mounted() {
-        this.sort(this.clients)
-        this.options = this.clients
+        this.getClients().then(() => {
+            this.sort(this.clients)
+            this.options = this.clients
+        })
     },
     methods: {
+        async getClients() {
+            this.clients = (await unWrap(await fetch('/api/clients/list'))).json
+        },
         open() {
             if(!this.show) window.addEventListener('click', this.close)
             this.show = true
@@ -84,7 +86,7 @@ export default {
                 
                 let regex = new RegExp(this.query, 'gi')
                 this.reset()
-                let list = this.options.filter(obj => obj.name.match(regex))
+                let list = this.options.filter(obj => (obj.firstName + " " + obj.lastName ).match(regex))
                 this.options = list
             }
         },
@@ -109,8 +111,8 @@ export default {
         },
         sort(arr) {
             arr.sort(function(a, b) {
-                var textA = a.name.toUpperCase();
-                var textB = b.name.toUpperCase();
+                var textA = (a.firstName + " " + a.lastName).toUpperCase();
+                var textB = (b.firstName  + " " + b.lastName).toUpperCase();
                 return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
             });
         },

@@ -42,5 +42,6 @@ You can directly use them in pages and other components without the need to impo
 - `<InputUtilsDatePickerDisabled>` | `<input-utils-date-picker-disabled>` (components/Input/Utils/DatePickerDisabled.vue)
 - `<InputUtilsDateTimeScheduler>` | `<input-utils-date-time-scheduler>` (components/Input/Utils/DateTimeScheduler.vue)
 - `<InputUtilsDropdown>` | `<input-utils-dropdown>` (components/Input/Utils/Dropdown.vue)
+- `<InputUtilsPhone>` | `<input-utils-phone>` (components/Input/Utils/Phone.vue)
 - `<InputUtilsTextarea>` | `<input-utils-textarea>` (components/Input/Utils/Textarea.vue)
 - `<InputUtilsToggle>` | `<input-utils-toggle>` (components/Input/Utils/Toggle.vue)

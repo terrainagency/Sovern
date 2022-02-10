@@ -107,6 +107,9 @@
   "InputUtilsDropdown": {
     "description": "Auto imported from components/Input/Utils/Dropdown.vue"
   },
+  "InputUtilsPhone": {
+    "description": "Auto imported from components/Input/Utils/Phone.vue"
+  },
   "InputUtilsTextarea": {
     "description": "Auto imported from components/Input/Utils/Textarea.vue"
   },

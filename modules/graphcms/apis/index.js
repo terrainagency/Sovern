@@ -1,4 +1,5 @@
 import userApi from './user'
+import clientsApi from './clients'
 import projectsApi from './projects'
 import moodboardsApi from './moodboards'
 import moodboardImagesApi from './moodboardimages'
@@ -11,6 +12,7 @@ import tasksApi from './tasks'
 export default (graphcmsConfig) => {
     return {
         user: userApi(graphcmsConfig),
+        clients: clientsApi(graphcmsConfig),
         projects: projectsApi(graphcmsConfig),
         moodboards: moodboardsApi(graphcmsConfig),
         moodboardImages: moodboardImagesApi(graphcmsConfig),

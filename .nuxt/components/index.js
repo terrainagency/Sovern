@@ -34,6 +34,7 @@ export { default as InputUtilsDatePicker } from '../../components/Input/Utils/Da
 export { default as InputUtilsDatePickerDisabled } from '../../components/Input/Utils/DatePickerDisabled.vue'
 export { default as InputUtilsDateTimeScheduler } from '../../components/Input/Utils/DateTimeScheduler.vue'
 export { default as InputUtilsDropdown } from '../../components/Input/Utils/Dropdown.vue'
+export { default as InputUtilsPhone } from '../../components/Input/Utils/Phone.vue'
 export { default as InputUtilsTextarea } from '../../components/Input/Utils/Textarea.vue'
 export { default as InputUtilsToggle } from '../../components/Input/Utils/Toggle.vue'
 

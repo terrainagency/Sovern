@@ -75,7 +75,7 @@
                     </fieldset>
                 </div>
 
-                <button type="submit" class="btn btn-lg btn-primary mx-auto mt-8">Create</button>
+                <button type="submit" class="btn btn-lg btn-black rounded-xl mx-auto mt-8">Create</button>
             </form>
         </div>
     </div>

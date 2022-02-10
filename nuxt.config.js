@@ -22,7 +22,7 @@ export default {
         ]
     },
     buildModules: ['@nuxtjs/tailwindcss', '@nuxt/image', '@nuxtjs/dotenv', '@nuxtjs/axios'],
-    plugins: ['~/plugins/graphcms', '~plugins/maps.client', '~/plugins/auth.client'],
+    plugins: ['~/plugins/graphcms', '~plugins/maps.client', '~/plugins/auth.client', '~/plugins/flagpack'],
     modules: ['~/modules/auth', '~/modules/graphcms', '~/modules/cloudinary', '@nuxtjs/cloudinary'],
     cloudinary: {
         cloudName: 'sovern',

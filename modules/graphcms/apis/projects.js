@@ -55,7 +55,8 @@ export default (graphcmsConfig) => {
                         }
                         clients {
                             id
-                            name
+                            firstName
+                            lastName
                         }
                         address
                         geoLocation {
@@ -80,7 +81,8 @@ export default (graphcmsConfig) => {
                         title
                         clients {
                             id
-                            name
+                            firstName
+                            lastName
                         }
                         address
                         tasks {
