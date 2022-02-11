@@ -1,6 +1,6 @@
 <template>
     <div>
-       <InputUtilsDropdown :options="options" :search="true" @update-value="update" />
+       <InputUtilsDropdown :options="options" :search="true" @output="update" />
     </div>
 </template>
 <script>
@@ -28,7 +28,7 @@ export default {
             this.workflows = (await unWrap(await fetch(`/api/workflows/listing`))).json
         },
         update(e) {
-            console.log(e)
+            this.$emit('output', e)
         }
     }
 }

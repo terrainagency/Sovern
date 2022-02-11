@@ -50,6 +50,9 @@
   "InputClient": {
     "description": "Auto imported from components/Input/Client.vue"
   },
+  "InputDateTime": {
+    "description": "Auto imported from components/Input/DateTime.vue"
+  },
   "InputImageUploader": {
     "description": "Auto imported from components/Input/ImageUploader.vue"
   },
@@ -61,9 +64,6 @@
   },
   "InputPrice": {
     "description": "Auto imported from components/Input/Price.vue"
-  },
-  "InputStartEnd": {
-    "description": "Auto imported from components/Input/StartEnd.vue"
   },
   "InputTaskCondition": {
     "description": "Auto imported from components/Input/TaskCondition.vue"

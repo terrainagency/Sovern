@@ -30,6 +30,7 @@ export default {
                 e.target.scrollHeight <= 64 ? e.target.style.height = "2.625rem" : e.target.style.height = "auto"
                 e.target.style.height = `${e.target.scrollHeight}px`
             }
+            this.$emit('output', this.value)
         },
         blur(e) {
             this.$emit('update-value', e.target.value)

@@ -18,7 +18,7 @@
             <ul class="flex flex-wrap py-1">
                 <li v-for="moodboard in moodboards" :key="moodboard.id" class="w-full py-1">
                     <input type="radio" name="moodboard" :id="moodboard.id" :value="moodboard.id" v-model="output">
-                    <label @click="show = false; selected = moodboard" :for="moodboard.id" class="moodboard block relative pb-3/4 select-none" role="button">
+                    <label @click="updateMoodboard(moodboard)" :for="moodboard.id" class="moodboard block relative pb-3/4 select-none" role="button">
                         <div class="absolute top-0 right-0 bottom-0 left-0 flex flex-wrap overflow-hidden rounded-xl bg-white-100  border border-black/5 shadow-lg">
                             <div v-for="image in moodboard.images" :key="image.id" class="w-1/3 h-1/2">
                                 <img :src="image.url" class="w-full h-full object-cover">
@@ -53,6 +53,11 @@ export default {
         async getMoodboards() {
             this.options = (await unWrap(await fetch(`/api/moodboards/list`))).json
             this.moodboards = this.options
+        },
+        updateMoodboard(moodboard) {
+            this.show = false
+            this.selected = moodboard
+            this.$emit('output', this.selected.id)
         },
         open() {
             if(!this.show) window.addEventListener('click', this.close)

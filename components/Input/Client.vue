@@ -40,7 +40,7 @@ import { unWrap } from '~/utils/fetchUtils'
 export default {
     data() {
         return {
-            output: null,
+            output: [],
             selectedClients: [],
             options: [],
             toggleDeletion: false,
@@ -78,7 +78,8 @@ export default {
             this.reset()
             this.show = false
             this.query = ''
-            this.$emit('output', this.selectedClients)
+            this.output.push(client.id)
+            this.$emit('output', this.output)
         },
         searchDropdown() {
             if(this.query.length > 0) {

@@ -62,7 +62,7 @@ export default {
             this.selectedTitle = title
             // this.selectedValue = option.value
             console.log(this.selectedValue)
-            this.$emit('update-value', this.selectedValue)
+            this.$emit('output', this.selectedValue)
             this.show = false
         },
         open() {
