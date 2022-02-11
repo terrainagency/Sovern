@@ -29,7 +29,7 @@ export default {
         },
         update(e) {
             this.$emit('output', e)
-        }
+        },
     }
 }
 </script>

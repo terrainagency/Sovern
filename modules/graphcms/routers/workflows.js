@@ -7,7 +7,11 @@ export default (apis) => {
         if(req.method == 'GET'){
             if(req.url == '/listing') {
                 return await getWorkflowsListing(req.identity.id, res)
-            } else {
+            }
+            else if(req.url.replace(/&id(=[^&]*)?/, '') === '/tasks') {
+                return await getTasksByID(req.identity.id, req.url.replace('/tasks&id=', ''), res)
+            } 
+            else {
                 return await getWorkflowByID(req.identity.id, req.url.replace(/^\/+/g, ''), res)
             }
         }
@@ -39,6 +43,14 @@ export default (apis) => {
         }
 
         sendJSON(await apis.workflows.getWorkflowByID(variables), res)
+    }
+    async function getTasksByID(gID, workflowID, res){
+        const variables = {
+            workflowID: workflowID,
+            gID: gID
+        }
+
+        sendJSON(await apis.workflows.getTasksByID(variables), res)
     }
 
     async function createWorkflow(identity, body, res){

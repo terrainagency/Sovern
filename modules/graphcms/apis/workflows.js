@@ -75,5 +75,32 @@ export default (graphcmsConfig) => {
 
             return data.workflows[0]
         },
+        getTasksByID: async function(variables) {
+            const query = gql`
+                query FindWorkflowsByID(
+                    $gID: String!
+                    $workflowID: ID
+                ){
+                    workflows(where: {creator: {gID: $gID}, id: $workflowID}) {
+                        id
+                        title
+                        automations(where: {type: task}) {
+                            id
+                            title
+                            type
+                            timing
+                            reference {
+                                title
+                            }
+                            when
+                            preset
+                        }
+                    }
+                }
+            `
+            let data = await graphcms.request(query, variables)
+
+            return data.workflows[0]
+        },
     }
 }

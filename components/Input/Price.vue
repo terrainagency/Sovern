@@ -51,7 +51,7 @@ export default {
             this.updatePrice()
         },
         updatePrice() {
-            this.price = `${this.base}.${this.change}`
+            this.price = parseFloat(`${this.base}.${this.change}`)
             this.$emit('output', this.price)
         }
     }

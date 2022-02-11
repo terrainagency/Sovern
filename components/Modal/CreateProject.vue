@@ -69,7 +69,7 @@
                 <button type="submit" class="btn btn-lg btn-black rounded-xl mx-auto mt-8">Create</button>
             </form>
         </div>
-        <span class="absolute top-0 left-0 bg-black/90 text-white rounded-md p-3">{{ project }}</span>
+        <span class="absolute bottom-0 right-0 bg-black/90 text-white rounded-md p-3">{{ project }}</span>
     </div>
     
     
@@ -90,9 +90,11 @@ export default {
                 directions: '',
                 latitude: '',
                 longitude: '',
+                timeZone: '',
                 startTime: '',
                 endTime: '',
                 workflow: '',
+                tasks: [],
                 price: '',
             },
             date: '',
@@ -114,11 +116,6 @@ export default {
                 }
             })
         },
-        // updateDate(e) { this.date = e },
-        // updateTiming(e) {
-        //     this.project.startTime = new Date(`${this.date} ${e.start}`)
-        //     this.project.endTime = new Date(`${this.date} ${e.end}`)
-        // },
         updateMoodboard(e) { this.project.moodboard = e },
         updateLocation(e) { 
             this.project.address = e.address
@@ -130,9 +127,36 @@ export default {
         updateDateTime(e) {
             this.project.startTime = e.start
             this.project.endTime = e.end
+            this.project.timeZone = e.timeZone
         },
-        updateWorkflow(e) { this.project.workflow = e },
+        updateWorkflow(e) { 
+            this.project.workflow = e 
+            this.scheduleTasks()
+        },
         updatePrice(e) { this.project.price = e },
+        async scheduleTasks() {
+            const workflow = (await unWrap(await fetch(`/api/workflows/tasks&id=${this.project.workflow}`))).json
+            this.project.tasks = []
+
+            workflow.automations.forEach(automation => {
+                this.project.tasks.push({
+                    automationID: automation.id,
+                    title: automation.title,
+                    deadline: (() => {
+                        let deadline = ''
+                        let num = parseInt(automation.timing.split(' ')[0])
+                        let unit = automation.timing.split(' ')[1]
+
+                        let eventEnd = new Date(this.project.endTime)
+
+                        // !--[FLAG] - Task Scheduling Logic Goes Here
+                        unit === 'hours' ? deadline = new Date(eventEnd.setHours( eventEnd.getHours() + num )).toISOString() : deadline = ''
+                        
+                        return deadline
+                    })()
+                })
+            })
+        }
         
     }
 }

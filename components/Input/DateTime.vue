@@ -4,7 +4,7 @@
             <div class="text-sm mb-1">Date</div>
             <InputUtilsDatePicker @output="updateDate" :past="true" />
             
-            <button class="text-sm text-gray hover:text-black flex items-center">{{ timezone }}</button>
+            <button class="text-sm text-gray hover:text-black flex items-center">{{ timeZone }}</button>
 
         </div>
 
@@ -35,7 +35,7 @@ export default {
             endTime: '',
             loaded: false,
             timezones: timezones,
-            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+            timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
             output: ''
         }
     },
@@ -81,7 +81,8 @@ export default {
         update() {
             this.output = {
                 start: new Date(`${this.date} ${this.startTime}`),
-                end: new Date(`${this.date} ${this.endTime}`)
+                end: new Date(`${this.date} ${this.endTime}`),
+                timeZone: this.timeZone
             }
             this.$emit('output', this.output)
         }
