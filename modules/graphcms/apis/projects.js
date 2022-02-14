@@ -20,7 +20,6 @@ export default (graphcmsConfig) => {
                     $endTime: DateTime!
                     $workflow: ID!
                     $price: Float!
-                    
                 ){
                     createProject(
                         data: {
@@ -42,14 +41,42 @@ export default (graphcmsConfig) => {
                     }
                 }
             `
+            
             // if(variables.tasks.length > 0) {
             //     variables.tasks.forEach(task => {
             //         await graphcms.request(gql`mutation UpdateProject`, task)
             //     })
             // }
             let data = await graphcms.request(mutation, variables)
+
+
+            // async function printFiles () {
+            //     const files = await getFilePaths();
+              
+            //     for (const file of files) {
+            //       const contents = await fs.readFile(file, 'utf8');
+            //       console.log(contents);
+            //     }
+            //   }
+
+            for(const client of variables.clients) {
+                await graphcms.request(
+                    gql`mutation UpdateProject($id: ID!, $clientID: ID!){ 
+                        updateProject(
+                            data: {clients: {connect: {where: {id: $clientID}}}}
+                                  where: { id: $id }
+                          ) { 
+                          id 
+                        }
+                    }`, 
+                    { clientID: client.id, id: data.createProject.id }
+                )
+            }
+
             await graphcms.request(
-                gql`mutation PublishProject($id: ID){ publishProject(where: { id: $id }) {id} }`, 
+                gql`mutation PublishProject($id: ID){ 
+                    publishProject(where: { id: $id }) {id} 
+                }`, 
                 { id: data.createProject.id }
             )
             return

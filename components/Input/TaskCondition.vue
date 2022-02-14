@@ -1,9 +1,9 @@
 <template>
     <div class="relative h-full">
-        <button @click.prevent="viewConditions = !viewConditions" :class="`text-white bg-${updatedColor} capitalize`">{{ updatedTask.condition.replace(/_/g, ' ') }}</button>
+        <button @click.prevent="viewConditions = !viewConditions" :class="`text-white bg-${updatedColor} capitalize px-3`">{{ updatedTask.condition.replace(/_/g, ' ') }}</button>
 
         <div v-if="viewConditions" class="absolute w-full h-full top-0 bg-white">            
-            <button v-for="condition in conditions" :key="condition.condition" @click.prevent="updateCondition(condition)" :class="`bg-${condition.color} text-white mb-1 capitalize`">{{ condition.condition.replace(/_/g, ' ') }}</button>
+            <button v-for="condition in conditions" :key="condition.condition" @click.prevent="updateCondition(condition)" :class="`bg-${condition.color} text-white mb-1 capitalize px-3`">{{ condition.condition.replace(/_/g, ' ') }}</button>
         </div>
     </div>
 </template>

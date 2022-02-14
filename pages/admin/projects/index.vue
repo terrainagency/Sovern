@@ -8,7 +8,7 @@
             <tr>
                 <th>Title</th>
                 <th class="px-6">Date</th>
-                <th class="pl-6 pr-9">Client</th>
+                <th class="pl-6 pr-9">Clients</th>
 
                 <th v-for="(task, i) in taskHeaders" :key="`${task}-${i}`" class="status">{{ task }}</th>
             </tr>
