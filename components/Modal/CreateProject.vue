@@ -129,7 +129,7 @@ export default {
 
             this.show = false
             this.loading = false
-            this.emit('created', this.project)
+            this.$emit('created', this.project)
         },
         updateMoodboard(e) { this.project.moodboard = e },
         updateLocation(e) { 

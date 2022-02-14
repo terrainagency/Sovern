@@ -18,7 +18,7 @@
                 <td class="text-black whitespace-nowrap">
                     <button @click="selectedProject = project; showProjectModal = true" class="hover:bg-white-100 w-full h-full rounded-md select-none text-left px-6">{{ project.title }}</button>
                 </td>
-                <td class="w-0 whitespace-nowrap px-6">{{ project.startTime }}</td>
+                <td class="w-0 whitespace-nowrap px-6">{{ new Date(project.startTime).toLocaleString('en-US', { timeZone: project.timeZone,  }).split(',')[0] }}</td>
                 <td class="w-0 whitespace-nowrap pl-6 pr-9"><span v-for="client in project.clients" :key="client.id">{{ client.name }}</span></td>
 
                 <td v-for="(task, i) in project.tasks" class="status" :key="`${task}-${i}`">
@@ -35,7 +35,7 @@
             </tr>
             <tr>
                 <td class="mb-2">
-                    <ModalCreateProject />
+                    <ModalCreateProject @created='setProjectsList' />
                 </td>
             </tr>
         </table>

@@ -9,7 +9,6 @@
 
         <div class="mx-auto">
           <button class="rounded-lg py-3 px-4 border border-transparent hover:border-white-200 hover:shadow-lg font-bold transition duration-150">Model Tests<span class="inline-block border-r-2 border-b-2 border-black w-2 h-2 transform rotate-45 ml-3 -translate-y-1"></span></button>
-          
         </div>
         <!-- <div class="flex items-center justify-center flex-grow">
           <button class="w-6 h-6 flex items-center justify-center mx-2">
