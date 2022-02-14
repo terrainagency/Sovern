@@ -75,11 +75,12 @@ export default {
         },
         addClient(client) {
             this.selectedClients.push(client)
+            this.$emit('output', this.selectedClients)
             this.reset()
             this.show = false
             this.query = ''
-            this.output.push(client.id)
-            this.$emit('output', this.output)
+            // this.output.push(client.id)
+            
         },
         searchDropdown() {
             if(this.query.length > 0) {
@@ -93,6 +94,7 @@ export default {
         },
         removeClient(client) {
             this.selectedClients = this.selectedClients.filter(obj => obj.id !== client.id)
+            this.$emit('output', this.selectedClients)
             this.reset()
         },
         removeLastClient() {
