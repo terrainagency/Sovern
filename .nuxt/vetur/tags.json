@@ -92,8 +92,11 @@
   "ModalMoodboardLightbox": {
     "description": "Auto imported from components/Modal/MoodboardLightbox.vue"
   },
-  "ModalViewProject": {
-    "description": "Auto imported from components/Modal/ViewProject.vue"
+  "ModalProject": {
+    "description": "Auto imported from components/Modal/Project.vue"
+  },
+  "ModalViewProjectDISABLED": {
+    "description": "Auto imported from components/Modal/ViewProjectDISABLED.vue"
   },
   "InputUtilsDatePicker": {
     "description": "Auto imported from components/Input/Utils/DatePicker.vue"

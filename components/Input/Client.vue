@@ -38,6 +38,12 @@
 import { unWrap } from '~/utils/fetchUtils'
 
 export default {
+    props: {
+        input: {
+            type: Object,
+            required: false
+        }
+    },
     data() {
         return {
             output: [],
@@ -51,6 +57,9 @@ export default {
         }
     },
     mounted() {
+        if(this.input) {
+            this.selectedClients = this.input
+        }
         this.getClients().then(() => {
             this.sort(this.clients)
             this.options = this.clients

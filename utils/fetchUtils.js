@@ -19,3 +19,15 @@ export function getErrorResponse(error) {
         json: {}
     }
 }
+
+export function parseQuery(url) {
+    let arr = url.replace(/(^.*)?\?/gm, "").split("&");
+    let result = {};
+  
+    for(const item of arr) {
+      let str = item.split('=');
+      result[str[0]] = str[1]
+    }
+  
+    return result;
+}

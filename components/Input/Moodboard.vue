@@ -36,6 +36,12 @@
 import { unWrap } from '~/utils/fetchUtils'
 
 export default {
+    props: {
+        input: {
+            type: Object,
+            required: false
+        }
+    },
     data() {
         return {
             show: false,
@@ -47,9 +53,15 @@ export default {
         }
     },
     mounted() {
+        if(this.input) {
+            this.getInput()
+        }
         this.getMoodboards()
     },
     methods: {
+        async getInput() {
+           this.selected = (await unWrap(await fetch(`/api/moodboards/${this.input}`)))
+        },
         async getMoodboards() {
             this.options = (await unWrap(await fetch(`/api/moodboards/list`))).json
             this.moodboards = this.options

@@ -134,6 +134,11 @@ export default (graphcmsConfig) => {
                         }
                         startTime
                         endTime
+                        timeZone
+                        workflow {
+                            id
+                            title
+                        }
                         price
                     }
                 }
@@ -141,6 +146,47 @@ export default (graphcmsConfig) => {
             const variables = { gID: gID }
             let data = await graphcms.request(query, variables)
             return data.projects
+        },
+        getByID: async function(id) {
+            const query = gql`
+                query FindProjectsByWorkflow($id: ID!) {
+                    project(where: {id: $id}) {
+                        id
+                        title
+                        clients {
+                            id
+                            firstName
+                            lastName
+                        }
+                        moodboard {
+                            id
+                            title
+                            images(first: 6) {
+                                id
+                                url
+                            }
+                        }
+                        geoLocation {
+                            latitude
+                            longitude
+                        }
+                        address
+                        tasks {
+                            id
+                            title
+                            automation {
+                                id
+                            }
+                            condition
+                        }
+                        startTime
+                        price
+                    }
+                }
+            `
+            let data = await graphcms.request(query, {id: id})
+            console.log(data)
+            return data.project
         },
         getByWorkflowID: async function(variables) {
             const query = gql`
@@ -168,7 +214,6 @@ export default (graphcmsConfig) => {
                 }
             `
             let data = await graphcms.request(query, variables)
-            console.log(data)
             return data.projects
         },
         // getByID: async function(id) {

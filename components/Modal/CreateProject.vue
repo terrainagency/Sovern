@@ -74,7 +74,7 @@
             </form>
             
         </div>
-        <span class="absolute bottom-0 right-0 bg-black/90 text-white rounded-md p-3">{{ project }}</span>
+        <!-- <span class="absolute bottom-0 right-0 bg-black/90 text-white rounded-md p-3">{{ project }}</span> -->
     </div>
     
     

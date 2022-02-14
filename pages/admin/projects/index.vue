@@ -16,7 +16,7 @@
             <tr v-for="project in projectList" :key="project.id" class="">
 
                 <td class="text-black whitespace-nowrap">
-                    <button @click="selectedProject = project; showProjectModal = true" class="hover:bg-white-100 w-full h-full rounded-md select-none text-left px-6">{{ project.title }}</button>
+                    <button @click="getProject(project.id); showProjectModal = true" class="hover:bg-white-100 w-full h-full rounded-md select-none text-left px-6">{{ project.title }}</button>
                 </td>
                 <td class="w-0 whitespace-nowrap px-6 text-gray select-none">{{ new Date(project.startTime).toLocaleString('en-US', { timeZone: project.timeZone,  }).split(',')[0] }}</td>
                 <td class="whitespace-nowrap relative px-6 w-0 text-gray">
@@ -27,14 +27,6 @@
                 <td v-for="(task, i) in project.tasks" class="status" :key="`${task}-${i}`">
                     <InputTaskCondition v-bind:task="task" />
                 </td>
-
-                <!-- <td class="status"><button class="bg-success text-white">Sent</button></td>
-                <td class="status"><button class="bg-success text-white">Completed</button></td>
-                <td class="status"><button class="bg-success text-white">Completed</button></td>
-                <td class="status"><button class="bg-warning text-white">Overdue</button></td>
-                <td class="status"><button class="hover:bg-white-100"> </button></td>
-                <td class="status"><button class="hover:bg-white-100"> </button></td>
-                <td class="status"><button class="hover:bg-white-100"> </button></td> -->
             </tr>
             <tr>
                 <td class="mb-2">
@@ -47,7 +39,7 @@
 
         <div><button class="font-bold mb-2 text-gray hover:text-black">Archived (0)</button></div>
 
-        <ModalViewProject v-if="showProjectModal" v-bind:project="selectedProject" @showModal="closeProjectModal" />
+        <ModalProject v-if="showProjectModal" :project="selectedProject" @showModal="closeProjectModal" />
 </div>
 </div>
         
@@ -76,7 +68,7 @@ export default {
     },
     methods: { 
         async setProjectsList(){
-            this.projectList = (await unWrap(await fetch(`/api/projects/${this.workflowID}`))).json
+            this.projectList = (await unWrap(await fetch(`/api/projects/?workflowId=${this.workflowID}`))).json
         },
         async setTaskHeaders(){
             this.automations = (await unWrap(await fetch(`/api/automations/${this.workflowID}`))).json
@@ -89,6 +81,9 @@ export default {
         },
         closeProjectModal() {
             this.showProjectModal = false
+        },
+        async getProject(id) {
+            this.selectedProject = (await unWrap(await fetch(`/api/projects/?id=${id}`))).json
         }
     },
     asyncData({ $config, redirect }){

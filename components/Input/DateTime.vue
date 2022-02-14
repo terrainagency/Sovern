@@ -1,15 +1,12 @@
 <template>
     <div>
-        <div class="mb-4">
+        <div class="mb-2">
             <div class="text-sm mb-1">Date</div>
             <InputUtilsDatePicker @output="updateDate" :past="true" />
-            
-            <button class="text-sm text-gray hover:text-black flex items-center">{{ timeZone }}</button>
-
         </div>
 
 
-        <div class="mb-2">
+        <div class="mb-4">
             <div class="text-sm mb-1">Timing</div>
             <div class="flex items-center justify-between">
 
@@ -19,6 +16,7 @@
                 
                 <InputUtilsDropdown ref="endTime" v-if="loaded" :options="end" :search="true" :placeholder="'End'" @output="updateEnd" class="tracking-wider flex-grow ml-1" />
             </div>
+            <button @click.prevent="" class="text-sm text-gray hover:text-black flex items-center">{{ timeZone }}</button>
         </div>  
     </div>
 </template>
