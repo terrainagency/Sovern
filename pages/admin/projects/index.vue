@@ -18,8 +18,11 @@
                 <td class="text-black whitespace-nowrap">
                     <button @click="selectedProject = project; showProjectModal = true" class="hover:bg-white-100 w-full h-full rounded-md select-none text-left px-6">{{ project.title }}</button>
                 </td>
-                <td class="w-0 whitespace-nowrap px-6">{{ new Date(project.startTime).toLocaleString('en-US', { timeZone: project.timeZone,  }).split(',')[0] }}</td>
-                <td class="w-0 whitespace-nowrap pl-6 pr-9"><span v-for="client in project.clients" :key="client.id">{{ client.name }}</span></td>
+                <td class="w-0 whitespace-nowrap px-6 text-gray select-none">{{ new Date(project.startTime).toLocaleString('en-US', { timeZone: project.timeZone,  }).split(',')[0] }}</td>
+                <td class="whitespace-nowrap relative px-6 w-0 text-gray">
+                    <span v-if="project.clients.length > 0" class="mr-2 select-none bg-white-100 py-2 px-3 rounded-md">{{ project.clients[0].firstName }} {{ project.clients[0].lastName }} </span>
+                    <span v-if="project.clients.length > 1">+{{ project.clients.length-1 }}</span>
+                </td>
 
                 <td v-for="(task, i) in project.tasks" class="status" :key="`${task}-${i}`">
                     <InputTaskCondition v-bind:task="task" />

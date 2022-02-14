@@ -41,43 +41,70 @@ export default (graphcmsConfig) => {
                     }
                 }
             `
-            
-            // if(variables.tasks.length > 0) {
-            //     variables.tasks.forEach(task => {
-            //         await graphcms.request(gql`mutation UpdateProject`, task)
-            //     })
-            // }
-            let data = await graphcms.request(mutation, variables)
-
-
-            // async function printFiles () {
-            //     const files = await getFilePaths();
-              
-            //     for (const file of files) {
-            //       const contents = await fs.readFile(file, 'utf8');
-            //       console.log(contents);
-            //     }
-            //   }
+            const projectData = await graphcms.request(mutation, variables)
+            const projectID = projectData.createProject.id
 
             for(const client of variables.clients) {
-                await graphcms.request(
-                    gql`mutation UpdateProject($id: ID!, $clientID: ID!){ 
+                await graphcms.request(gql`
+                    mutation UpdateProject($id: ID!, $clientID: ID!){ 
                         updateProject(
                             data: {clients: {connect: {where: {id: $clientID}}}}
                                   where: { id: $id }
                           ) { 
                           id 
                         }
-                    }`, 
-                    { clientID: client.id, id: data.createProject.id }
+                    }`, { clientID: client.id, id: projectID }
                 )
             }
+            for(const task of variables.tasks) {
+                const taskData = await graphcms.request(gql`
+                    mutation CreateTask(
+                        $id: ID!
+                        $gID: String!
+                        $automationID: ID! 
+                        $title: String!
+                    ){
+                        createTask(
+                            data: {
+                                automation: { connect: { id: $automationID }}
+                                creator: { connect: { gID: $gID }}
+                                project: { connect: { id: $id }}
+                                title: $title
+                                condition: none
+                            }
+                        ) {
+                            id
+                        }
+                    }
+                `, { id: projectID, gID: variables.gID, automationID: task.automationID, title: task.title }
+                )
+                const taskID = taskData.createTask.id
+
+                await graphcms.request(
+                    gql`mutation PublishTask($id: ID){ 
+                        publishTask(where: { id: $id }) {id} 
+                    }`, 
+                    { id: taskID }
+                )
+
+                await graphcms.request(gql`
+                    mutation UpdateProject($id: ID!, $taskID: ID!){ 
+                        updateProject(
+                            data: {tasks: {connect: {where: {id: $taskID}}}}
+                                  where: { id: $id }
+                          ) { 
+                          id 
+                        }
+                    }`, { taskID: taskID, id: projectID }
+                )
+            }
+
 
             await graphcms.request(
                 gql`mutation PublishProject($id: ID){ 
                     publishProject(where: { id: $id }) {id} 
                 }`, 
-                { id: data.createProject.id }
+                { id: projectID }
             )
             return
         },

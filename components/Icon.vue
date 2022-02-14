@@ -73,6 +73,12 @@
             <path id="Path_78" data-name="Path 78" d="M18.823,11.575l-6.011,8.683a.987.987,0,0,1-1.8-.562V13.973H5.989a.987.987,0,0,1-.811-1.549l6.011-8.683a.987.987,0,0,1,1.8.562v5.723h5.025a.987.987,0,0,1,.811,1.549Z"/>
         </svg>
 
+        <svg v-if="icon === 'user'" class="w-full h-full stroke-current" viewBox="0 0 24 24">
+            <path id="Path_88" data-name="Path 88" d="M14.475,4.525a3.5,3.5,0,1,1-4.95,0,3.5,3.5,0,0,1,4.95,0" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+            <path id="Path_89" data-name="Path 89" d="M4,18.5v1a1,1,0,0,0,1,1H19a1,1,0,0,0,1-1v-1c0-3.026-3.952-4.992-8-4.992S4,15.474,4,18.5Z" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        </svg>
+
+
 
     </div>
 </template>

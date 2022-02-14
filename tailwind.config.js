@@ -15,14 +15,14 @@ theme: {
     colors: {
         white: {
             DEFAULT: '#FFFFFF',
-            100: '#F7F7F8',
+            100: '#F5F5FA',
             200: '#EAEAEA',
             300: '#DFDFDF'
         },
         gray: {
             900: '#E6E6E6',
             800: '#D9D9D9',
-            DEFAULT: '#989898',
+            DEFAULT: '#A4A4B1',
         },
         black: {
             DEFAULT: '#000000',
