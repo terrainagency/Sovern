@@ -112,6 +112,13 @@
     "_name": "_5b7edb1a"
   },
   {
+    "name": "admin-projects-id",
+    "path": "/admin/projects/:id",
+    "component": "/Users/tony/Documents/Sovern/pages/admin/projects/_id.vue",
+    "chunkName": "pages/admin/projects/_id",
+    "_name": "_f8163b60"
+  },
+  {
     "name": "bookings-id",
     "path": "/bookings/:id",
     "component": "/Users/tony/Documents/Sovern/pages/bookings/_id.vue",
@@ -166,5 +173,12 @@
     "component": "/Users/tony/Documents/Sovern/pages/index.vue",
     "chunkName": "pages/index",
     "_name": "_7ada3eb7"
+  },
+  {
+    "name": "slug",
+    "path": "/:slug",
+    "component": "/Users/tony/Documents/Sovern/pages/_slug/index.vue",
+    "chunkName": "pages/_slug/index",
+    "_name": "_08da14b2"
   }
 ]

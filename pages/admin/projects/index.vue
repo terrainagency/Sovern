@@ -16,7 +16,7 @@
             <tr v-for="project in projectList" :key="project.id" class="">
 
                 <td class="text-black whitespace-nowrap">
-                    <button @click="getProject(project.id); showProjectModal = true" class="hover:bg-white-100 w-full h-full rounded-md select-none text-left px-6">{{ project.title }}</button>
+                    <button @click="selectedProjectId = project.id; showProjectModal = true" class="hover:bg-white-100 w-full h-full rounded-md select-none text-left px-6">{{ project.title }}</button>
                 </td>
                 <td class="w-0 whitespace-nowrap px-6 text-gray select-none">{{ new Date(project.startTime).toLocaleString('en-US', { timeZone: project.timeZone,  }).split(',')[0] }}</td>
                 <td class="whitespace-nowrap relative px-6 w-0 text-gray">
@@ -39,7 +39,7 @@
 
         <div><button class="font-bold mb-2 text-gray hover:text-black">Archived (0)</button></div>
 
-        <ModalProject v-if="showProjectModal" :project="selectedProject" @showModal="closeProjectModal" />
+        <ModalProject v-if="showProjectModal" :projectId="selectedProjectId" @showModal="closeProjectModal" />
 </div>
 </div>
         
@@ -54,7 +54,7 @@ export default {
     data() { 
         return {
             projectList: [],
-            selectedProject: {},
+            selectedProjectId: '',
             showProjectModal: false,
             workflowID: "ckz768n9c01vl0b81l32elx66",
             automations: [],
@@ -82,9 +82,6 @@ export default {
         closeProjectModal() {
             this.showProjectModal = false
         },
-        async getProject(id) {
-            this.selectedProject = (await unWrap(await fetch(`/api/projects/?id=${id}`))).json
-        }
     },
     asyncData({ $config, redirect }){
         if(!Cookie.get($config.auth.cookieName)){

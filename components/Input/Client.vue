@@ -1,6 +1,7 @@
 <template>
     <div class="relative">
         <div class="flex flex-wrap input max-h-32 overflow-y-scroll p-0.5 mb-2">
+            
             <div v-for="client in selectedClients" :key="`selected-${client.id}`" class="w-1/2 p-0.5">
                 <div class="relative flex bg-white-100 rounded-md h-full overflow-hidden px-3 py-1 items-center justify-between transition duration-150">
                     <div class="relative overflow-x-hidden mr-2 flex-grow">
@@ -40,7 +41,7 @@ import { unWrap } from '~/utils/fetchUtils'
 export default {
     props: {
         input: {
-            type: Object,
+            type: Array,
             required: false
         }
     },

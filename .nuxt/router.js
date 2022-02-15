@@ -20,6 +20,7 @@ const _9701cd16 = () => interopDefault(import('../pages/admin/projects/newworkfl
 const _bcdcf002 = () => interopDefault(import('../pages/admin/settings/collections/_id.vue' /* webpackChunkName: "pages/admin/settings/collections/_id" */))
 const _60d9b1be = () => interopDefault(import('../pages/admin/settings/workflows/_id.vue' /* webpackChunkName: "pages/admin/settings/workflows/_id" */))
 const _5b7edb1a = () => interopDefault(import('../pages/admin/moodboards/_id.vue' /* webpackChunkName: "pages/admin/moodboards/_id" */))
+const _f8163b60 = () => interopDefault(import('../pages/admin/projects/_id.vue' /* webpackChunkName: "pages/admin/projects/_id" */))
 const _7ed60090 = () => interopDefault(import('../pages/bookings/_id.vue' /* webpackChunkName: "pages/bookings/_id" */))
 const _0ffdbdf2 = () => interopDefault(import('../pages/gallery/_slug.vue' /* webpackChunkName: "pages/gallery/_slug" */))
 const _6f7d80d3 = () => interopDefault(import('../pages/packages/_slug.vue' /* webpackChunkName: "pages/packages/_slug" */))
@@ -28,6 +29,7 @@ const _6218fbcb = () => interopDefault(import('../pages/bookings/_service/_slug.
 const _6967e001 = () => interopDefault(import('../pages/packages/_collection/_slug.vue' /* webpackChunkName: "pages/packages/_collection/_slug" */))
 const _dad177aa = () => interopDefault(import('../pages/specials/_service/_slug.vue' /* webpackChunkName: "pages/specials/_service/_slug" */))
 const _7ada3eb7 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _08da14b2 = () => interopDefault(import('../pages/_slug/index.vue' /* webpackChunkName: "pages/_slug/index" */))
 
 const emptyFn = () => {}
 
@@ -105,6 +107,10 @@ export const routerOptions = {
     component: _5b7edb1a,
     name: "admin-moodboards-id"
   }, {
+    path: "/admin/projects/:id",
+    component: _f8163b60,
+    name: "admin-projects-id"
+  }, {
     path: "/bookings/:id",
     component: _7ed60090,
     name: "bookings-id"
@@ -136,6 +142,10 @@ export const routerOptions = {
     path: "/",
     component: _7ada3eb7,
     name: "index"
+  }, {
+    path: "/:slug",
+    component: _08da14b2,
+    name: "slug"
   }],
 
   fallback: false

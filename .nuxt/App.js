@@ -10,10 +10,12 @@ import '../assets/css/tailwind.css'
 
 import _6f6c098b from '../layouts/default.vue'
 import _57ff370c from '../layouts/moodboards.vue'
+import _00e6bcf3 from '../layouts/profile.vue'
+import _00e87e63 from '../layouts/project.vue'
 import _1c274e70 from '../layouts/projects.vue'
 import _a59e1bce from '../layouts/settings.vue'
 
-const layouts = { "_default": sanitizeComponent(_6f6c098b),"_moodboards": sanitizeComponent(_57ff370c),"_projects": sanitizeComponent(_1c274e70),"_settings": sanitizeComponent(_a59e1bce) }
+const layouts = { "_default": sanitizeComponent(_6f6c098b),"_moodboards": sanitizeComponent(_57ff370c),"_profile": sanitizeComponent(_00e6bcf3),"_project": sanitizeComponent(_00e87e63),"_projects": sanitizeComponent(_1c274e70),"_settings": sanitizeComponent(_a59e1bce) }
 
 export default {
   render (h, props) {

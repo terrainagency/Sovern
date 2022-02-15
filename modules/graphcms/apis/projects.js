@@ -185,7 +185,6 @@ export default (graphcmsConfig) => {
                 }
             `
             let data = await graphcms.request(query, {id: id})
-            console.log(data)
             return data.project
         },
         getByWorkflowID: async function(variables) {

@@ -54,14 +54,12 @@ export default {
     },
     mounted() {
         if(this.input) {
-            this.getInput()
+            console.log(this.input)
+            this.selected = this.input
         }
         this.getMoodboards()
     },
     methods: {
-        async getInput() {
-           this.selected = (await unWrap(await fetch(`/api/moodboards/${this.input}`)))
-        },
         async getMoodboards() {
             this.options = (await unWrap(await fetch(`/api/moodboards/list`))).json
             this.moodboards = this.options
