@@ -16,7 +16,7 @@
             <tr v-for="project in projectList" :key="project.id" class="">
 
                 <td class="text-black whitespace-nowrap">
-                    <button @click="selectedProjectId = project.id; showProjectModal = true" class="hover:bg-white-100 w-full h-full rounded-md select-none text-left px-6">{{ project.title }}</button>
+                    <button @click="selectProject(project.id)" class="hover:bg-white-100 w-full h-full rounded-md select-none text-left px-6">{{ project.title }}</button>
                 </td>
                 <td class="w-0 whitespace-nowrap px-6 text-gray select-none">{{ new Date(project.startTime).toLocaleString('en-US', { timeZone: project.timeZone,  }).split(',')[0] }}</td>
                 <td class="whitespace-nowrap relative px-6 w-0 text-gray">
@@ -39,7 +39,17 @@
 
         <div><button class="font-bold mb-2 text-gray hover:text-black">Archived (0)</button></div>
 
-        <ModalProject v-if="showProjectModal" :projectId="selectedProjectId" @showModal="closeProjectModal" />
+        <Modal ref="spm" size="md">
+            <template v-slot:body>
+                <Project :id="selectedProjectID" :admin="true" />
+            </template>
+            <template v-slot:nav>
+                <nuxt-link :to="`/projects/${selectedProjectID}`" class="bg-black text-white shadow-lg border border-black flex items-center justify-center rounded-lg w-36 font-normal mx-1">Edit</nuxt-link>
+                <nuxt-link :to="`/projects/${selectedProjectID}`" target="_blank" class="bg-white shadow-lg border border-black/5 flex items-center justify-center rounded-lg px-4 font-normal mx-1"><Icon name="Eye" class="w-6 h-6" /></nuxt-link>
+            </template>
+        </Modal>
+
+        <!-- <ModalProject v-if="showProjectModal" :projectId="selectedProjectId" @showModal="closeProjectModal" /> -->
 </div>
 </div>
         
@@ -54,8 +64,7 @@ export default {
     data() { 
         return {
             projectList: [],
-            selectedProjectId: '',
-            showProjectModal: false,
+            selectedProjectID: '',
             workflowID: "ckz768n9c01vl0b81l32elx66",
             automations: [],
             taskHeaders: [],
@@ -79,9 +88,10 @@ export default {
                 }
             })
         },
-        closeProjectModal() {
-            this.showProjectModal = false
-        },
+        selectProject(id) {
+            this.selectedProjectID = id
+            this.$refs.spm.open()
+        }
     },
     asyncData({ $config, redirect }){
         if(!Cookie.get($config.auth.cookieName)){

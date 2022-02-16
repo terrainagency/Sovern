@@ -14,7 +14,7 @@ export default (graphcmsConfig) => {
                     $address: String!
                     $latitude: Float!
                     $longitude: Float!
-                    $directions: String!
+                    $description: String!
                     $timeZone: String!
                     $startTime: DateTime!
                     $endTime: DateTime!
@@ -28,7 +28,7 @@ export default (graphcmsConfig) => {
                             moodboard: { connect: { id: $moodboard }}
                             address: $address
                             geoLocation: { latitude: $latitude, longitude: $longitude }
-                            directions: $directions
+                            description: $description
                             timeZone: $timeZone
                             startTime: $startTime
                             endTime: $endTime
@@ -153,6 +153,11 @@ export default (graphcmsConfig) => {
                     project(where: {id: $id}) {
                         id
                         title
+                        creator {
+                            id
+                            name
+                            image
+                        }
                         clients {
                             id
                             firstName
@@ -179,6 +184,7 @@ export default (graphcmsConfig) => {
                             }
                             condition
                         }
+                        description
                         startTime
                         price
                     }

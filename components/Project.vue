@@ -1,62 +1,117 @@
 <template>
-    <div class="max-w-xl w-full bg-[#ffffff] shadow-xl rounded-xl py-5 px-5 border border-black/10">
-        <div class="mb-10">
-            <div class="flex mb-5">
-                <div class="flex flex-wrap overflow-hidden rounded-xl shadow-xl relative">
-                    <div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 bg-white rounded-full btn btn-lg">Moodboard</div>
-                    <div v-for="image in project.service.featuredImages" :key="image.id" class="w-1/3">
-                        <img :src="image.url">
+    <div v-if="project" class="pt-10 px-4 mb-4 flex flex-wrap justify-center w-full">
+        <header class="w-full mb-6 text-center">
+            <h1 class="font-bold text-center text-xl">{{ project.title }}</h1>
+        </header>
+
+        <section class="w-3/5 pr-2">
+            <div v-if="!admin" class="p-3 border border-black/5 shadow-md shadow-black/5 rounded-2xl mb-4">
+                <header class="flex items-center justify-between mb-8">
+                    <h2 class="font-bold text-center pl-2">Status</h2>
+
+                    <div v-if="nextStep" class="flex items-center">{{ nextStep.title }}<div class="ml-4 py-2 px-3 rounded-xl bg-pending/10 text-pending flex items-center"> <span :class="`w-2 h-2 rounded-full bg-pending inline-block mr-3 capitalize`"></span>{{ nextStep.condition.replace("_", " ") }}</div></div>
+                </header>
+                <div class="px-2 w-full">
+                    <div class="w-full h-2 flex mb-4 relative">
+                        <div class="absolute bg-white-100 top-0 right-0 left-0 bottom-0 rounded-full overflow-hidden"></div>
+                        <div class="relative rounded-l-full w-full mr-[1px] bg-success shadow-lg shadow-success"></div>
+                        <div class="relative w-full mr-[1px] bg-success shadow-lg shadow-success"></div>
+                        <div v-for="task in project.tasks" :key="task.id" :class="task.condition === 'completed' ? 'w-full mr-[1px] bg-success shadow-lg shadow-success relative' : 'relative w-full mr-[1px]'"></div>
                     </div>
                 </div>
             </div>
-
-            <!-- Integrate google maps -->
-            <div ref="map" class="w-full h-48 rounded-xl shadow-lg"></div>
-
             
-        </div>
-        <div class="px-3 pb-3">
-            <h5 class="font-bold">Client</h5>
-            <!-- <div v-for="customer in photoshoots[0].customers" :key="customer.id" class="flex items-center">
-                <div class="w-12 h-12 flex items-center justify-center bg-gray-800 border border-gray/20 text-gray rounded-full bg-opacity-10 shadow-sm mr-2">DM</div>{{ customer.name }}
-            </div> -->
-
-            <div class="py-10">
-                <div class="font-bold mb-5">History</div>
-                <ul class="pl-4">
-                    <li class=" flex items-center py-1">
-                        <div>Call sheet</div>
-                        <div class="ml-2 rounded-full bg-success py-1 px-3 text-success bg-opacity-10 uppercase text-xs tracking-widest flex items-center">Sent</div>
-                    </li>
-                    <li class="flex items-center py-1">
-                        <div>Photoshoot</div>
-                        <div class="ml-2 rounded-full bg-success py-1 px-3 text-success bg-opacity-10 uppercase text-xs tracking-widest flex items-center">Completed</div>
-
-                    </li>
-                    <li class="flex items-center py-1">
-                        <div>Exported</div>
-                    </li>
-                    <li></li>
-
-                </ul>
+            <div class="relative bg-gray/20 rounded-xl w-full h-80 card overflow-hidden flex flex-wrap mb-4" role="button">
+                <div v-for="image in project.moodboard.images" :key="image.id" class="w-1/3 h-1/2">
+                    <img :src="image.url" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 py-3 px-5 bg-white transition duration-150 rounded-full shadow-lg tracking-wider text-sm whitespace-nowrap">
+                    Moodboard
+                </div> 
             </div>
-        
-            <div class="font-bold mb-5">Files</div>
+
+            <div v-if="project.geoLocation && project.address">
+                <InputLocation :input="{ latitude: project.geoLocation.latitude, longitude: project.geoLocation.longitude, address: project.address }" :class="admin ? `mb-8` : `mb-8 h-96`" />            
+            </div>
             
+            <div v-if="project.description" class="mb-8">
+                <div class="mb-1 font-bold">Info</div>
+                <div>{{ project.description }}</div>
+            </div>
+        </section>
 
-            <div class="btn btn-lg border border-black/10 shadow-sm hover:border-black/20 transition duration-150 rounded-lg max-w-xs">Call sheet</div>
-        </div>
+        <section class="w-2/5 pl-2">
+            <div class="mb-8 text-left">
+                <div class="pb-2">Studio Model Test</div>
+                <div>$475<span class="text-gray pl-4">2 Looks - 4 Photos</span></div>
+            </div>
 
+            <div class="mb-8 text-left">
+                <div class="pb-2">Monday, Feb 24</div>
+                <span class="inline-block border border-black/5 rounded-lg py-2 px-3">9:00 AM</span><span class="text-gray px-3">to</span><span class="inline-block border border-black/5 rounded-lg py-2 px-3">11:00 AM</span>
+            </div>
+            <ul class="flex flex-col items-start mb-8">
+                <li class="p-2 flex items-center justify-center border border-transparent hover:shadow-md hover:border-black/5 rounded-xl select-none" role="button">
+                    <div class="rounded-full overflow-hidden w-14 h-14 relative flex items-center justify-center shadow-md shadow-black/5 select-none bg-white-200 mr-3">
+                        <img :src="project.creator.image" alt="" class="absolute w-full h-full object-cover">
+                    </div>
+                    <div class="text-left pr-2">
+                        <p>{{ project.creator.name }} (he/him)</p>
+                        <p class="text-gray">Photographer</p>
+                    </div>
+                </li>
+                <li v-for="client in project.clients" :key="client.id" class="p-2 flex items-center justify-center border border-transparent hover:shadow-md hover:border-black/5 rounded-xl select-none" role="button">
+                    <div class="rounded-full overflow-hidden w-14 h-14 relative flex items-center justify-center shadow-md shadow-black/5 select-none bg-white-200 mr-3">
+                        <div class="relative text-gray">{{ client.firstName.slice(0,1) }}{{ client.lastName.slice(0,1) }}</div>
+                    </div>
+                    <div class="text-left pr-2">
+                        <p>{{ client.firstName }} {{ client.lastName }} (he/him)</p>
+                        <p class="text-gray">Model</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
     </div>
 </template>
+
 <script>
+import { unWrap } from '~/utils/fetchUtils'
+
 export default {
     props: {
-        project: Object,
-        required: true
+        id: {
+            type: String,
+            required: true,
+        },
+        admin: {
+            type: Boolean,
+            required: false
+        }
+    },
+    data() {
+        return {
+            project: undefined,
+            nextStep: null
+        }
     },
     mounted() {
-        this.$maps.showMap(this.$refs.map, '30.2624018', '-97.727721')
+        console.log(this.id)
+        this.getProject(this.id)
+    },
+    methods: {
+        async getProject(id) {
+            this.project = (await unWrap(await fetch(`/api/projects/?id=${id}`))).json
+            this.setStatus()
+            this.$emit('loaded')
+        },
+        setStatus() {
+            for(const task of this.project.tasks) {
+                if(task.condition !== 'completed') {
+                    this.nextStep = task
+                    return
+                }
+            }
+        }
     }
 }
 </script>

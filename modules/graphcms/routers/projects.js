@@ -1,5 +1,5 @@
 import { rejectHitBadRequest, hasBadBody, sendJSON } from "../../helpers"
-import { parseQuery, queryString } from "../../../utils/fetchUtils"
+import { parseQuery } from "../../../utils/fetchUtils"
 
 
 export default (apis) => {

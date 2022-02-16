@@ -20,6 +20,9 @@
   "Icon": {
     "description": "Auto imported from components/Icon.vue"
   },
+  "Modal": {
+    "description": "Auto imported from components/Modal.vue"
+  },
   "Navigation": {
     "description": "Auto imported from components/Navigation.vue"
   },
@@ -65,6 +68,9 @@
   "InputPrice": {
     "description": "Auto imported from components/Input/Price.vue"
   },
+  "InputRichText": {
+    "description": "Auto imported from components/Input/RichText.vue"
+  },
   "InputTaskCondition": {
     "description": "Auto imported from components/Input/TaskCondition.vue"
   },
@@ -91,12 +97,6 @@
   },
   "ModalMoodboardLightbox": {
     "description": "Auto imported from components/Modal/MoodboardLightbox.vue"
-  },
-  "ModalProject": {
-    "description": "Auto imported from components/Modal/Project.vue"
-  },
-  "ModalViewProjectDISABLED": {
-    "description": "Auto imported from components/Modal/ViewProjectDISABLED.vue"
   },
   "InputUtilsDatePicker": {
     "description": "Auto imported from components/Input/Utils/DatePicker.vue"

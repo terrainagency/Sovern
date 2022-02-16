@@ -94,7 +94,7 @@ export default {
     },
     methods: { 
         async setProjectsList(){
-            this.projectList = (await unWrap(await fetch('api/projects/user/'))).json
+            // this.projectList = (await unWrap(await fetch('api/projects/user/'))).json
         }
     },
     asyncData({ $config, redirect }){

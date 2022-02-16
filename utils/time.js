@@ -350,3 +350,10 @@ export function timezones() {
         'Africa/Johannesburg'
     ];
 }
+
+export function months() {
+    return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+}
+export function days() {
+    return ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+}

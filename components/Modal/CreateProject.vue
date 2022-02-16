@@ -22,10 +22,11 @@
                         <InputMoodboard @output="updateMoodboard" class="mb-4" />
                         <InputLocation @output="updateLocation" class="mb-4" />
 
-                        <button @click="showDirections = true" v-if="!showDirections" class="text-sm text-gray px-2 hover:text-black">+ Directions</button>
-                        <div v-if="showDirections">
-                            <div class="text-sm mb-1">Directions</div>
-                            <InputUtilsTextarea class="input input-md" :placeholder="'Directions'" @output="updateDirections" />
+                        <!-- <button @click="showDirections = true" v-if="!showDirections" class="text-sm text-gray px-2 hover:text-black">+ Directions</button> -->
+                        <div>
+                            <div class="text-sm mb-1">Description</div>
+                            <InputRichText />
+                            <!-- <InputUtilsTextarea class="input input-md" :placeholder="'Directions'" @output="updateDirections" /> -->
                         </div>
                         
 
@@ -86,15 +87,14 @@ export default {
         return {
             show: false,
             loading: false,
-            showDirections: false,
+            // showDirections: false,
             titleEdit: false,
-            projectList: [],
             project: {
                 clients: [],
                 title: '',
                 moodboard: '',
                 address: '',
-                directions: '',
+                description: '',
                 latitude: '',
                 longitude: '',
                 timeZone: '',
@@ -108,12 +108,8 @@ export default {
         }
     },
     mounted() {
-        this.setProjectsList()
     },
-    methods: { 
-        async setProjectsList(){
-            this.projectList = (await unWrap(await fetch('api/projects/user/'))).json
-        },
+    methods: {
         async createProject() {
             // Disable all fields
             // Show loading indicator
