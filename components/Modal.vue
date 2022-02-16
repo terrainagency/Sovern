@@ -1,14 +1,16 @@
 <template>
     <div v-if="show" @click.self="close()" class="fixed top-0 left-0 flex items-center justify-center w-screen h-screen bg-black/10">
-        <div :class="`relative flex flex-col w-full ${sizeClass} max-h-[90vh] rounded-xl shadow-xl bg-white border border-white-100`">
+        <Loading :loaded="loaded" />
+
+        <div :class="`relative flex flex-col max-h-[90vh] rounded-2xl shadow-xl bg-white border border-white-100`">
             <div class="overflow-y-scroll scrollbar-none">
                 <slot name="body"></slot>
             </div>
-            <div class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 h-10 flex">
+
+            <div v-if="loaded" class="absolute -bottom-5 h-10 w-full flex">
                 <slot name="nav"></slot>
             </div>
         </div>
-        
     </div>
 </template>
 <script>
@@ -21,7 +23,8 @@ export default {
     },
     data() {
         return {
-            show: false
+            show: false,
+            loaded: false,
         }
     },
     computed: {
@@ -45,7 +48,11 @@ export default {
         }
     },
     methods: {
+        ready() {
+            this.loaded = true
+        },
         open() {
+            this.loaded = false
             this.show = true
             this.$emit('open')
         },

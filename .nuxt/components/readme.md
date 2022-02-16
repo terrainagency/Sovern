@@ -6,13 +6,15 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
+- `<BaseIcon>` | `<base-icon>` (components/BaseIcon.vue)
 - `<BookingFooter>` | `<booking-footer>` (components/BookingFooter.vue)
 - `<BookingHeader>` | `<booking-header>` (components/BookingHeader.vue)
 - `<ContactForm>` | `<contact-form>` (components/ContactForm.vue)
 - `<Footer>` | `<footer>` (components/Footer.vue)
 - `<GalleryImage>` | `<gallery-image>` (components/GalleryImage.vue)
 - `<HeaderDisabled>` | `<header-disabled>` (components/Header-disabled.vue)
-- `<Icon>` | `<icon>` (components/Icon.vue)
+- `<Icondisabled>` | `<icondisabled>` (components/Icondisabled.vue)
+- `<Loading>` | `<loading>` (components/Loading.vue)
 - `<Modal>` | `<modal>` (components/Modal.vue)
 - `<Navigation>` | `<navigation>` (components/Navigation.vue)
 - `<Project>` | `<project>` (components/Project.vue)
@@ -39,6 +41,7 @@ You can directly use them in pages and other components without the need to impo
 - `<ModalCreateService>` | `<modal-create-service>` (components/Modal/CreateService.vue)
 - `<ModalCreateWorkflow>` | `<modal-create-workflow>` (components/Modal/CreateWorkflow.vue)
 - `<ModalMoodboardLightbox>` | `<modal-moodboard-lightbox>` (components/Modal/MoodboardLightbox.vue)
+- `<IconsEye>` | `<icons-eye>` (components/icons/Eye.vue)
 - `<InputUtilsDatePicker>` | `<input-utils-date-picker>` (components/Input/Utils/DatePicker.vue)
 - `<InputUtilsDatePickerDisabled>` | `<input-utils-date-picker-disabled>` (components/Input/Utils/DatePickerDisabled.vue)
 - `<InputUtilsDateTimeScheduler>` | `<input-utils-date-time-scheduler>` (components/Input/Utils/DateTimeScheduler.vue)

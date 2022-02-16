@@ -1,4 +1,7 @@
 {
+  "BaseIcon": {
+    "description": "Auto imported from components/BaseIcon.vue"
+  },
   "BookingFooter": {
     "description": "Auto imported from components/BookingFooter.vue"
   },
@@ -17,8 +20,11 @@
   "HeaderDisabled": {
     "description": "Auto imported from components/Header-disabled.vue"
   },
-  "Icon": {
-    "description": "Auto imported from components/Icon.vue"
+  "Icondisabled": {
+    "description": "Auto imported from components/Icondisabled.vue"
+  },
+  "Loading": {
+    "description": "Auto imported from components/Loading.vue"
   },
   "Modal": {
     "description": "Auto imported from components/Modal.vue"
@@ -97,6 +103,9 @@
   },
   "ModalMoodboardLightbox": {
     "description": "Auto imported from components/Modal/MoodboardLightbox.vue"
+  },
+  "IconsEye": {
+    "description": "Auto imported from components/icons/Eye.vue"
   },
   "InputUtilsDatePicker": {
     "description": "Auto imported from components/Input/Utils/DatePicker.vue"

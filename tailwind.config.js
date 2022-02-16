@@ -12,36 +12,36 @@ theme: {
     fontFamily: {
         'body': ['"Gilroy"', 'ui-sans-serif', 'system-ui', 'Helvetica Neue', 'Helvetica']
     },
-    colors: {
-        white: {
-            DEFAULT: '#FFFFFF',
-            100: '#F5F5FA',
-            200: '#EAEAEA',
-            300: '#DFDFDF'
-        },
-        gray: {
-            900: '#E6E6E6',
-            800: '#D9D9D9',
-            DEFAULT: '#A4A4B1',
-        },
-        black: {
-            DEFAULT: '#000000',
-            900: '#101010',
-        },
-        transparent: {
-            DEFAULT: "transparent",
-        },
-        warning: {
-            DEFAULT: '#E83100',
-        },
-        success: {
-            DEFAULT: '#00c34e',
-        },
-        pending: {
-            DEFAULT: '#edc307'
-        }
-    },
     extend: {
+        colors: {
+            white: {
+                DEFAULT: '#FFFFFF',
+                100: '#F5F5FA',
+                200: '#EAEAEA',
+                300: '#DFDFDF'
+            },
+            gray: {
+                900: '#E6E6E6',
+                800: '#D9D9D9',
+                DEFAULT: '#A4A4B1',
+            },
+            black: {
+                DEFAULT: '#000000',
+                900: '#101010',
+            },
+            transparent: {
+                DEFAULT: "transparent",
+            },
+            warning: {
+                DEFAULT: '#E83100',
+            },
+            success: {
+                DEFAULT: '#00c34e',
+            },
+            pending: {
+                DEFAULT: '#edc307'
+            }
+        },
         height: {
             '104': '24rem',
             '112': '28rem',
