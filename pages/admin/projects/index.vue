@@ -9,12 +9,11 @@
                     <th>Title</th>
                     <th class="px-6">Date</th>
                     <th class="pl-6 pr-9">Clients</th>
-
                     <th v-for="(task, i) in taskHeaders" :key="`${task}-${i}`" class="status">{{ task }}</th>
+                    <th></th>
                 </tr>
                 
                 <tr v-for="project in projectList" :key="project.id" class="">
-
                     <td class="text-black whitespace-nowrap">
                         <button @click="selectProject(project.id)" class="hover:bg-white-100 w-full h-full rounded-md select-none text-left px-6">{{ project.title }}</button>
                     </td>
@@ -23,9 +22,11 @@
                         <span v-if="project.clients.length > 0" class="mr-2 select-none bg-white-100 py-2 px-3 rounded-md">{{ project.clients[0].firstName }} {{ project.clients[0].lastName }} </span>
                         <span v-if="project.clients.length > 1">+{{ project.clients.length-1 }}</span>
                     </td>
-
                     <td v-for="(task, i) in project.tasks" class="status" :key="`${task}-${i}`">
                         <InputTaskCondition v-bind:task="task" />
+                    </td>
+                    <td class="w-0">
+                        <div class="ml-2 h-10 w-10 border border-black/5 hover:border-success rounded-full transition duration-150" role="button"></div>
                     </td>
                 </tr>
                 <tr>

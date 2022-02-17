@@ -1,6 +1,6 @@
 <template>
     <div v-if="!loaded" class="p-4 pointer-events-none">
-        <div class="h-10 w-10"><div class="spinner"></div></div>
+        <div class="h-8 w-8"><div class="spinner"></div></div>
     </div>
 </template>
 <script>

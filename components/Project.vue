@@ -8,7 +8,7 @@
                 <h1 class="font-bold text-center text-xl">{{ project.title }}</h1>
             </header>
 
-            <section class="w-3/5 pr-2 flex-grow">
+            <section class="w-3/5 pr-3 flex-grow">
                 <div v-if="!admin" class="p-3 border border-black/5 shadow-md shadow-black/5 rounded-2xl mb-4">
                     <header class="flex items-center justify-between mb-8">
                         <h2 class="font-bold text-center pl-2">Status</h2>
@@ -44,36 +44,38 @@
                 </div>
             </section>
 
-            <section class="w-2/5 pl-2 max-w-xs">
-                <div class="mb-8 text-left">
-                    <div class="pb-2">Studio Model Test</div>
-                    <div>$475<span class="text-gray pl-4">2 Looks - 4 Photos</span></div>
-                </div>
+            <section class="w-2/5 pl-3 max-w-xs">
+                <div class="sticky top-6">
+                    <div class="mb-8 text-left">
+                        <div class="pb-2">Studio Model Test</div>
+                        <div>$475<span class="text-gray pl-4">2 Looks - 4 Photos</span></div>
+                    </div>
 
-                <div class="mb-8 text-left">
-                    <div class="pb-2">Monday, Feb 24</div>
-                    <span class="inline-block border border-black/5 rounded-lg py-2 px-3">9:00 AM</span><span class="text-gray px-3">to</span><span class="inline-block border border-black/5 rounded-lg py-2 px-3">11:00 AM</span>
+                    <div class="mb-8 text-left">
+                        <div class="pb-2">Monday, Feb 24</div>
+                        <span class="inline-block border border-black/5 rounded-lg py-2 px-3">9:00 AM</span><span class="text-gray px-3">to</span><span class="inline-block border border-black/5 rounded-lg py-2 px-3">11:00 AM</span>
+                    </div>
+                    <ul class="flex flex-col items-start mb-8">
+                        <li class="p-2 flex items-center justify-center border border-transparent hover:shadow-md hover:border-black/5 rounded-xl select-none" role="button">
+                            <div class="rounded-full overflow-hidden w-14 h-14 relative flex items-center justify-center shadow-md shadow-black/5 select-none bg-white-200 mr-3">
+                                <img :src="project.creator.image" alt="" class="absolute w-full h-full object-cover">
+                            </div>
+                            <div class="text-left pr-2">
+                                <p>{{ project.creator.name }} (he/him)</p>
+                                <p class="text-gray">Photographer</p>
+                            </div>
+                        </li>
+                        <li v-for="client in project.clients" :key="client.id" class="p-2 flex items-center justify-center border border-transparent hover:shadow-md hover:border-black/5 rounded-xl select-none" role="button">
+                            <div class="rounded-full overflow-hidden w-14 h-14 relative flex items-center justify-center shadow-md shadow-black/5 select-none bg-white-200 mr-3">
+                                <div class="relative text-gray">{{ client.firstName.slice(0,1) }}{{ client.lastName.slice(0,1) }}</div>
+                            </div>
+                            <div class="text-left pr-2">
+                                <p>{{ client.firstName }} {{ client.lastName }} (he/him)</p>
+                                <p class="text-gray">Model</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="flex flex-col items-start mb-8">
-                    <li class="p-2 flex items-center justify-center border border-transparent hover:shadow-md hover:border-black/5 rounded-xl select-none" role="button">
-                        <div class="rounded-full overflow-hidden w-14 h-14 relative flex items-center justify-center shadow-md shadow-black/5 select-none bg-white-200 mr-3">
-                            <img :src="project.creator.image" alt="" class="absolute w-full h-full object-cover">
-                        </div>
-                        <div class="text-left pr-2">
-                            <p>{{ project.creator.name }} (he/him)</p>
-                            <p class="text-gray">Photographer</p>
-                        </div>
-                    </li>
-                    <li v-for="client in project.clients" :key="client.id" class="p-2 flex items-center justify-center border border-transparent hover:shadow-md hover:border-black/5 rounded-xl select-none" role="button">
-                        <div class="rounded-full overflow-hidden w-14 h-14 relative flex items-center justify-center shadow-md shadow-black/5 select-none bg-white-200 mr-3">
-                            <div class="relative text-gray">{{ client.firstName.slice(0,1) }}{{ client.lastName.slice(0,1) }}</div>
-                        </div>
-                        <div class="text-left pr-2">
-                            <p>{{ client.firstName }} {{ client.lastName }} (he/him)</p>
-                            <p class="text-gray">Model</p>
-                        </div>
-                    </li>
-                </ul>
             </section>
         </div>
     </div>

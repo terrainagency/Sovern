@@ -3,7 +3,7 @@
         <div class="flex justify-between items-center py-3">
 
             <div class="flex items-center min-w-64">
-                <div v-if="automation.type === 'email'" class="relative z-10 h-14 w-14 flex items-center bg-conic rounded-xl justify-center mr-4 flex-shrink-0">
+                <div v-if="automation.type === 'email'" class="relative z-10 h-14 w-14 flex items-center bg-black rounded-xl justify-center mr-4 flex-shrink-0">
                     <svg class="w-7 h-7" viewBox="0 0 36.5 28.389">
                         <defs>
                             <linearGradient id="email-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
@@ -38,7 +38,7 @@
                 
             </div>
             
-            <div class="text-right flex-grow text-gray">
+            <!-- <div class="text-right flex-grow text-gray">
                 <div class="py-3 px-4 w-36 text-center rounded-lg bg-white-100 inline-block">{{ automation.timing }}</div>
                 <div class="py-3 px-4 w-24 text-center inline-block">{{ automation.when }}</div>
                 <div class="py-3 px-4 w-36 text-center rounded-lg bg-white-100 inline-block">
@@ -49,7 +49,7 @@
             <div @click.stop="" v-if="expanded" class="ml-8 flex-shrink-0 flex">
                 <button @click.prevent="save" class="btn py-3 px-8 btn-black rounded-lg w-32">Save</button>
                 <button @click.prevent="destroy" class="btn py-3 px-5 bg-warning text-white ml-2 rounded-lg w-auto">x</button>
-            </div>
+            </div> -->
         </div>
 
         <div v-if="automation.type === 'email'" class="py-3">
