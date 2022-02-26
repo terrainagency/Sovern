@@ -53,6 +53,9 @@
   "CardAutomation": {
     "description": "Auto imported from components/Card/Automation.vue"
   },
+  "IconsEye": {
+    "description": "Auto imported from components/Icons/Eye.vue"
+  },
   "InputAutomationAction": {
     "description": "Auto imported from components/Input/AutomationAction.vue"
   },
@@ -103,9 +106,6 @@
   },
   "ModalMoodboardLightbox": {
     "description": "Auto imported from components/Modal/MoodboardLightbox.vue"
-  },
-  "IconsEye": {
-    "description": "Auto imported from components/icons/Eye.vue"
   },
   "InputUtilsDatePicker": {
     "description": "Auto imported from components/Input/Utils/DatePicker.vue"
